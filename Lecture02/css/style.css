@@ -1,4 +1,17 @@
 .reveal .keyboard{
+	width: 35px;
+	height: 35px;
+	display: inline-block;
+	text-align: center;
+	background-color: #FFFFAA;
+	color: black;
+	border-radius: 5px;
+	font-family: monospace;
+	font-size: 30px;
+	line-height: 38px;
+}
+/*
+.reveal .keyboard{
 	width: 50px;
 	height: 50px;
 
@@ -20,7 +33,14 @@
 	line-height: 28px;
 	text-align: center;
 }
+*/
 
 .reveal strong{
 	color: red;
+}
+
+.reveal .tip{
+	background-color: #668800;
+	max-width: 700px;
+	margin: 0 auto;
 }
