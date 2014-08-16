@@ -1,3 +1,6 @@
+.reveal{
+	font-family:"Palatino Linotype", "Book Antiqua", Palatino, FreeSerif, serif; 
+}
 .reveal .keyboard{
 	width: 35px;
 	height: 35px;
@@ -9,6 +12,8 @@
 	font-family: monospace;
 	font-size: 30px;
 	line-height: 38px;
+	position: relative;
+	top: -3px;
 }
 /*
 .reveal .keyboard{
@@ -43,4 +48,28 @@
 	background-color: #668800;
 	max-width: 700px;
 	margin: 0 auto;
+}
+
+.reveal li{
+	margin: 10px 0;
+}
+
+.reveal table{
+	margin: auto;
+}
+
+.reveal td{
+	padding:0 10px;
+}
+
+.reveal .mono{
+	font-family: monospace;
+}
+.reveal .borderTable{
+	border-collapse: collapse;
+	border: 3px solid black
+}
+
+.reveal .borderTable td{
+	border: 3px solid black;
 }
