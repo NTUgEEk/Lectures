@@ -397,6 +397,7 @@ set bs=indent,eol,start ww+=<,>,[,]
 					<h2> position </h2>
 					<ul>
 						<li> movement: <span class="keyboard">i</span><span class="keyboard">j</span><span class="keyboard">k</span><span class="keyboard">l</span><span class="keyboard">gg</span><span class="keyboard">f</span>...
+						<li> Current Line: <span class="keyboard">d</span><span class="keyboard">d</span>, <span class="keyboard">y</span><span class="keyboard">y</span>...
 						<li> range: <span class="keyboard">a</span><span class="keyboard">(</span>: Around (),
 						<span class="keyboard">i</span><span class="keyboard">w</span>: in a word
 				</section>
@@ -491,7 +492,50 @@ nnoremap &lt;F8&gt; ...
 					
 				</section>
 				</section>
+
+				<section>
+				<h2> For coding </h2>
+					<ul>
+						<li> <span class="keyboard">=</span>
+						: Auto formating</li>
+						<li> <span class="keyboard">&lt;</span>/ <span class="keyboard">&gt;</span>
+						: indenting</li>
+						<li> <span class="keyboard">Ctrl-a</span>/ <span class="keyboard">Ctrl-x</span>
+						: Add/Minus one the number <br>where the cursor is
+						<li> <span class="keyboard">g</span><span class="keyboard">t</span>
+						: <strong>g</strong>oto next <strong>t</strong>ab
+					</ul>
+				</section>
+				
+
+				<section>
+					<h2> plugins </h2>
+					<p>Vim 有許多好用的插件!<br>
+					ex: pathogen.vim - Package manager of Vim</p>
+				</section>	
+				<section>
+				<section>
+				<h2> small small project - .vimrc </h2>
+					目標: 安裝NERDTree!
+					<blockquote>
+						Try to install pathogen.vim!
+					</blockquote>
+					<blockquote>
+						After finish install pathogen.vim, install NERDTree!
+					</blockquote>
+				</section>
+				<section>
+					<blockquote>
+						Give NERDTree a comfortable mapping key!
+					</blockquote>
+
+						<pre><code class="vim">
+let mapleader = ...
+nnoremap &lt;leader&gt;? ...
+						</pre></code class="bash">
 					
+				</section>
+
 			</div>
 		</div>
 
