@@ -217,7 +217,7 @@ git clone .......
 						Insert Mode </div>
 					<div style="clear:left"></div>
 					</div><br>
-					<p> Use <span class="keyboard" style="width:auto">Esc</span> <br>
+					<p> Use <span class="keyboard" >Esc</span> <br>
 					or <span class="keyboard" style="width:auto">Ctrl-[</span> (Recommend)</p>
 				</section>
 				</section>
@@ -246,6 +246,134 @@ git clone .......
 						<td> find previous </td>
 						</tr>
 					</table>
+				</section>
+
+
+				<section>
+					<h2> Repeat command </h2>
+
+					<ul>
+						<li> <span class="keyboard">.</span>
+						: Repeat last command </li>
+						<li> <span class="combined"> &lt;Number&gt;&lt;Command&gt; </span>
+						: 一次執行[Number]次[Command] <br> </li>
+					</ul>
+
+						<br><div class="example"> Examples:<br>
+						<span class="keyboard">5</span><span class="keyboard">l</span>
+						: move left 5 characters
+						<br>
+						<span class="keyboard">3</span><span class="keyboard">a</span><span class="combined">ha</span><span class="keyboard">&lt;Esc&gt;</span>
+						: insert hahaha<br>
+						</div>
+				</section>
+
+				<section>
+					<section>
+					<h2> Delete, Yank & Paste </h2>
+
+					<ul>
+						<li> <span class="keyboard">d</span>
+						: <strong>d</strong>elete </li>
+						<li> <span class="keyboard">d</span><span class="keyboard">d</span>
+						: delete current line </li>
+						<li> <span class="keyboard">y</span>
+						: <strong>y</strong>ank
+						<li> <span class="keyboard">y</span><span class="keyboard">y</span>
+						: yank current line </li>
+						<li> <span class="keyboard">p</span>/<span class="keyboard">P</span>
+						: paste after/Before the cursor <br>
+					</ul><br><br>
+				</section>
+				<section>
+					
+					<div class="example"> Examples:<br>
+					<span class="keyboard">5</span><span class="keyboard">d</span><span class="keyboard">d</span>
+					: delete 5 lines
+					<br>
+					<span class="keyboard">4</span><span class="keyboard">y</span><span class="keyboard">y</span>
+					: copy 4 line<br>
+					<span class="keyboard">d</span><span class="keyboard">f</span><span class="keyboard">a</span>
+					: delete to next character 'a'<br>
+					<span class="keyboard">y</span><span class="keyboard">3</span><span class="keyboard">l</span>
+				
+					: copy 3 letter left
+					</div>
+				</section>
+				</section>
+
+				<section>
+					<h2>Visual Mode!</h2>
+					就是框選模式!!<br>
+
+					<ul>
+						<li> <span class="keyboard">v</span>
+						: enter <strong>v</strong>isual mode </li>
+						<li> <span class="keyboard">V</span>
+							: line <strong>V</strong>isual mode </li>
+						<li> <span class="keyboard">ctrl-v</span>
+							: block visual mode </li>
+					</ul>
+					<br>
+					<br>
+					<div class="tip">
+					Tips: 可搭配<span class="keyboard">d</span><span class="keyboard">y</span>...
+					風味更佳!
+					</div>
+				</section>
+
+				<section>
+					<h2> Replace! </h2>
+					<ul>
+						<li> <span class="keyboard">r</span>
+							: <strong>r</strong>eplace a letter</li>
+						<li> <span class="keyboard">R</span>
+							: enter <strong>R</strong>eplace mode </li>
+						<li> <span class="keyboard">s</span>
+							: <strong>s</strong>ubstitute </li>
+						<li> <span class="keyboard">c</span>
+							: <strong>c</strong>hange </li>
+					</ul>
+				</section>
+
+				<section>
+				<section>
+					<h2> More movement! </h2>
+					
+					<ul>
+						<li> <span class="keyboard">w</span>
+							: <strong>w</strong>ord</li>
+						<li> <span class="keyboard">e</span>
+							: <strong>e</strong>nd</li>
+						<li> <span class="keyboard">b</span>
+							: <strong>b</strong>ack </li>
+					</ul>
+				</section>
+				<section>
+					<ul>
+						<li> <span class="keyboard">%</span>
+							: 到對應的刮號</li>
+						<li> <span class="keyboard">^</span>
+							: Begin of line</li>
+						<li> <span class="keyboard">$</span>
+							: End of line</li>
+					</ul>
+				</section>
+				<section>
+					<h2> g stand for go! </h2>
+					<ul>
+						<li> <span class="keyboard">g</span><span class="keyboard">g</span>
+							: go to line 1</li>
+						<li> <span class="keyboard">G</span>
+							: <strong>G</strong>o to EOF</li>
+						<li> <span class="keyboard">g</span><span class="keyboard">d</span>
+							: <strong>g</strong>o to <strong>d</strong>efine</li>
+					</ul>
+				</section>
+				</section>
+
+				<section>
+					<h2> Search </h2>
 				</section>
 			</div>
 		</div>
