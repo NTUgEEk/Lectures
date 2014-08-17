@@ -222,6 +222,19 @@ git clone .......
 				</section>
 				</section>
 
+				<section> <h2> Small small project - .vimrc </h2>
+					<p> Create a file called ~/.vimrc and edit it </p>	
+
+						<pre><code class="vim">
+syntax on
+colortheme torte
+set nu, ai, ar
+set ts=4, sw=2 
+set mouse=a
+set bs=indent,eol,start ww+=<,>,[,]
+						</pre></code class="bash">
+					</section>
+
 				<section>
 					<h2> Move Faster ! </h2>
 					<table>
@@ -373,8 +386,112 @@ git clone .......
 				</section>
 
 				<section>
-					<h2> Search </h2>
+				<section>
+					<h2> transitive verbs </h2>
+					vim中的指令大致上可以分成兩類
+					<ul>
+						<li> 不及物動詞: 按下後立刻執行<br>ex: <span class="keyboard">a</span>,<span class="keyboard">r</span>,<span class="keyboard">s</span></li>
+						<li> 及物動詞: 按下後可接修飾詞<br>ex: <span class="keyboard">d</span>,<span class="keyboard">y</span>,<span class="keyboard">c</span></li>
 				</section>
+				<section>
+					<h2> position </h2>
+					<ul>
+						<li> movement: <span class="keyboard">i</span><span class="keyboard">j</span><span class="keyboard">k</span><span class="keyboard">l</span><span class="keyboard">gg</span><span class="keyboard">f</span>...
+						<li> range: <span class="keyboard">a</span><span class="keyboard">(</span>: Around (),
+						<span class="keyboard">i</span><span class="keyboard">w</span>: in a word
+				</section>
+				<section>
+					<div class="example">Examples:<br>
+						<span class="keyboard">y</span><span class="keyboard">a</span><span class="keyboard">w</span>:
+						yank a word.<br>
+						<span class="keyboard">c</span><span class="keyboard">i</span><span class="keyboard">(</span>:
+						change inside ( )<br>
+						<span class="keyboard">d</span><span class="keyboard">i</span><span class="keyboard">{</span>:
+						delete everything inside {}<br>
+				</section>
+				</section>
+
+				<section>
+				<section>
+					<h2> Search </h2>
+
+					<ul>
+						<li> <span class="keyboard">/</span>/
+						<span class="keyboard">?</span>: Forward/Backward search pattern</li>
+
+						<li><span class="combined">:s/[pattern1]/[pattern2]/[flag]</span>: replace
+					</ul><br>
+					<br>
+
+					<div class="tip"> Tips: pattern could be a regular expression! </div>
+				</section>
+
+				<section>
+					<h2> regular expression </h2>
+
+					<table class="borderTable" style="/*font-family: arial; font-weight:normal;*/">
+						<tr>
+							<td> [abc] </td> <td> a or b or c </td>
+						</tr>
+						<tr>
+							<td> \d </td> <td> digit (=[0-9]) </td>
+						</tr>
+						<tr>
+							<td> . </td> <td> any character </td>
+						</tr>
+							<td> \{x, y\}  </td> <td> match [x, y] times </td>
+						<tr>
+							<td> * </td> <td> match any times (=\{0, INF\}) </td>
+						</tr>
+						<tr>
+							<td> \( ... \) </td> <td> group </td>
+						</tr>
+						<tr>
+							<td> \1 </td> <td> 1st group </td>
+						</tr>
+					</table>
+
+				</section>
+				</section>
+
+				<section>
+					<h2> make vim an IDE </h2>
+					<p>Vim 中有強大的 map 工能 !<br>
+					:[inv..][nore]map <span class="combined">key</span> <span class="combined">command</span>:
+					map key to command
+					</p>
+				</section>
+
+				<section>
+				<section>
+				<h2> small small project - .vimrc </h2>
+				目標: 完成C++的一鍵編譯!	
+						<pre><code class="vim">
+se ai
+autocmd filetype indent plugin on
+au filetype cpp se makeprg = (Your make-program command)
+						</pre></code class="bash">
+				<div class="tip">
+					Hint:<br> g++ -o &lt;output file&gt; [options] &lt;input file&gt;<br>
+					記得跳脫空白字元!
+				</div>
+				</section>
+				<section>
+					<ul>
+						<li> <span class="combined">:make</span>
+						: Make file.</li>
+						<li> <span class="combined">:copen</span>
+						: open error list</li>
+						<li> <span class="combined">:cclose</span>
+						: close error list</li>
+					</ul>
+						<pre><code class="vim">
+nnoremap &lt;F8&gt; ...
+						</pre></code class="bash">
+					
+				</section>
+				</section>
+					
 			</div>
 		</div>
 
