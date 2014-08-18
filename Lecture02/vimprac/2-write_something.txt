@@ -1,0 +1,34 @@
+# Practice 2 - write something
+# I - insert at beginning
+# A - append at end
+# edit the 2 lines with your name!
+
+My name is 
+ is my name
+
+#Complete these line!
+
+ + 3 = 7
+1 + 2 = 
+To be or not to be, that is the 
+density = mass / 
+ is the coolest editor !!
+
+# i - insert before cursor
+# a - append after cursor
+
+5 -  = 2
+I am  years old
+press  to insert in vim
+and press  to append
+
+# o - new line after
+# O - new line before
+# There are 8 lines below
+
+line 2
+line 3
+line 5
+line 6
+line 7
+

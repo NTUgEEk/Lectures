@@ -1,0 +1,47 @@
+# Practice 9 - Verbs
+# dw - delete word
+# de - delete to end
+# diw - delete in word
+# daw - delete around word
+# di( - delete in ()
+# da" - delete around ""
+# ...
+# !extra!
+# Different between w and W, e and E....
+# this-is-several-words-but-count-as-one-Word
+# this,is,several,words,but,one,Word
+#
+# Correct the sentence below!
+
+These are my favorite 3 fruits:
+apple banana cocacola watermelon
+
+There are 3 dogs:
+woof woof woof
+There are 5 cats:
+meeeooowwwww 
+There are 2 cows:
+moo moo moo moo
+There are 6 sheeps:
+meeeeehhh meeeeehhh 
+
+string your_name = "blablabla"
+call setYourBirthday(1234/56/78)
+
+# below is a cpp file, correct it!
+
+#include<streamio.h>
+
+using namesapce std;
+
+int mian(){
+	
+	// Repeat 5 times
+
+	int count = 5
+	while(5 times){
+		// print "Vim is fun"
+		cout << "Oops!" << endl;
+		count = cnt - 1;
+	}
+}

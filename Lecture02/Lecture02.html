@@ -220,37 +220,35 @@ git clone .......
 					<div style="clear:left"></div>
 					</div><br>
 					<p> Use <span class="keyboard" >Esc</span> <br>
-					or <span class="keyboard" style="width:auto">Ctrl-[</span> (Recommend)</p>
+					or <span class="keyboard" style="width:auto">Ctrl-[</span> (Recommended)</p>
 				</section>
 				</section>
 
 				<section> <h2> Small small project - .vimrc </h2>
-					<p> Create a file called ~/.vimrc and edit it </p>	
+					<p> Create a file named ~/.vimrc and edit it </p>	
 
 						<pre><code class="vim">
 syntax on
 colortheme torte
 set nu, ai, ar
-set ts=4, sw=2 
+set ts=4, sw=4 
 set mouse=a
 set bs=indent,eol,start ww+=<,>,[,]
-						</pre></code class="bash">
+						</pre></code>
 					</section>
 
 				<section>
 					<h2> Move Faster ! </h2>
 					<table>
 						<tr>
-							<td> <span class="keyboard"> f </span> 
-							&lt;c&gt; </td>
+							<td> <span class="keyboard"> f </span><span class="group">char</span> </td>
 						<td> <strong>f</strong>ind the next character
-							&lt;c&gt; </td>
+							<span class="group">char</span></td>
 						</tr>
 						<tr>
-							<td> <span class="keyboard"> F </span> 
-							&lt;c&gt; </td>
+							<td> <span class="keyboard"> F </span><span class="group">char</span></td>
 						<td> <strong>F</strong>ind the previous character
-							&lt;c&gt; </td>
+							<span class="group">char</span></td>
 						</tr>
 						<tr>
 							<td> <span class="keyboard"> ; </span> </td>
@@ -381,6 +379,8 @@ set bs=indent,eol,start ww+=<,>,[,]
 							: go to line 1</li>
 						<li> <span class="keyboard">G</span>
 							: <strong>G</strong>o to EOF</li>
+							<li> <span class="keyboard">G</span><span class="group">number</span>
+							: <strong>G</strong>o to line <span class="group">number</span></li>
 						<li> <span class="keyboard">g</span><span class="keyboard">d</span>
 							: <strong>g</strong>o to <strong>d</strong>efine</li>
 					</ul>

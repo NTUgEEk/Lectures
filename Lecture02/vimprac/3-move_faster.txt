@@ -1,0 +1,30 @@
+# Practice 3 - Move faster !
+# f [char] - go to the next [char] position
+# F [char] - go to the previous [char] position
+# Same as practice 1 - Remove all the x
+
+..............x......
+.........x....x...x....
+.x..x..x.................
+...x...........x.....x
+.........
+.....
+...........
+.........x...x......x.
+..x..x............x...x..
+........x......x....
+
+# Now remove any alphabet you see!
+
+*c*      *rP*   **   ***       L***     
+ A**    *A*    **   *j***     ****     
+  ** f **     **   ** **   ** *K*     
+   D***D*      **   **  *f* **  **     
+    **       **p   **   ***qq   **q     
+
+# fix those sentence!
+
+Appple is red
+The editor we are using are called vm
+Vim is really useful in Lnux
+for(int i=0; i<5; i+ ) // repeat 5 times

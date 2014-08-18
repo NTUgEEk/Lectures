@@ -1,0 +1,26 @@
+# Practice 7 - Replace
+# r - replace a character
+# below are c++ codes with syntax
+# error, correct them!
+# Again, move FAST!
+
+int main()[
+	\\ This is a comment
+	\\ Repeat 10 times
+	for(int i = 0, i < 10, i++){
+		cout >> 'Vim is cool' >> end1. 
+	}
+	return 0.
+]
+
+# [num]s - subsitute next [num] characters
+# C - subsitute to end
+# Correct these sentence!
+# You can also use visual + c/s !
+
+My name is NikaidoShinku
+xxx is my name
+
+Today is 2014/7/5
+You are using Windows now.
+You are using Word as an editor now.
