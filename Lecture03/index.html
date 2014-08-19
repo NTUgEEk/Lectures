@@ -1,0 +1,207 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+
+		<title>Lecture03-Git</title>
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../reveal.js/css/reveal.min.css">
+		<link rel="stylesheet" href="../reveal.js/css/theme/serif.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="../reveal.js/lib/css/zenburn.css">
+
+		<!-- Custom CSSs -->
+		<link rel="stylesheet" href="style.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+				<section>
+					<h1>Git</h1>
+					<p>The most popular distibuted version control system</p>
+				</section>
+
+        <section>
+          <h2> Installation </h2>
+          <pre><code class="bash">
+$ sudo apt-get install git
+# Or something similar depend on your distro
+$ git --version
+# You should see your git version
+          </pre></code>
+        </section>
+
+        <section>
+          <h2>Why we need git?</h2>
+        </section>
+        <section>
+          <section>
+            <h2>Basic Usage</h2>
+            <pre><code class="bash">
+$ mkdir my_project
+$ cd $_
+$ git init                        # initial a git repo
+$ echo "Hello world!" &gt; README.md
+$ git add README.md               # add README.md into WD
+$ git commit -m 'initial commit'  # commit to repo
+            </pre></code class="bash">
+            <em>Note: 後面也是都用 WD 來當作 working directory 的縮寫</em>
+          </section>
+          <section>
+            <h2>basic git command</h2>
+            下面的 command 都是接在 <code class="command">git</code> 後面
+            <ul>
+              <li><code class="command">add</code>: 將後面的檔案加入 WD</li>
+              <li><code class="command">commit</code>: 將目前的 WD commit</li>
+              <li><code class="command">status</code>: 觀看目前 WD 的狀態</li>
+              <li><code class="command">branch</code>: 觀看 branch 的狀態</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Practice Time</h2>
+            <ul>
+              <li>新增一個名為 <code class="files">my_project</code> 資料夾並初始化一個 git repo</li>
+              <li>新增一個檔案 <code class="files">README.md</code> ，裡面雖然寫一些內容</li>
+              <li>用 <code class="command">status</code> 觀看目前 WD 的狀態</li>
+              <li>將 <code class="files">README.md</code> 加入 WD 後再觀看一次狀態</li>
+              <li>確認無誤後將目前的狀態 <code class="command">commit</code></li>
+            </ul>
+            <div class="tip">
+              Tip: 可以用 <code class="command">git add .</code> 來加入所有有修改的檔案進 WD 喔！
+            </div>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Github</h2>
+            <p>
+              一個非常熱門的 git remote repo 服務
+            </p>
+            <img height="300" src="https://assets-cdn.github.com/images/modules/open_graph/github-logo.png" />
+            <img height="300" src="https://assets-cdn.github.com/images/modules/logos_page/Octocat.png" />
+          </section>
+          <section>
+            <h2>Git Workflow</h2>
+            <img height="600" src="https://mockupstogo.mybalsamiq.com/mockups/4191.png" />
+          </section>
+        </section>
+
+				<section>
+				  <h2>.gitconfig</h2>
+          An example of <code class="files">.gitconfig</code>
+          <pre><code class="ini">
+[user]
+    name = YourName
+    email = YourEmail
+[alias]
+    ci = commit
+    st = status -sb
+    # ... something more ... (you should remove this line)
+[push]
+    default = tracking
+[branch]
+    autosetuprebase = always
+[color]
+    ui = true
+          </pre></code>
+          <p>
+          <blockquote>
+            Practice: create your config file in <code>~</code>
+          </blockquote>
+          </p>
+				</section>
+
+        <section>
+          <section>
+            <h2>Work with remote repo</h2>
+            <ul>
+              <li><code class="command">clone</code> &lt;<em>URL</em>&gt; :
+                將<em>URL</em> 的 repo 複製一份到 local 端</li>
+              <li><code class="command">push</code>: 將目前 branch 的 commit
+                上傳到 remote 的 tracking branch</li>
+              <li><code class="command">pull</code>: 下載 remote tracking
+                branch 的 commit 到 local</li>
+            </ul>
+          </section>
+          <section>
+          </section>
+        </section>
+
+        <section>
+          <h2>Branches are cheap !!</h2>
+        </section>
+
+        <section>
+          <h2>conflict? merge them!</h2>
+        </section>
+
+        <section>
+          <h2>keep clean with rebase =)</h2>
+        </section>
+
+        <section>
+          <h2></h2>
+        </section>
+
+			</div>
+		</div>
+
+
+		<script src="../reveal.js/lib/js/head.min.js"></script>
+		<script src="../reveal.js/js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: '../reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '../reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: '../reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+	</body>
+</html>
+
