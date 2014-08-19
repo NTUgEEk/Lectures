@@ -1,24 +1,23 @@
 <!doctype html>
-<html lang="en">
-
+<html>
 	<head>
 		<meta charset="utf-8">
 
-		<title>reveal.js - The HTML Presentation Framework</title>
-
-		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-		<meta name="author" content="Hakim El Hattab">
+		<title>Lecture02-Vim</title>
 
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" href="css/reveal.min.css">
-		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+		<link rel="stylesheet" href="../reveal.js/css/reveal.min.css">
+		<link rel="stylesheet" href="../reveal.js/css/theme/default.css" id="theme">
 
 		<!-- For syntax highlighting -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<link rel="stylesheet" href="../reveal.js/lib/css/zenburn.css">
+
+		<!-- Custom CSSs -->
+		<link rel="stylesheet" href="style.css">
 
 		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
 		<script>
@@ -35,330 +34,561 @@
 		<script src="lib/js/html5shiv.js"></script>
 		<![endif]-->
 	</head>
-
 	<body>
-
 		<div class="reveal">
-
-			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
+
 				<section>
-					<h1>Reveal.js</h1>
-					<h3>HTML Presentations Made Easy</h3>
-					<p>
-						<small>Created by <a href="http://hakim.se">Hakim El Hattab</a> / <a href="http://twitter.com/hakimel">@hakimel</a></small>
-					</p>
+					<h1>Vim</h1>
+					<p> 強大的text mode編輯軟體 </p>
 				</section>
 
 				<section>
-					<h2>Heads Up</h2>
-					<p>
-						reveal.js is a framework for easily creating beautiful presentations using HTML. You'll need a browser with
-						support for CSS 3D transforms to see it in its full glory.
-					</p>
+					<section>
+						<h2> Installation </h2>
+						<pre><code class="bash">
+sudo apt-get install gvim
+#Or something similar depend on your distro
+vim --version
+# You should see your vim version
+						</pre></code>
+					</section>
 
-					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-					</aside>
-				</section>
-
-				<!-- Example of nested vertical slides -->
-				<section>
 					<section>
-						<h2>Vertical Slides</h2>
-						<p>
-							Slides can be nested inside of other slides,
-							try pressing <a href="#" class="navigate-down">down</a>.
-						</p>
-						<a href="#" class="image navigate-down">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
+						<h2> Something else </h2>
+						<pre><code class="bash">
+sudo apt-get build-essential git
+cd ~
+mkdir NTUgEEk
+cd $_
+git clone https://github.com/NTUgEEk/Lectures.git
+						</pre></code class="bash">
 					</section>
 					<section>
-						<h2>Basement Level 1</h2>
-						<p>Press down or up to navigate.</p>
-					</section>
-					<section>
-						<h2>Basement Level 2</h2>
-						<p>Cornify</p>
-						<a class="test" href="http://cornify.com">
-							<img width="280" height="326" src="https://s3.amazonaws.com/hakim-static/reveal-js/cornify.gif" alt="Unicorn">
-						</a>
-					</section>
-					<section>
-						<h2>Basement Level 3</h2>
-						<p>That's it, time to go back up.</p>
-						<a href="#/2" class="image">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="-webkit-transform: rotate(180deg);">
-						</a>
+						<h2> check you have all! </h2>
+						<pre><code class="bash">
+python3 --version
+g++ --version
+						</pre></code class="bash">
 					</section>
 				</section>
 
 				<section>
-					<h2>Slides</h2>
-					<p>
-						Not a coder? No problem. There's a fully-featured visual editor for authoring these, try it out at <a href="http://slid.es" target="_blank">http://slid.es</a>.
-					</p>
-				</section>
-
-				<section>
-					<h2>Point of View</h2>
-					<p>
-						Press <strong>ESC</strong> to enter the slide overview.
-					</p>
-					<p>
-						Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
-					</p>
-				</section>
-
-				<section>
-					<h2>Works in Mobile Safari</h2>
-					<p>
-						Try it out! You can swipe through the slides and pinch your way to the overview.
-					</p>
-				</section>
-
-				<section>
-					<h2>Marvelous Unordered List</h2>
-					<ul>
-						<li>No order here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-						<li>Or here</li>
+					 <h2> Move Around! </h2>
+					 <ul>
+						 <li class="fragment">Mouse? NO!</li>
+						 <li class="fragment">
+						 <span class="keyboard">←</span>
+						 <span class="keyboard">↓</span>
+						 <span class="keyboard">↑</span>
+						 <span class="keyboard">→</span>
+						  ?</li>
+						<li class="fragment">CS/LOL:
+						 <span class="keyboard">w</span>
+						 <span class="keyboard">a</span>
+						 <span class="keyboard">s</span>
+						 <span class="keyboard">d</span>?
+						 </li>
+						 <li class="fragment">Answer: Stepmania <br>
+						 <span class="keyboard">h</span>
+						 <span class="keyboard">j</span>
+						 <span class="keyboard">k</span>
+						 <span class="keyboard">l</span> !!
+						 <br>
+						 <span class="keyboard">←</span>
+						 <span class="keyboard">↓</span>
+						 <span class="keyboard">↑</span>
+						 <span class="keyboard">→</span>
+						</li>
 					</ul>
 				</section>
 
 				<section>
-					<h2>Fantastic Ordered List</h2>
-					<ol>
-						<li>One is smaller than...</li>
-						<li>Two is smaller than...</li>
-						<li>Three!</li>
-					</ol>
+					<h2> Cursor </h2>
+					<p style="font-family:monospace; font-size:40px;">
+					This i<span style="border-left:solid 3px black;
+						background-color:gray;">s</span> a text </p>
 				</section>
+				<section>
+				<section>
+					<h2> Basic command </h2>
+					<ul>
+						<li> <span class="keyboard">u</span>
+						: <strong>u</strong>ndo </li>
+						<li> <span class="keyboard">ctrl-r</span>
+						: <strong>r</strong>edo </li>
+						<li> <span class="keyboard">x</span>
+						: 把東西打叉叉! Delete <br>
+						刪除在Cursor後的字</li>
+						<li> <span class="keyboard">X</span>
+						: Backspace <br>
+						刪除在Cursor前的字</li>
+					</ul><br><br>
 
-				<section data-markdown>
-					<script type="text/template">
-						## Markdown support
-
-						For those of you who like that sort of thing. Instructions and a bit more info available [here](https://github.com/hakimel/reveal.js#markdown).
-
-						```
-						<section data-markdown>
-						  ## Markdown support
-
-						  For those of you who like that sort of thing.
-						  Instructions and a bit more info available [here](https://github.com/hakimel/reveal.js#markdown).
-						</section>
-						```
-					</script>
+					<div class="tip">
+						Tip: Vim中大寫指令常有"強化"或"相反"的意義!
+					</div>
 				</section>
-
-				<section id="transitions">
-					<h2>Transition Styles</h2>
-					<p>
-						You can select from different transitions, like: <br>
-						<a href="?transition=cube#/transitions">Cube</a> -
-						<a href="?transition=page#/transitions">Page</a> -
-						<a href="?transition=concave#/transitions">Concave</a> -
-						<a href="?transition=zoom#/transitions">Zoom</a> -
-						<a href="?transition=linear#/transitions">Linear</a> -
-						<a href="?transition=fade#/transitions">Fade</a> -
-						<a href="?transition=none#/transitions">None</a> -
-						<a href="?#/transitions">Default</a>
-					</p>
+				
+				<section>
+					<span class="keyboard">:</span>
+					<span style="margin-left: 15px"> Run commands </span>
+					<br><br>
+					<table class="borderTable">
+						<tr>
+							<td class="mono">:w</td>
+							<td> <strong>w</strong>rite file</td>
+						</tr>
+						<tr>
+							<td class="mono">:e</td>
+							<td> edit </td>
+						</tr>
+						<tr>
+							<td class="mono">:tabe</td>
+							<td> <strong>tab</strong> edit </td>
+						</tr>
+						<tr>
+							<td class="mono">:q</td>
+							<td> <strong>q</strong>uit </td>
+						</tr>
+						<tr>
+							<td class="mono">:a</td>
+							<td> <strong>a</strong>ll </td>
+						</tr>
+					</table>
+					<blockquote>
+						You may try practice #1 now!
+					</blockquote>
 				</section>
-
-				<section id="themes">
-					<h2>Themes</h2>
-					<p>
-						Reveal.js comes with a few themes built in: <br>
-						<a href="?#/themes">Default</a> -
-						<a href="?theme=sky#/themes">Sky</a> -
-						<a href="?theme=beige#/themes">Beige</a> -
-						<a href="?theme=simple#/themes">Simple</a> -
-						<a href="?theme=serif#/themes">Serif</a> -
-						<a href="?theme=night#/themes">Night</a> <br>
-						<a href="?theme=moon#/themes">Moon</a> -
-						<a href="?theme=solarized#/themes">Solarized</a>
-					</p>
-					<p>
-						<small>
-							* Theme demos are loaded after the presentation which leads to flicker. In production you should load your theme in the <code>&lt;head&gt;</code> using a <code>&lt;link&gt;</code>.
-						</small>
-					</p>
 				</section>
 
 				<section>
-					<h2>Global State</h2>
-					<p>
-						Set <code>data-state="something"</code> on a slide and <code>"something"</code>
-						will be added as a class to the document element when the slide is open. This lets you
-						apply broader style changes, like switching the background.
-					</p>
+				<section>
+					<h2> Go into insert mode! </h2>
+					<div style="display: inline-block; margin:0 auto;">
+					<div style="float:left; background-color: #3333FF; 
+						width: 150px; border-radius: 10px;">
+						Normal Mode </div>
+
+					<div style="float:left; width: 0; height: 0; border-top:
+						30px solid transparent; border-bottom: 30px solid
+						transparent; border-left: 50px solid red; margin:
+						10px 60px;">
+						</div>
+					<div style="float:left; background-color: #33FF33; 
+						width: 150px; border-radius: 10px;">
+						Insert Mode </div>
+					<div style="clear:left"></div>
+					</div><br>
+
+					<table>
+						<tr>
+							<td> <span class="keyboard"> i </span> </td>
+							<td> <strong>i</strong>nsert </td>
+						</tr>
+						<tr>
+							<td> <span class="keyboard"> I </span> </td>
+							<td> <strong>I</strong>nsert at beginning </td>
+						</tr>
+						<tr>
+							<td> <span class="keyboard"> a </span> </td>
+							<td> <strong>a</strong>ppend </td>
+						</tr>
+						<tr>
+							<td> <span class="keyboard"> A </span> </td>
+							<td> <strong>A</strong>ppend at EOL </td>
+						</tr>
+						<tr>
+							<td> <span class="keyboard"> o </span> </td>
+							<td> insert line after </td>
+						</tr>
+						<tr>
+							<td> <span class="keyboard"> O </span> </td>
+							<td> insert line before </td>
+						</tr>
+					</table>
+				</section>
+				<section>
+					<h2> Exit Mode </h2>
+					<div style="display: inline-block; margin:0 auto;">
+					<div style="float:left; background-color: #3333FF; 
+						width: 150px; border-radius: 10px;">
+						Normal Mode </div>
+
+					<div style="float:left; width: 0; height: 0; border-top:
+						30px solid transparent; border-bottom: 30px solid
+						transparent; border-right: 50px solid red; margin:
+						10px 60px;">
+						</div>
+					<div style="float:left; background-color: #33FF33; 
+						width: 150px; border-radius: 10px;">
+						Insert Mode </div>
+					<div style="clear:left"></div>
+					</div><br>
+					<p> Use <span class="keyboard" >Esc</span> <br>
+					or <span class="keyboard" style="width:auto">Ctrl-[</span> (Recommended)</p>
+					<blockquote>
+						You may try practice #2 now!
+					</blockquote>
+				</section>
 				</section>
 
-				<section data-state="customevent">
-					<h2>Custom Events</h2>
-					<p>
-						Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
-					</p>
-					<pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
-Reveal.addEventListener( 'customevent', function() {
-	console.log( '"customevent" has fired' );
-} );
-					</code></pre>
+				<section> <h2> Small small project - .vimrc </h2>
+					<p> Create a file named ~/.vimrc and edit it </p>	
+
+						<pre><code class="vim">
+syntax on
+colortheme torte
+set nu, ai, ar
+set ts=4, sw=4 
+set mouse=a
+set bs=indent,eol,start ww+=<,>,[,]
+						</pre></code>
+					</section>
+
+				<section>
+					<h2> Move Faster ! </h2>
+					<table>
+						<tr>
+							<td> <span class="keyboard"> f </span><span class="group">char</span> </td>
+						<td> <strong>f</strong>ind the next character
+							<span class="group">char</span></td>
+						</tr>
+						<tr>
+							<td> <span class="keyboard"> F </span><span class="group">char</span></td>
+						<td> <strong>F</strong>ind the previous character
+							<span class="group">char</span></td>
+						</tr>
+						<tr>
+							<td> <span class="keyboard"> ; </span> </td>
+						<td> find next </td>
+						</tr>
+						<tr>
+							<td> <span class="keyboard"> , </span> </td>
+						<td> find previous </td>
+						</tr>
+					</table>
+					<blockquote>
+						You may try practice #3 now!
+					</blockquote>
+				</section>
+
+
+				<section>
+					<h2> Repeat command </h2>
+
+					<ul>
+						<li> <span class="keyboard">.</span>
+						: Repeat last command </li>
+						<li> <span class="combined"> &lt;Number&gt;&lt;Command&gt; </span>
+						: 一次執行[Number]次[Command] <br> </li>
+					</ul>
+
+						<br><div class="example"> Examples:<br>
+						<span class="keyboard">5</span><span class="keyboard">l</span>
+						: move left 5 characters
+						<br>
+						<span class="keyboard">3</span><span class="keyboard">a</span><span class="combined">ha</span><span class="keyboard">&lt;Esc&gt;</span>
+						: insert hahaha<br>
+						</div>
 				</section>
 
 				<section>
-					<section data-background="#007777">
-						<h2>Slide Backgrounds</h2>
-						<p>
-							Set <code>data-background="#007777"</code> on a slide to change the full page background to the given color. All CSS color formats are supported.
-						</p>
-						<a href="#" class="image navigate-down">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png">
-						<h2>Image Backgrounds</h2>
-						<pre><code>&lt;section data-background="image.png"&gt;</code></pre>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" data-background-repeat="repeat" data-background-size="100px">
-						<h2>Repeated Image Backgrounds</h2>
-						<pre><code style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
-					</section>
-				</section>
+					<section>
+					<h2> Delete, Yank & Paste </h2>
 
-				<section data-transition="linear" data-background="#4d7e65" data-background-transition="slide">
-					<h2>Background Transitions</h2>
-					<p>
-						Pass reveal.js the <code>backgroundTransition: 'slide'</code> config argument to make backgrounds slide rather than fade.
-					</p>
+					<ul>
+						<li> <span class="keyboard">d</span>
+						: <strong>d</strong>elete </li>
+						<li> <span class="keyboard">d</span><span class="keyboard">d</span>
+						: delete current line </li>
+						<li> <span class="keyboard">y</span>
+						: <strong>y</strong>ank
+						<li> <span class="keyboard">y</span><span class="keyboard">y</span>
+						: yank current line </li>
+						<li> <span class="keyboard">p</span>/<span class="keyboard">P</span>
+						: paste after/Before the cursor <br>
+					</ul><br><br>
 				</section>
-
-				<section data-transition="linear" data-background="#8c4738" data-background-transition="slide">
-					<h2>Background Transition Override</h2>
-					<p>
-						You can override background transitions per slide by using <code>data-background-transition="slide"</code>.
-					</p>
+				<section>
+					
+					<div class="example"> Examples:<br>
+					<span class="keyboard">5</span><span class="keyboard">d</span><span class="keyboard">d</span>
+					: delete 5 lines
+					<br>
+					<span class="keyboard">4</span><span class="keyboard">y</span><span class="keyboard">y</span>
+					: copy 4 line<br>
+					<span class="keyboard">d</span><span class="keyboard">f</span><span class="keyboard">a</span>
+					: delete to next character 'a'<br>
+					<span class="keyboard">y</span><span class="keyboard">3</span><span class="keyboard">l</span>
+					: copy 3 letter left
+					</div>
+					<blockquote>
+						You may try practice #4 now!
+					</blockquote>
+				</section>
 				</section>
 
 				<section>
-					<h2>Clever Quotes</h2>
-					<p>
-						These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;The nice thing about standards is that there are so many to choose from&rdquo;</q> and block:
-					</p>
-					<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
-						reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;
+					<h2>Visual Mode!</h2>
+					就是框選模式!!<br>
+
+					<ul>
+						<li> <span class="keyboard">v</span>
+						: enter <strong>v</strong>isual mode </li>
+						<li> <span class="keyboard">V</span>
+							: line <strong>V</strong>isual mode </li>
+						<li> <span class="keyboard">ctrl-v</span>
+							: block visual mode </li>
+					</ul>
+					<br>
+					<br>
+					<div class="tip">
+					Tips: 可搭配<span class="keyboard">d</span><span class="keyboard">y</span>...
+					風味更佳!
+					</div>
+					<blockquote>
+						You may try practice #5 now!
+					</blockquote>
+					<blockquote>
+						You may try practice #6 now!
 					</blockquote>
 				</section>
 
 				<section>
-					<h2>Pretty Code</h2>
-					<pre><code data-trim contenteditable>
-function linkify( selector ) {
-  if( supports3DTransforms ) {
-
-    var nodes = document.querySelectorAll( selector );
-
-    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
-      var node = nodes[i];
-
-      if( !node.className ) {
-        node.className += ' roll';
-      }
-    }
-  }
-}
-					</code></pre>
-					<p>Courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
-				</section>
-
-				<section>
-					<h2>Intergalactic Interconnections</h2>
-					<p>
-						You can link between slides internally,
-						<a href="#/2/3">like this</a>.
-					</p>
-				</section>
-
-				<section>
-					<section id="fragments">
-						<h2>Fragmented Views</h2>
-						<p>Hit the next arrow...</p>
-						<p class="fragment">... to step through ...</p>
-						<ol>
-							<li class="fragment"><code>any type</code></li>
-							<li class="fragment"><em>of view</em></li>
-							<li class="fragment"><strong>fragments</strong></li>
-						</ol>
-
-						<aside class="notes">
-							This slide has fragments which are also stepped through in the notes window.
-						</aside>
-					</section>
-					<section>
-						<h2>Fragment Styles</h2>
-						<p>There's a few styles of fragments, like:</p>
-						<p class="fragment grow">grow</p>
-						<p class="fragment shrink">shrink</p>
-						<p class="fragment roll-in">roll-in</p>
-						<p class="fragment fade-out">fade-out</p>
-						<p class="fragment highlight-red">highlight-red</p>
-						<p class="fragment highlight-green">highlight-green</p>
-						<p class="fragment highlight-blue">highlight-blue</p>
-						<p class="fragment current-visible">current-visible</p>
-						<p class="fragment highlight-current-blue">highlight-current-blue</p>
-					</section>
-				</section>
-
-				<section>
-					<h2>Spectacular image!</h2>
-					<a class="image" href="http://lab.hakim.se/meny/" target="_blank">
-						<img width="320" height="299" src="http://s3.amazonaws.com/hakim-static/portfolio/images/meny.png" alt="Meny">
-					</a>
-				</section>
-
-				<section>
-					<h2>Export to PDF</h2>
-					<p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, below is an example that's been uploaded to SlideShare.</p>
-					<iframe id="slideshare" src="http://www.slideshare.net/slideshow/embed_code/13872948" width="455" height="356" style="margin:0;overflow:hidden;border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen> </iframe>
-					<script>
-						document.getElementById('slideshare').attributeName = 'allowfullscreen';
-					</script>
-				</section>
-
-				<section>
-					<h2>Take a Moment</h2>
-					<p>
-						Press b or period on your keyboard to enter the 'paused' mode. This mode is helpful when you want to take distracting slides off the screen
-						during a presentation.
-					</p>
-				</section>
-
-				<section>
-					<h2>Stellar Links</h2>
+					<h2> Replace! </h2>
 					<ul>
-						<li><a href="http://slid.es">Try the online editor</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js">Source code on GitHub</a></li>
-						<li><a href="http://twitter.com/hakimel">Follow me on Twitter</a></li>
+						<li> <span class="keyboard">r</span>
+							: <strong>r</strong>eplace a letter</li>
+						<li> <span class="keyboard">R</span>
+							: enter <strong>R</strong>eplace mode </li>
+						<li> <span class="keyboard">s</span>
+							: <strong>s</strong>ubstitute </li>
+						<li> <span class="keyboard">c</span>
+							: <strong>c</strong>hange </li>
+					</ul>
+					<blockquote>
+						You may try practice #7 now!
+					</blockquote>
+				</section>
+
+				<section>
+				<section>
+					<h2> More movement! </h2>
+					
+					<ul>
+						<li> <span class="keyboard">w</span>
+							: <strong>w</strong>ord</li>
+						<li> <span class="keyboard">e</span>
+							: <strong>e</strong>nd</li>
+						<li> <span class="keyboard">b</span>
+							: <strong>b</strong>ack </li>
 					</ul>
 				</section>
+				<section>
+					<ul>
+						<li> <span class="keyboard">%</span>
+							: 到對應的刮號</li>
+						<li> <span class="keyboard">^</span>
+							: Begin of line</li>
+						<li> <span class="keyboard">$</span>
+							: End of line</li>
+					</ul>
+				</section>
+				<section>
+					<h2> g stand for go! </h2>
+					<ul>
+						<li> <span class="keyboard">g</span><span class="keyboard">g</span>
+							: go to line 1</li>
+						<li> <span class="keyboard">G</span>
+							: <strong>G</strong>o to EOF</li>
+							<li> <span class="keyboard">G</span><span class="group">number</span>
+							: <strong>G</strong>o to line <span class="group">number</span></li>
+						<li> <span class="keyboard">g</span><span class="keyboard">d</span>
+							: <strong>g</strong>o to <strong>d</strong>efine</li>
+					</ul>
+					<blockquote>
+						You may try practice #8 now!
+					</blockquote>
+				</section>
+				</section>
 
 				<section>
-					<h1>THE END</h1>
-					<h3>BY Hakim El Hattab / hakim.se</h3>
+				<section>
+					<h2> transitive verbs </h2>
+					vim中的指令大致上可以分成兩類
+					<ul>
+						<li> 不及物動詞: 按下後立刻執行<br>ex: <span class="keyboard">a</span>,<span class="keyboard">r</span>,<span class="keyboard">s</span></li>
+						<li> 及物動詞: 按下後可接修飾詞<br>ex: <span class="keyboard">d</span>,<span class="keyboard">y</span>,<span class="keyboard">c</span></li>
+				</section>
+				<section>
+					<h2> position </h2>
+					<ul>
+						<li> movement: <span class="keyboard">h</span><span class="keyboard">j</span><span class="keyboard">k</span><span class="keyboard">l</span><span class="combined">gg</span><span class="keyboard">f</span>...
+						<li> Current Line: <span class="combined">dd</span>, <span class="combined">yy</span>...
+						<li> range: <span class="keyboard">a</span><span class="keyboard">(</span>: Around (),
+						<span class="keyboard">i</span><span class="keyboard">w</span>: in a word
+				</section>
+				<section>
+					<div class="example">Examples:<br>
+						<span class="keyboard">y</span><span class="keyboard">a</span><span class="keyboard">w</span>:
+						yank a word.<br>
+						<span class="keyboard">c</span><span class="keyboard">i</span><span class="keyboard">(</span>:
+						change inside ( )<br>
+						<span class="keyboard">d</span><span class="keyboard">i</span><span class="keyboard">{</span>:
+						delete everything inside {}<br>
+					</div>
+					<blockquote>
+						You may try practice #9 now!
+					</blockquote>
+				</section>
+				</section>
+
+				<section>
+				<section>
+					<h2> Search </h2>
+
+					<ul>
+						<li> <span class="keyboard">/</span>/
+						<span class="keyboard">?</span>: Forward/Backward search pattern</li>
+
+						<li><span class="combined">:s/[pattern1]/[pattern2]/[flag]</span>: subsitute <br> <span class="group">pattern1</span> with <span class="group">pattern2</span>
+					</ul><br>
+					<br>
+
+					<div class="tip"> Tips: pattern could be a regular expression! </div>
+				</section>
+
+				<section>
+					<h2> regular expression </h2>
+
+					<table class="borderTable" style="/*font-family: arial; font-weight:normal;*/">
+						<tr>
+							<td> [abc] </td> <td> a or b or c </td>
+						</tr>
+						<tr>
+							<td> [^a] </td> <td> not a </td>
+						</tr>
+						<tr>
+							<td> \d </td> <td> digit (=[0-9]) </td>
+						</tr>
+						<tr>
+							<td> . </td> <td> any character </td>
+						</tr>
+							<td> \{x, y\}  </td> <td> match [x, y] times </td>
+						<tr>
+							<td> * </td> <td> match any times (=\{0, INF\}) </td>
+						</tr>
+						<tr>
+							<td> \( ... \) </td> <td> group </td>
+						</tr>
+						<tr>
+							<td> \1 </td> <td> 1st group </td>
+						</tr>
+					</table>
+
+				</section>
+				<section>
+					<blockquote>
+						You may try practice #10 now!
+					</blockquote>
+					<blockquote>
+						You may try practice #11 now!
+					</blockquote>
+				</section>
+				</section>
+
+				<section>
+					<h2> make vim an IDE </h2>
+					<p>Vim 中有強大的 map 功能 !<br>
+					<span class="combined">:[inv..][nore]map</span> <span class="group">key</span> <span class="group">command</span>:
+					map <span class="group">key</span> to <span class="group">command</span>
+					<div class="example">
+						Example: <br>
+						<span class="combined">:map &lt;Ctrl-C&gt; ggyG</span>  - map <Ctrl-C> to copy whole file
+					</div>
+					</p>
+				</section>
+
+				<section>
+				<section>
+				<h2> small small project - .vimrc </h2>
+				目標: 完成C++的一鍵編譯!	
+						<pre><code class="vim">
+se ai
+autocmd filetype indent plugin on
+au filetype cpp se makeprg = (Your make-program command)
+						</pre></code class="bash">
+				<div class="tip">
+					Hint:<br> g++ -o &lt;output file&gt; [options] &lt;input file&gt;<br>
+					記得跳脫空白字元!
+				</div>
+				</section>
+				<section>
+					<ul>
+						<li> <span class="combined">:make</span>
+						: Make file.</li>
+						<li> <span class="combined">:copen</span>
+						: open error list</li>
+						<li> <span class="combined">:cclose</span>
+						: close error list</li>
+					</ul>
+						<pre><code class="vim">
+nnoremap &lt;F8&gt; ...
+						</pre></code class="bash">
+					
+				</section>
+				</section>
+
+				<section>
+				<h2> For coding </h2>
+					<ul>
+						<li> <span class="keyboard">=</span>
+						: Auto formating</li>
+						<li> <span class="keyboard">&lt;</span>/ <span class="keyboard">&gt;</span>
+						: indenting</li>
+						<li> <span class="keyboard">Ctrl-a</span>/ <span class="keyboard">Ctrl-x</span>
+						: Add/Minus one the number <br>where the cursor is
+						<li> <span class="keyboard">g</span><span class="keyboard">t</span>
+						: <strong>g</strong>oto next <strong>t</strong>ab
+					</ul>
+				</section>
+				
+
+				<section>
+					<h2> plugins </h2>
+					<p>Vim 有許多好用的插件!<br>
+					ex: pathogen.vim - Package manager of Vim</p>
+				</section>	
+				<section>
+				<section>
+				<h2> small small project - .vimrc </h2>
+					目標: 安裝NERDTree!
+					<blockquote>
+						Try to install pathogen.vim!
+					</blockquote>
+					<blockquote>
+						After finish install pathogen.vim, install NERDTree!
+					</blockquote>
+				</section>
+				<section>
+					<blockquote>
+						Give NERDTree a comfortable mapping key!
+					</blockquote>
+
+						<pre><code class="vim">
+let mapleader = ...
+nnoremap &lt;leader&gt;? ...
+						</pre></code class="bash">
+					
 				</section>
 
 			</div>
-
 		</div>
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.min.js"></script>
+
+		<script src="../reveal.js/lib/js/head.min.js"></script>
+		<script src="../reveal.js/js/reveal.min.js"></script>
 
 		<script>
 
@@ -379,16 +609,16 @@ function linkify( selector ) {
 
 				// Optional libraries used to extend on reveal.js
 				dependencies: [
-					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					{ src: '../reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '../reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: '../reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
 				]
 			});
 
 		</script>
-
 	</body>
 </html>
+
