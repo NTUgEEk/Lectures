@@ -123,3 +123,7 @@
 .reveal .borderTable td{
 	border: 3px solid black;
 }
+
+.reveal blockquote{
+	margin-top: 25px;
+}

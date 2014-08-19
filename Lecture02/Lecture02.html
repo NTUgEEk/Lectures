@@ -59,9 +59,16 @@ vim --version
 						<pre><code class="bash">
 sudo apt-get build-essential git
 cd ~
-mkdir vimprac
+mkdir NTUgEEk
 cd $_
-git clone .......
+git clone https://github.com/NTUgEEk/Lectures.git
+						</pre></code class="bash">
+					</section>
+					<section>
+						<h2> check you have all! </h2>
+						<pre><code class="bash">
+python3 --version
+g++ --version
 						</pre></code class="bash">
 					</section>
 				</section>
@@ -149,7 +156,6 @@ git clone .......
 							<td> <strong>a</strong>ll </td>
 						</tr>
 					</table>
-					<br>
 					<blockquote>
 						You may try practice #1 now!
 					</blockquote>
@@ -221,6 +227,9 @@ git clone .......
 					</div><br>
 					<p> Use <span class="keyboard" >Esc</span> <br>
 					or <span class="keyboard" style="width:auto">Ctrl-[</span> (Recommended)</p>
+					<blockquote>
+						You may try practice #2 now!
+					</blockquote>
 				</section>
 				</section>
 
@@ -259,6 +268,9 @@ set bs=indent,eol,start ww+=<,>,[,]
 						<td> find previous </td>
 						</tr>
 					</table>
+					<blockquote>
+						You may try practice #3 now!
+					</blockquote>
 				</section>
 
 
@@ -309,9 +321,11 @@ set bs=indent,eol,start ww+=<,>,[,]
 					<span class="keyboard">d</span><span class="keyboard">f</span><span class="keyboard">a</span>
 					: delete to next character 'a'<br>
 					<span class="keyboard">y</span><span class="keyboard">3</span><span class="keyboard">l</span>
-				
 					: copy 3 letter left
 					</div>
+					<blockquote>
+						You may try practice #4 now!
+					</blockquote>
 				</section>
 				</section>
 
@@ -333,6 +347,12 @@ set bs=indent,eol,start ww+=<,>,[,]
 					Tips: 可搭配<span class="keyboard">d</span><span class="keyboard">y</span>...
 					風味更佳!
 					</div>
+					<blockquote>
+						You may try practice #5 now!
+					</blockquote>
+					<blockquote>
+						You may try practice #6 now!
+					</blockquote>
 				</section>
 
 				<section>
@@ -347,6 +367,9 @@ set bs=indent,eol,start ww+=<,>,[,]
 						<li> <span class="keyboard">c</span>
 							: <strong>c</strong>hange </li>
 					</ul>
+					<blockquote>
+						You may try practice #7 now!
+					</blockquote>
 				</section>
 
 				<section>
@@ -384,6 +407,9 @@ set bs=indent,eol,start ww+=<,>,[,]
 						<li> <span class="keyboard">g</span><span class="keyboard">d</span>
 							: <strong>g</strong>o to <strong>d</strong>efine</li>
 					</ul>
+					<blockquote>
+						You may try practice #8 now!
+					</blockquote>
 				</section>
 				</section>
 
@@ -398,8 +424,8 @@ set bs=indent,eol,start ww+=<,>,[,]
 				<section>
 					<h2> position </h2>
 					<ul>
-						<li> movement: <span class="keyboard">h</span><span class="keyboard">j</span><span class="keyboard">k</span><span class="keyboard">l</span><span class="keyboard">gg</span><span class="keyboard">f</span>...
-						<li> Current Line: <span class="keyboard">d</span><span class="keyboard">d</span>, <span class="keyboard">y</span><span class="keyboard">y</span>...
+						<li> movement: <span class="keyboard">h</span><span class="keyboard">j</span><span class="keyboard">k</span><span class="keyboard">l</span><span class="combined">gg</span><span class="keyboard">f</span>...
+						<li> Current Line: <span class="combined">dd</span>, <span class="combined">yy</span>...
 						<li> range: <span class="keyboard">a</span><span class="keyboard">(</span>: Around (),
 						<span class="keyboard">i</span><span class="keyboard">w</span>: in a word
 				</section>
@@ -411,6 +437,10 @@ set bs=indent,eol,start ww+=<,>,[,]
 						change inside ( )<br>
 						<span class="keyboard">d</span><span class="keyboard">i</span><span class="keyboard">{</span>:
 						delete everything inside {}<br>
+					</div>
+					<blockquote>
+						You may try practice #9 now!
+					</blockquote>
 				</section>
 				</section>
 
@@ -422,7 +452,7 @@ set bs=indent,eol,start ww+=<,>,[,]
 						<li> <span class="keyboard">/</span>/
 						<span class="keyboard">?</span>: Forward/Backward search pattern</li>
 
-						<li><span class="combined">:s/[pattern1]/[pattern2]/[flag]</span>: replace
+						<li><span class="combined">:s/[pattern1]/[pattern2]/[flag]</span>: subsitute <br> <span class="group">pattern1</span> with <span class="group">pattern2</span>
 					</ul><br>
 					<br>
 
@@ -435,6 +465,9 @@ set bs=indent,eol,start ww+=<,>,[,]
 					<table class="borderTable" style="/*font-family: arial; font-weight:normal;*/">
 						<tr>
 							<td> [abc] </td> <td> a or b or c </td>
+						</tr>
+						<tr>
+							<td> [^a] </td> <td> not a </td>
 						</tr>
 						<tr>
 							<td> \d </td> <td> digit (=[0-9]) </td>
@@ -455,13 +488,25 @@ set bs=indent,eol,start ww+=<,>,[,]
 					</table>
 
 				</section>
+				<section>
+					<blockquote>
+						You may try practice #10 now!
+					</blockquote>
+					<blockquote>
+						You may try practice #11 now!
+					</blockquote>
+				</section>
 				</section>
 
 				<section>
 					<h2> make vim an IDE </h2>
 					<p>Vim 中有強大的 map 功能 !<br>
-					:[inv..][nore]map <span class="combined">key</span> <span class="combined">command</span>:
-					map key to command
+					<span class="combined">:[inv..][nore]map</span> <span class="group">key</span> <span class="group">command</span>:
+					map <span class="group">key</span> to <span class="group">command</span>
+					<div class="example">
+						Example: <br>
+						<span class="combined">:map &lt;Ctrl-C&gt; ggyG</span>  - map <Ctrl-C> to copy whole file
+					</div>
 					</p>
 				</section>
 
