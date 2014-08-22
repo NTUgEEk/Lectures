@@ -6,14 +6,26 @@
     background-color: #C0E7FF;
     color: black;
     font-size: 25px;
+    font-style: normal;
     padding: 5px;
     border-radius: 7px;
 }
+
+.reveal .param {
+    background-color: #DDE5D3;
+    color: black;
+    font-size: 25px;
+    font-style: normal;
+    padding: 5px;
+    border-radius: 7px;
+}
+
 
 .reveal .files {
     background-color: #FFE7C0;
     color: black;
     font-size: 25px;
+    font-style: normal;
     padding: 5px;
     border-radius: 7px;
 }

@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Lecture01-Introduction to Linux</title>
+
+		<meta name="description" content="introduction to linux">
+		<meta name="author" content="Leo Mao">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../reveal.js/css/reveal.min.css">
+		<link rel="stylesheet" href="../reveal.js/css/theme/serif.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="../reveal.js/lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+          <h1>Intro to Linux</h1>
+          <small>Created by NTUgEEk</small>
+				</section>
+        
+        <section>
+          <h2>Why Linux?</h2>
+          <p>
+          <ul>
+            <li class="fragment">It's free!!!</li>
+            <li class="fragment">Linux 相當適合用來開發</li>
+            <li class="fragment">Linux 相當安全，不像 M$ Windows
+            要防備各種病毒的威脅</li>
+            <li class="fragment">絕大部分的 Server 都採用 Linux</li>
+          </ul>
+          </p>
+        </section>
+
+        <section>
+          <h2>How to Install?</h2>
+          <p class="fragment grow">下一步大法</p>
+          <p class="fragment">
+            也有比較進階的設定，但需要對 Linux 的 Filesystems 有些了解
+          </p>
+        </section>
+        
+        <section>
+          <h2>Advanced Distro</h2>
+          <p>
+          <img style="border: none;" src="https://d11xdyzr0div58.cloudfront.net/static/logos/archlinux-logo-dark-90dpi.ebdee92a15b3.png" /><br>
+          <img style="border: none;" width="300" src="http://sources.gentoo.org/viewcvs.py/gentoo-projects/pr/images/smaller-sign.png" />
+          </p>
+        </section>
+
+        <section>
+          <h2>How to Use?</h2>
+          <p>
+          平時使用時會需要的大概有：
+          <ul>
+            <li>Browser - Firefox, Chrome</li>
+            <li>Input Method - gcin, fcitx, ibus</li>
+            <li>Terminal - gnome-terminal, Kconsole, terminator...</li>
+            <li>File Manager - Dolphin, Nautilus, Thunar...</li>
+          </ul>
+          </p>
+          <p>
+          或許你還會想要：
+          <ul>
+            <li>音樂播放器 - Amarok, Clementine, DeaDBeeF...</li>
+            <li>FTP client - Filezilla</li>
+            <li>影片播放器 - VLC, totem...</li>
+          </ul>
+          </p>
+        </section>
+
+        <section>
+          <h2>Need help?</h2>
+          <p>
+            會碰到的問題，大概都有其他人遇到過並解決了XD
+          </p>
+          <p>
+            一些常用的網路資源：
+            <ul>
+              <li>Stack Overflow</li>
+              <li>Arch Wiki</li>
+              <li>Gentoo Documentation</li>
+              <li>Google (?)</li>
+            </ul>
+          </p>
+        </section>
+
+        <section>
+          <h2>Filesystems</h2>
+          <h2>File Permission</h2>
+        </section>
+
+        <section>
+          <section>
+            <h2>Command Line Usage</h2>
+            <p>
+              <ul>
+                <li><code>cd, ls</code></li>
+                <li><code>mv, cp, rm, touch, mkdir, rmdir</code></li>
+                <li><code>cat, head, tail, less, more</code></li>
+              </ul>
+            </p>
+          </section>
+          <section>
+            <h2>Text Manipulation</h2>
+            <p>
+            <ul>
+              <li><code>sed</code></li>
+              <li><code>awk</code></li>
+            </ul>
+            </p>
+          </section>
+          <section>
+            <h2>Pipe and Redirection</h2>
+            <p>
+            <ul>
+              <li><code>cat file | less</code></li>
+              <li><code>ls -R some_dir | grep <em>name</em></code></li>
+              <li><code>echo "TEST" &gt; file</code></li>
+              <li><code>echo "TEST" &gt;&gt; file</code></li>
+              <li><code>./test.sh &lt; input_file</code></li>
+              <li><code>./somethin 2&lt;&amp;1</code></li>
+              <li><code>cat &lt;&lt; EOF &gt; file</code></li>
+            </ul>
+            </p>
+          </section>
+        </section>
+        
+        <section>
+          <h2>More details...</h2>
+          認真想學習 Linux ，推薦去看
+          <a href="https://www.edx.org/course/linuxfoundationx/linuxfoundationx-lfs101x-introduction-1621#.U_czl3V53UY">Introduction to Linux</a>
+          ，可以學到很多東西。除此之外就要靠平時累積囉～前面提到的一些資源都有很大的幫助的XD
+        </section>
+
+			</div>
+
+		</div>
+
+		<script src="../reveal.js/lib/js/head.min.js"></script>
+		<script src="../reveal.js/js/reveal.min.js"></script>
+
+    <script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: '../reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '../reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: '../reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+	</body>
+</html>

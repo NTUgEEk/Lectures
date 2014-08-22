@@ -41,6 +41,7 @@
 				<section>
 					<h1>Git</h1>
 					<p>The most popular distibuted version control system</p>
+          <small>Created by NTUgEEk</small>
 				</section>
 
         <section>
@@ -50,7 +51,7 @@ $ sudo apt-get install git
 # Or something similar depend on your distro
 $ git --version
 # You should see your git version
-          </pre></code>
+          </code></pre>
         </section>
 
         <section>
@@ -77,7 +78,7 @@ $ git init                           # initial a git repo
 $ echo "Hello world!" &gt; README.md
 $ git add README.md                  # add README.md into SA
 $ git commit -m 'initial commit'     # commit to repo
-            </pre></code class="bash">
+            </code></pre>
             <em>SA = Staging Area</em>
           </section>
           <section>
@@ -88,6 +89,7 @@ $ git commit -m 'initial commit'     # commit to repo
               <li><code class="command">commit</code>: 將目前的 SA commit</li>
               <li><code class="command">status</code>: 觀看目前的狀態</li>
               <li><code class="command">branch</code>: 觀看 branch 狀態</li>
+              <li><code class="command">checkout</code>: 移動目前所在的位置</li>
             </ul>
           </section>
           <section>
@@ -108,6 +110,122 @@ $ git commit -m 'initial commit'     # commit to repo
           </section>
         </section>
 
+				<section>
+				  <h2>.gitconfig</h2>
+          An example of <code class="files">.gitconfig</code>
+          <pre><code class="ini">
+[user]
+    name = YourName
+    email = YourEmail
+[alias]
+    ci = commit
+    st = status -sb
+    co = checkout
+    # ... something more ... (you should remove this line)
+[push]
+    default = tracking
+[branch]
+    autosetuprebase = always
+[color]
+    ui = true
+          </code></pre>
+          <p>
+          <blockquote>
+            Practice: create your config file in <code>~</code>
+          </blockquote>
+          </p>
+				</section>
+
+        <section>
+          <h2>Branches are cheap !!</h2>
+          <ul>
+            <li><code class="command">branch</code> <code class="param">&lt;name&gt;</code>
+              : Create a new branch named <code class="param">&lt;name&gt;</code></li>
+            <li><code class="command">branch -d</code> <code class="param">&lt;name&gt;</code>
+              : Delete branch <code class="param">&lt;name&gt;</code></li>
+            <li><code class="command">branch -a</code>
+              : List all branch (include remote branch refs)</li>
+            <li><code class="command">checkout -b</code>
+              <code class="param">&lt;name&gt;</code> :<br/>
+              Create a new branch <code class="param">&lt;name&gt;</code>
+              and checkout to it</li>
+            <li><code class="command">checkout -t</code>
+              <code class="param">&lt;remote&gt;/&lt;branch&gt;</code> :<br/>
+              Create a new branch <code class="param">&lt;branch&gt;</code> tracking  
+              <code class="param">&lt;remote&gt;/&lt;branch&gt;</code>
+              and checkout to it
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <section>
+            <h2>merge</h2>
+            如果 merge 沒有出現 conflict 的話就沒什麼問題，但是當有 conflict 的時候...
+            <pre><code class="no-highlight">
+CONFLICT (add/add): Merge conflict in test.cpp
+Automatic merge failed; fix conflicts and then commit the result.
+            </code></pre>
+            這個時候就需要人工來解決問題了
+            <p class="fragment" style="font-size: 40pt; color: red;">Q____Q</p>
+          </section>
+          <section>
+            <h2>mergetool - vimdiff</h2>
+            首先設定 mergetool 為 vimdiff
+            <pre><code class="bash">
+$ git config --global merge.tool vimdiff
+            </code></pre>
+            當碰到如前頁的 conflict 時，就可以用 vimdiff 來 resolve conflict
+            <pre><code class="bash">
+$ git mergetool
+            </code></pre>
+          </section>
+          <section>
+            <img src="http://img2.wikia.nocookie.net/__cb20120605015921/vim/images/0/01/Vimdiff-default.png" />
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>rebase and cherry-pick</h2>
+            這兩個指令的功能在這邊就不多說<br/>
+            但提一個 <code class="command">rebase</code> 很有趣的功能：
+            <pre><code class="bash">
+$ git rebase --onto brachA brachB target
+            </code></pre>
+            這裡的 <code class="command">rebase --onto</code> 的作用是把
+            <code class="files">target</code> 從
+            <code class="files">brachB</code> 移到
+            <code class="files">brachA</code>
+          </section>
+          <section>
+            <h2>碰到 conflict 時</h2>
+            <ul>
+              <li>手動處理好後將修改好的檔案並 <code class="command">add</code> 進來</li>
+              <li>
+                <code class="command">rebase --continue</code>
+                (<code class="command">cherry-pick --continue</code>)
+                來繼續處理
+              </li>
+            另一方面也可以用 <code class="command">--abort</code>
+            來取消
+          </section>
+        </section>
+
+        <section>
+          <h2>A checkout trick</h2>
+          <code class="command">checkout</code> 有一個還滿不錯的功能是
+          <pre><code class="bash">
+$ git checkout -B branchA
+          </code></pre>
+          效用等同於
+          <pre><code class="bash">
+$ git branch -f branchA
+$ git checkout branchA
+          </code></pre>
+          最大的功能是如果 branchA 已經存在，就強制將 branchA 改指向目前的位置
+        </section>
+
         <section>
           <section>
             <h2>Github</h2>
@@ -123,63 +241,69 @@ $ git commit -m 'initial commit'     # commit to repo
           </section>
         </section>
 
-				<section>
-				  <h2>.gitconfig</h2>
-          An example of <code class="files">.gitconfig</code>
-          <pre><code class="ini">
-[user]
-    name = YourName
-    email = YourEmail
-[alias]
-    ci = commit
-    st = status -sb
-    # ... something more ... (you should remove this line)
-[push]
-    default = tracking
-[branch]
-    autosetuprebase = always
-[color]
-    ui = true
-          </pre></code>
-          <p>
-          <blockquote>
-            Practice: create your config file in <code>~</code>
-          </blockquote>
-          </p>
-				</section>
-
         <section>
           <section>
             <h2>Work with remote repo</h2>
             <ul>
-              <li><code class="command">clone</code> &lt;<em>URL</em>&gt; :
-                將<em>URL</em> 的 repo 複製一份到 local 端</li>
+              <li><code class="command">clone</code> 
+                <code class="param">&lt;URL&gt;</code> :
+                將 <code class="param">&lt;URL&gt;</code>
+                的 repo 複製一份到 local 端</li>
               <li><code class="command">push</code>: 將目前 branch 的 commit
-                上傳到 remote 的 tracking branch</li>
+                上傳到 remote tracking branch</li>
               <li><code class="command">pull</code>: 下載 remote tracking
+                branch 的 commit 到 local 並跟當前的 branch merge</li>
+              <li><code class="command">fetch</code>: 下載 remote
                 branch 的 commit 到 local</li>
             </ul>
             <em>Note: <code class="command">clone</code>的 URL 參數也可以是
             local 的路徑</em>
           </section>
           <section>
+            <h2>強大的進階參數</h2>
+            <ul>
+              <li>
+                <code class="command">fetch</code>
+                <code class="param">&lt;repo&gt;</code>
+                <code class="param">&lt;source&gt;:&lt;destination&gt;</code>
+                : <br/>
+                將 <code class="param">&lt;repo&gt;/&lt;source&gt;</code>
+                下載至 <code class="param">&lt;destination&gt;</code>
+                (<code class="command">pull</code> 也可以用)
+              </li>
+              <li>
+                <code class="command">push</code>
+                <code class="param">&lt;repo&gt;</code>
+                <code class="param">&lt;source&gt;:&lt;destination&gt;</code>
+                : <br/>
+                將 <code class="param">&lt;source&gt;</code> 上傳至
+                <code class="param">&lt;repo&gt;/&lt;destination&gt;</code>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2>Some Tips</h2>
+            <ul>
+              <li>
+                <code class="command">fetch</code>
+                <code class="param">&lt;repo&gt;</code>
+                <code class="param">:&lt;destination&gt;</code>
+                : 
+                Create new branch <code class="param">&lt;destination&gt;</code>
+              </li>
+              <li>
+                <code class="command">push</code>
+                <code class="param">&lt;repo&gt;</code>
+                <code class="param">:&lt;destination&gt;</code>
+                : 
+                Delete branch <code class="param">&lt;repo&gt;/&lt;destination&gt;</code>
+              </li>
+            </ul>
           </section>
         </section>
 
         <section>
-          <h2>Branches are cheap !!</h2>
-        </section>
-
-        <section>
-          <h2>conflict? merge them!</h2>
-        </section>
-
-        <section>
-          <h2>keep clean with rebase =)</h2>
-        </section>
-
-        <section>
-          <h2></h2>
+          <h1>Conclusion</h1>
         </section>
 
 			</div>
