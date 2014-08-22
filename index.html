@@ -21,15 +21,16 @@
 				var li = document.createElement("li");
 				var title;
 				if (i < lecNameList.length) {
+          a.href = "Lecture" + lzToString(i + 1);
 					title = "Lecture" + lzToString(i + 1) + " - " + lecNameList[i];
 				} else {
+          a.href = "#";
 					title = "Lecture" + lzToString(i + 1) + " - TBD";
 				}
 				var node = document.createTextNode(title);
 				li.appendChild(node);
 				li.style.backgroundColor = getColorCode(i, lecNum);
 				a.appendChild(li);
-				a.href = "./Lecture" + lzToString(i + 1) + "/index.html";
 				ul.appendChild(a);
 			}
 		}
