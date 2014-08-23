@@ -137,25 +137,44 @@ $ git commit -m 'initial commit'     # commit to repo
 				</section>
 
         <section>
-          <h2>Branches are cheap !!</h2>
-          <ul>
-            <li><code class="command">branch</code> <code class="param">&lt;name&gt;</code>
-              : Create a new branch named <code class="param">&lt;name&gt;</code></li>
-            <li><code class="command">branch -d</code> <code class="param">&lt;name&gt;</code>
-              : Delete branch <code class="param">&lt;name&gt;</code></li>
-            <li><code class="command">branch -a</code>
-              : List all branch (include remote branch refs)</li>
-            <li><code class="command">checkout -b</code>
-              <code class="param">&lt;name&gt;</code> :<br/>
-              Create a new branch <code class="param">&lt;name&gt;</code>
-              and checkout to it</li>
-            <li><code class="command">checkout -t</code>
-              <code class="param">&lt;remote&gt;/&lt;branch&gt;</code> :<br/>
-              Create a new branch <code class="param">&lt;branch&gt;</code> tracking  
-              <code class="param">&lt;remote&gt;/&lt;branch&gt;</code>
-              and checkout to it
-            </li>
-          </ul>
+          <section>
+            <h2>Branches are cheap !!</h2>
+            <ul>
+              <li><code class="command">branch</code> <code class="param">&lt;name&gt;</code>
+                : Create a new branch named <code class="param">&lt;name&gt;</code></li>
+              <li><code class="command">branch -d</code> <code class="param">&lt;name&gt;</code>
+                : Delete branch <code class="param">&lt;name&gt;</code></li>
+              <li><code class="command">branch -a</code>
+                : List all branch (include remote branch refs)</li>
+              <li><code class="command">checkout -b</code>
+                <code class="param">&lt;name&gt;</code> :<br/>
+                Create a new branch <code class="param">&lt;name&gt;</code>
+                and checkout to it</li>
+              <li><code class="command">checkout -t</code>
+                <code class="param">&lt;remote&gt;/&lt;branch&gt;</code> :<br/>
+                Create a new branch <code class="param">&lt;branch&gt;</code> tracking  
+                <code class="param">&lt;remote&gt;/&lt;branch&gt;</code>
+                and checkout to it
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2>Practice Time</h2>
+            <ul>
+              <li>
+                在之前的 <code class="files">my_project</code> 中新增一個 branch
+                <code class="files">cpp-dev</code> 
+              </li>
+              <li>
+                加入一個新檔案 <code class="files">main.cpp</code> 並加入 SA &amp;
+                <code class="command">commit</code>
+              </li>
+              <li>
+                <code class="command">checkout</code> 回
+                <code class="files">master</code> 並看看檔案的狀態
+              </li>
+            </ul>
+          </section>
         </section>
 
         <section>
@@ -181,7 +200,57 @@ $ git mergetool
             </code></pre>
           </section>
           <section>
+            <h2>Practice Time</h2>
+            <ul>
+              <li>
+                在之前的 <code class="files">my_project</code> 的
+                <code class="files">master</code> 中
+                <code class="command">merge</code>
+                <code class="files">cpp-dev</code>
+                看看
+              </li>
+              <li>
+                在 <code class="files">master</code> 修改
+                <code class="files">main.cpp</code> 並加入 SA &amp;
+                <code class="command">commit</code>
+              </li>
+              <li>
+                <code class="command">checkout</code> 到
+                <code class="files">cpp-dev</code> 在
+                <code class="files">main.cpp</code> 做一點不同的修改並加入 SA &amp;
+                <code class="command">commit</code>
+              </li>
+              <li>
+                <code class="command">checkout</code> 回
+                <code class="files">master</code> 並試著去
+                <code class="command">merge</code>
+                <code class="files">cpp-dev</code>
+              </li>
+              <li>
+                由於 conflict 因此必須手動處理，使用
+                <code class="command">mergetool</code>
+              </li>
+              <li>
+                處理好後就可以將修改好的檔案 <code class="command">add</code>
+                進 SA 並 <code class="command">comit</code>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2>Practice Time (cont.)</h2>
             <img src="http://img2.wikia.nocookie.net/__cb20120605015921/vim/images/0/01/Vimdiff-default.png" />
+          </section>
+          <section>
+            <h2>一些 vimdiff command</h2>
+            <ul>
+              <li><code class="command">:diffg</code>
+                <code class="param">&lt;num&gt;</code> :
+                get difference from window <code class="param">&lt;num&gt;</code>
+              </li>
+              <li><code class="command">:diffu</code>:
+                update difference
+              </li>
+            </ul>
           </section>
         </section>
 
@@ -197,6 +266,10 @@ $ git rebase --onto brachA brachB target
             <code class="files">target</code> 從
             <code class="files">brachB</code> 移到
             <code class="files">brachA</code>
+            <div class="tip">
+              Tip: <code class="command">rebase -i</code>
+              是 interactive mode ，很好用喔～
+            </div>
           </section>
           <section>
             <h2>碰到 conflict 時</h2>
@@ -209,6 +282,10 @@ $ git rebase --onto brachA brachB target
               </li>
             另一方面也可以用 <code class="command">--abort</code>
             來取消
+            <div class="tip">
+              Tip: <code class="command">git add -A .</code><br/>
+              可以加入所有修改、新增、刪除的檔案進 SA 喔！
+            </div>
           </section>
         </section>
 
@@ -238,6 +315,9 @@ $ git checkout branchA
           <section>
             <h2>Git Workflow</h2>
             <img height="600" src="https://mockupstogo.mybalsamiq.com/mockups/4191.png" />
+          </section>
+          <section>
+            <h2>Setup git ssh key</h2>
           </section>
         </section>
 
@@ -298,6 +378,29 @@ $ git checkout branchA
                 : 
                 Delete branch <code class="param">&lt;repo&gt;/&lt;destination&gt;</code>
               </li>
+            </ul>
+          </section>
+          <section>
+            <h2>Practice Time</h2>
+            <ul>
+              <li>去 github 創建一個新 repo</li>
+              <li><code class="command">git remote add</code>
+              <code class="param">origin git@guthub.com:&lt;username&gt;/&lt;repo_name&gt;.git</code></li>
+              <li><code class="command">git push</code>
+                <code class="param">origin master</code></li>
+              <li><code class="command">git push</code>
+                <code class="param">origin cpp-dev:dev</code></li>
+            </ul>
+          </section>
+          <section>
+            <h2>Practice Time (cont.)</h2>
+            <ul>
+              <li>去 github 的 repo settings 頁面，建立一個範本 gh-pages</li>
+              <li>將前一步建立的 branch <code class="command">pull</code> 下來</li>
+              <li>做一些修改後 <code class="command">commit</code> 並
+                <code class="command">push</code> 上 github</li>
+              <li>去 <code class="param">&lt;username&gt;.github.io/&lt;repo_name&gt;</code>
+              看看自己的成果</li>
             </ul>
           </section>
         </section>
