@@ -1,0 +1,276 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <title>Lecture04-Web Frontend</title>
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="../reveal.js/css/reveal.min.css">
+    <link rel="stylesheet" href="../reveal.js/css/theme/serif.css" id="theme">
+
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="../reveal.js/lib/css/zenburn.css">
+
+    <!-- Custom CSSs -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+    <script>
+      if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+      }
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+        <section>
+          <h1>Web Frontend</h1>
+          <p>HTML5 = HTML + CSS + JS</p>
+          <small>Created by NTUgEEk</small>
+        </section>
+
+        <section>
+          <h2>Javscript</h2>
+          <p>讓你的 Web 活起來</p>
+          <p class="fragment">and much more...</p>
+        </section>
+
+        <section>
+          <h2>What is Javascript?</h2>
+          <ul>
+            <li class="fragment">簡稱 JS，直譯式語言</li>
+            <li class="fragment">物件導向 (prototype)</li>
+            <li class="fragment">DOM ，處理<strong>網頁內容</strong>的方法與介面</li>
+            <li class="fragment">BOM ，與<strong>瀏覽器</strong>互動的方法與介面</li>
+          </ul>
+        </section>
+
+        <section>
+          <section>
+            <h2>Getting Started</h2>
+            <p>
+              比較新的 Browser 都有所謂的 Inspector 可以讓我們檢測網頁的各種資訊和狀態
+            </p>
+            <ul>
+              <li>在你的 Browser 中按下 <code class="key">&lt;F12&gt;</code></li>
+              <li>切換到 Console (主控台) 的 Tab</li>
+              <li>輸入 <code class="command">console.log("Hello JS!");</code> 後
+              <code class="key">&lt;Enter&gt;</code></li>
+            </ul>
+          </section>
+          <section>
+            <h2>Basic</h2>
+            <ul>
+              <li>基本的 Syntax 與 C++ 相同</li>
+              <li>所有變數都是由 <code class="command">var</code> 關鍵字來宣告</li>
+              <li>一般的 controll flow 寫法如
+                <code class="command">if else</code>
+                <code class="command">for</code>
+                <code class="command">while</code>
+                與 C++ 相同
+              </li>
+              <li>函數由 <code class="command">function</code> 關鍵字來宣告</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Example</h2>
+            <pre><code class="javascript">
+function printNumber(from, to) {
+    if(from &gt; to) {
+        console.log("Nothing to print.");
+        return;
+    }
+    for (var i = from; i &lt;= to; i++)
+        console.log(i);
+}               
+
+printNumber(4, 15);
+            </code></pre>
+          </section>
+          <section>
+            <h2>Note:</h2>
+            一個跟 C++ 不同的 behavior 如下
+            <pre><code class="javascript">
+var x = 1;
+
+if (condition) {
+    var x = 2;
+    // somthing more...
+}
+
+console.log(x);  // get output: 2
+            </code></pre>
+            <strong>JS 中沒有 block scope</strong>
+            <div class="tip">
+              設定變數名稱時不要重複最安全！
+            </div>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Array (List)</h2>
+            <pre><code class="javascript">
+var arr = [1, "test", 4];
+console.log(arr.length); // 3
+for (var i = 0; i &lt; arr.length; i++)
+    console.log(arr[i]);
+// 1 
+// test
+// 4
+
+arr.push("asdf");
+console.log(arr); // [1, "test", 4, "asdf"]
+console.log(arr.pop()); // asdf
+            </code></pre>
+            <p>
+              <h3>Key ideas:</h3>
+              <ul>
+                <li>內容不限型態</li>
+                <li>
+                  也是物件，有一些內建的 methods
+                  (<code class="command">push</code>, <code class="command">pop</code> etc)
+                </li>
+              </ul>
+            </p>
+          </section>
+          <section>
+            <h2>Object (Hash)</h2>
+            <pre><code class="javascript">
+var obj = {
+    name: "geek",
+    num: 123,
+    hello: function() {
+        console.log("hello, I'm a " + this.name);
+    }
+};
+
+obj.hello(); // hello, I'm a geek
+obj["hello"](); // hello, I'm a geek
+            </code></pre>
+            For more detials: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects">Working with Objects</a>
+            <p>
+              <h3>Key ideas: 物件就是 mapping</h3>
+            </p>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>So, What can JS do?</h2>
+            <ul>
+              <li>本 Slides 就是用 JS 做出來的</li>
+              <li>Chrome Web Store 的各種 App 都是用 JS 寫的</li>
+              <li>近年來也可以在 Browser 之外看到 JS 的應用了
+                (ex: <a href="http://nodejs.org/">nodejs</a>)</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Use JS in Web</h2>
+            <pre><code class="html">
+&lt;html&gt;
+&lt;head&gt;
+  &lt;script&gt;
+    // your js code here
+  &lt;/script&gt;
+  &lt;!--or external js file--&gt;
+  &lt;script src=&quot;path/to/js/file.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+            </code></pre>
+            Note: <code class="command">&lt;script&gt;</code> 可以放在
+            <code class="command">&lt;html&gt;</code> tag 中的任何地方
+          </section>
+          <section>
+            <h2>DOM Manipulation</h2>
+            <p>要用 JS 來讓 Web 動起來，就必須知道如何操作 DOM</p>
+            <p>JS 本身有提供一套 API 來操作 DOM，但是更多的人喜歡使用
+              <a href="http://jquery.com/">jQuery</a></p>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Learn Javascript</h2>
+            <ul>
+              <li>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">MDN Javascript Docs</a>
+              </li>
+              <li>Stack Overflow</li>
+              <li>Google</li>
+              <li>讀別人的 source code (還滿有用的)</li>
+              <li><strong>Practice</strong></li>
+            </ul>
+          </section>
+          <section>
+            <h2>JS Libraries</h2>
+            JS 的 lib 可以說是非常之多<br/>
+            一個收集各種 js lib 的網站
+            <a href="http://www.jsdb.io/">JSDB.IO</a>
+          </section>
+          <section>
+            <h2>Read Reference (Docs)</h2>
+            <ol>
+              <li>看看 example code</li>
+              <li>從 API Reference 中找自己需要的功能</li>
+              <li>在自己的電腦上測試</li>
+              <li>如果碰到問題就 google</li>
+            </ol>
+          </section>
+        </section>
+        <section>
+          <h2>實戰</h2>
+        </section>
+      </div>
+    </div>
+
+    <script src="../reveal.js/lib/js/head.min.js"></script>
+    <script src="../reveal.js/js/reveal.min.js"></script>
+
+    <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+        // Parallax scrolling
+        // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+        // parallaxBackgroundSize: '2100px 900px',
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: '../reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: '../reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: '../reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: '../reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: '../reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+      });
+
+    </script>
+  </body>
+</html>
+
