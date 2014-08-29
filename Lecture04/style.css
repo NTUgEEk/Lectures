@@ -1,0 +1,45 @@
+.reveal{
+	font-family:"Palatino Linotype", "Book Antiqua", Palatino, FreeSerif, serif; 
+}
+
+.reveal .command {
+    background-color: #C0E7FF;
+    color: black;
+    font-size: 25px;
+    font-style: normal;
+    padding: 5px;
+    border-radius: 7px;
+}
+
+.reveal .param {
+    background-color: #DDE5D3;
+    color: black;
+    font-size: 25px;
+    font-style: normal;
+    padding: 5px;
+    border-radius: 7px;
+}
+
+
+.reveal .files {
+    background-color: #FFE7C0;
+    color: black;
+    font-size: 25px;
+    font-style: normal;
+    padding: 5px;
+    border-radius: 7px;
+}
+
+.reveal .tip {
+    background-color: #FFFF32;
+    color: black;
+    margin: 10px 0px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.reveal blockquote {
+    background-color: #555;
+    color: #FFF;
+    margin-top: 25px;
+}
