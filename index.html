@@ -1,6 +1,6 @@
 <html>
   <head>
-	<link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
     <title>NTUgEEk Lectures</title>
   </head>
   <body onload="initLinks();">
@@ -10,72 +10,72 @@
     </div>
   </body>
 
-	<script>
-		function initLinks(){
-			var lecNum = 12;
-			var lecNameList = ["Linux", "Vim", "Git"];
+  <script>
+    function initLinks(){
+      var lecNum = 12;
+      var lecNameList = ["Linux", "Vim", "Git", "Web1"];
 
-			var ul = document.getElementById("navBar")
-			for(var i = 0; i < lecNum; i++) {
-				var a = document.createElement("a");
-				var li = document.createElement("li");
-				var title;
-				if (i < lecNameList.length) {
+      var ul = document.getElementById("navBar")
+      for(var i = 0; i < lecNum; i++) {
+        var a = document.createElement("a");
+        var li = document.createElement("li");
+        var title;
+        if (i < lecNameList.length) {
           a.href = "Lecture" + lzToString(i + 1);
-					title = "Lecture" + lzToString(i + 1) + " - " + lecNameList[i];
-				} else {
+          title = "Lecture" + lzToString(i + 1) + " - " + lecNameList[i];
+        } else {
           a.href = "#";
-					title = "Lecture" + lzToString(i + 1) + " - TBD";
-				}
-				var node = document.createTextNode(title);
-				li.appendChild(node);
-				li.style.backgroundColor = getColorCode(i, lecNum);
-				a.appendChild(li);
-				ul.appendChild(a);
-			}
-		}
+          title = "Lecture" + lzToString(i + 1) + " - TBD";
+        }
+        var node = document.createTextNode(title);
+        li.appendChild(node);
+        li.style.backgroundColor = getColorCode(i, lecNum);
+        a.appendChild(li);
+        ul.appendChild(a);
+      }
+    }
 
-		function lzToString(a){
-			if(a >= 10) return a.toString();
-			return "0" + a.toString();
-		}
+    function lzToString(a){
+      if(a >= 10) return a.toString();
+      return "0" + a.toString();
+    }
 
-		function getColorCode(a, n){
-			var t = Math.PI * 2.0 * a / n;
-			var h =  6.0 * a / n;
-			var c = 255;
-			var x = (1 - Math.abs(h%2 - 1)) * 255;
-			var s;
-			switch(Math.floor(h)) {
-				case 0:
-					s = colorToString(c, x, 0);
-					break;
-				case 1:
-					s = colorToString(x, c, 0);
-					break;
-				case 2:
-					s = colorToString(0, c, x);
-					break;
-				case 3:
-					s = colorToString(0, x, c);
-					break;
-				case 4:
-					s = colorToString(x, 0, c);
-					break;
-				case 5:
-					s = colorToString(c, 0, x);
-					break;
-				default:
-					s = "rgb(0, 0, 0)"
-					break;
-			}
-			return s;
-		}
+    function getColorCode(a, n){
+      var t = Math.PI * 2.0 * a / n;
+      var h =  6.0 * a / n;
+      var c = 255;
+      var x = (1 - Math.abs(h%2 - 1)) * 255;
+      var s;
+      switch(Math.floor(h)) {
+        case 0:
+          s = colorToString(c, x, 0);
+          break;
+        case 1:
+          s = colorToString(x, c, 0);
+          break;
+        case 2:
+          s = colorToString(0, c, x);
+          break;
+        case 3:
+          s = colorToString(0, x, c);
+          break;
+        case 4:
+          s = colorToString(x, 0, c);
+          break;
+        case 5:
+          s = colorToString(c, 0, x);
+          break;
+        default:
+          s = "rgb(0, 0, 0)"
+          break;
+      }
+      return s;
+    }
 
-		function colorToString(r, g, b) {
-			var s = "rgb(" + Math.floor(r) + ", " + Math.floor(g) +
-			", " + Math.floor(b) + ")";
-			return s;
-		}
-	</script>
+    function colorToString(r, g, b) {
+      var s = "rgb(" + Math.floor(r) + ", " + Math.floor(g) +
+      ", " + Math.floor(b) + ")";
+      return s;
+    }
+  </script>
 </html>
