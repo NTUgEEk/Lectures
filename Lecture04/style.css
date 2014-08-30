@@ -30,20 +30,21 @@
     border-radius: 7px;
 }
 
-.reveal .tag {
+.reveal .tags {
 	background-color: #FFA3A3;
 	color: black;
 	font-size: 25px;
 	font-style: normal;
+	font-family: monospace;
 	padding: 5px;
 	border-radius: 7px;
 }
 
-.reveal .tag:before {
+.reveal .tags:before {
 	content: "<";
 }
 
-.reveal .tag:after {
+.reveal .tags:after {
 	content: ">";
 }
 
