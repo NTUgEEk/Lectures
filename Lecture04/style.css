@@ -30,6 +30,32 @@
     border-radius: 7px;
 }
 
+.reveal .tag {
+	background-color: #FFA3A3;
+	color: black;
+	font-size: 25px;
+	font-style: normal;
+	padding: 5px;
+	border-radius: 7px;
+}
+
+.reveal .tag:before {
+	content: "<";
+}
+
+.reveal .tag:after {
+	content: ">";
+}
+
+.reveal .key {
+    background-color: #EEE790;
+    color: black;
+    font-size: 25px;
+    font-style: normal;
+    padding: 5px;
+    border-radius: 7px;
+}
+
 .reveal .tip {
     background-color: #FFFF32;
     color: black;
