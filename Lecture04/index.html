@@ -1,90 +1,90 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
+  <head>
+    <meta charset="utf-8">
 
-		<title></title>
+    <title></title>
 
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" href="../reveal.js/css/reveal.min.css">
-		<link rel="stylesheet" href="../reveal.js/css/theme/serif.css" id="theme">
+    <link rel="stylesheet" href="../reveal.js/css/reveal.min.css">
+    <link rel="stylesheet" href="../reveal.js/css/theme/serif.css" id="theme">
 
-		<!-- For syntax highlighting -->
-		<link rel="stylesheet" href="../reveal.js/lib/css/zenburn.css">
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="../reveal.js/lib/css/zenburn.css">
 
-		<!-- Custom CSSs -->
-		<link rel="stylesheet" href="style.css">
+    <!-- Custom CSSs -->
+    <link rel="stylesheet" href="style.css">
 
-		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
-		<script>
-			if( window.location.search.match( /print-pdf/gi ) ) {
-				var link = document.createElement( 'link' );
-				link.rel = 'stylesheet';
-				link.type = 'text/css';
-				link.href = 'css/print/pdf.css';
-				document.getElementsByTagName( 'head' )[0].appendChild( link );
-			}
-		</script>
+    <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+    <script>
+      if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+      }
+    </script>
 
-		<!--[if lt IE 9]>
-		<script src="lib/js/html5shiv.js"></script>
-		<![endif]-->
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
 
-				<section>
-					<h1> Web 前端 </h1>
-					<p> HTML + CSS + JS </p>
+        <section>
+          <h1> Web 前端 </h1>
+          <p> HTML + CSS + JS </p>
           <small>Created by NTUgEEk</small>
-				</section>
+        </section>
 
-				<section>
-					<section>
-						<h2> 前端技術 </h2>
-						<img src="img/webApp.png">
-					</section>
+        <section>
+          <section>
+            <h2> 前端技術 </h2>
+            <img src="img/webApp.png">
+          </section>
 
-					<section>
-						<h2> HTML </h2>
+          <section>
+            <h2> HTML </h2>
 
-						<p>
-						決定網頁的架構！<br> ex: 標題、框架、區塊…
-						</p>
-					</section>
-					<section>
-						<h2> CSS </h2>
-						<p>
-						決定網頁元素的style!<br> ex: 顏色、大小、對齊…
-						</p>
-					</section>
-					<section>
-						<h2> JS </h2>
-						<p>
-						讓網頁動起來！<br> ex: 與使用者互動、動話、伺服器溝通…
-						</p>
-					</section>
-				</section>
+            <p>
+            決定網頁的架構！<br> ex: 標題、框架、區塊…
+            </p>
+          </section>
+          <section>
+            <h2> CSS </h2>
+            <p>
+            決定網頁元素的style!<br> ex: 顏色、大小、對齊…
+            </p>
+          </section>
+          <section>
+            <h2> JS </h2>
+            <p>
+            讓網頁動起來！<br> ex: 與使用者互動、動話、伺服器溝通…
+            </p>
+          </section>
+        </section>
 
-				<section>
-					<section>
-						<h2> HTML 語法 </h2>
-						<p>
-							標籤語法，主要有兩種標籤:
-							<ul>
-								<li> 成對標籤: <span class="tags">TagName</span> ... <span class="tags">/TagName</span> </li>
-								<li> 單獨標籤: <span class="tags">TagName</span> </li>
-							</ul>
-						</p>
-					</section>
-					<section>
-						<h2> Dom tree </h2>
-						<img src="http://www.webstepbook.com/supplements/slides/images/dom_tree.gif" style="width: 48%;">
+        <section>
+          <section>
+            <h2> HTML 語法 </h2>
+            <p>
+              標籤語法，主要有兩種標籤:
+              <ul>
+                <li> 成對標籤: <span class="tags">TagName</span> ... <span class="tags">/TagName</span> </li>
+                <li> 單獨標籤: <span class="tags">TagName</span> </li>
+              </ul>
+            </p>
+          </section>
+          <section>
+            <h2> Dom tree </h2>
+            <img src="http://www.webstepbook.com/supplements/slides/images/dom_tree.gif" style="width: 48%;">
             <pre style="margin-top: 0;"><code class="html">&lt;html&gt;
   &lt;head&gt;
     &lt;title&gt; HTML5 is cool &lt;/title&gt;
@@ -97,28 +97,28 @@
     &lt;ul&gt; &lt;li&gt; List 1 &lt;/li&gt; &lt;li&gt; List 2 &lt;/li&gt; &lt;li&gt; List 3 &lt;/li&gt; &lt;/ul&gt;
   &lt;/body&gt;
 &lt;/html&gt; </code></pre>
-					</section>
+          </section>
 
-					<section>
-						<h2> Some Important Tag </h2>
-						<ul>
-							<li><span class="tags">title</span>, <span class="tags">meta</span>, <span class="tags">link</span></li>
-							<li><span class="tags">div</span>, <span class="tags">span</span></li>
-							<li><span class="tags">h?</span>, <span class="tags">p</span></li>
-							<li><span class="tags">a</span>, <span class="tags">b</span></li>
-							<li><span class="tags">table</span>, <span class="tags">tr</span>, <span class="tags">td</span>,
-							<span class="tags">ul</span>, <span class="tags">ol</span>, <span class="tags">li</span></li>
-							<li><span class="tags">img</span></li>
-							<li><span class="tags">form</span>, <span class="tags">input</span></li>
-					</section>
-				</section>
-				<section>
-					<section>
-						<h2> CSS Syntax </h2>
-						<img src="http://2010.ittwpal.co.uk/images/css_syntax.png">
-					</section>
-					<section>
-						<h2> CSS - Where To? </h2>
+          <section>
+            <h2> Some Important Tag </h2>
+            <ul>
+              <li><span class="tags">title</span>, <span class="tags">meta</span>, <span class="tags">link</span></li>
+              <li><span class="tags">div</span>, <span class="tags">span</span></li>
+              <li><span class="tags">h?</span>, <span class="tags">p</span></li>
+              <li><span class="tags">a</span>, <span class="tags">b</span></li>
+              <li><span class="tags">table</span>, <span class="tags">tr</span>, <span class="tags">td</span>,
+              <span class="tags">ul</span>, <span class="tags">ol</span>, <span class="tags">li</span></li>
+              <li><span class="tags">img</span></li>
+              <li><span class="tags">form</span>, <span class="tags">input</span></li>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2> CSS Syntax </h2>
+            <img src="http://2010.ittwpal.co.uk/images/css_syntax.png">
+          </section>
+          <section>
+            <h2> CSS - Where To? </h2>
 <pre style="margin-top: 0;"><code class="html">&lt;html&gt;
   &lt;head&gt;
     &lt;link rel="stylesheet" type="text/css" href="link/to/style.css"&gt;
@@ -127,10 +127,10 @@
     &lt;p style="color: red;"&gt; Paragraph to be styled &lt;/p&gt;
   &lt;/body&gt;
 &lt;/html&gt; </code></pre>
-					</section>
-					<section>
-						<h2> CSS Selector </h2>
-						<pre style="margin-top: 0;"><code class="css">p {
+          </section>
+          <section>
+            <h2> CSS Selector </h2>
+            <pre style="margin-top: 0;"><code class="css">p {
     /* Select every &lt;p&gt; tag */
     color: red;
     border: solid 1px black;
@@ -147,11 +147,11 @@
     Ex: &lt;div id="IDName"&gt;*/
     text-family: monospace;
 }
-						</code></pre>
-					</section>
-					<section>
-						<h2> CSS Selector More </h2>
-						<pre style="margin-top: 0;"><code class="css">p a {
+            </code></pre>
+          </section>
+          <section>
+            <h2> CSS Selector More </h2>
+            <pre style="margin-top: 0;"><code class="css">p a {
     /* Select each &lt;a&gt; inside &lt;p&gt; */
     color: red;
 }
@@ -162,85 +162,85 @@
 } 
 p::before {
     /* Insert at begin of content */
-		content: "I wrote:"
+    content: "I wrote:"
 } </code></pre>
-					</section>
-					<section>
-						<h2> CSS Box Model </h2>
-						<img src="http://www.jaceju.net/resources/css_boxmodel/boxdim.gif">
-					</section>
-					<section>
-						<h2> CSS property </h2>
-						<ul>
-							<li><span class="csss">width</span>, <span class="csss">height</span></li>
-							<li><span class="csss">color</span>, <span class="csss">background-color</span></li>
-							<li><span class="csss">margin</span>, <span class="csss">border</span>,
-								<span class="csss">padding</span></li>
-							<li><span class="csss">display</span>, <span class="csss">float</span></li>
-						</ul>
-					</section>
-					<section>
-						<h2> CSS Compatibility </h2>
-						<p> Remember to check out reference for cross browser compatibility </p>
-						<pre style="margin-top: 0;"><code class="css">div {
+          </section>
+          <section>
+            <h2> CSS Box Model </h2>
+            <img src="http://www.jaceju.net/resources/css_boxmodel/boxdim.gif">
+          </section>
+          <section>
+            <h2> CSS property </h2>
+            <ul>
+              <li><span class="csss">width</span>, <span class="csss">height</span></li>
+              <li><span class="csss">color</span>, <span class="csss">background-color</span></li>
+              <li><span class="csss">margin</span>, <span class="csss">border</span>,
+                <span class="csss">padding</span></li>
+              <li><span class="csss">display</span>, <span class="csss">float</span></li>
+            </ul>
+          </section>
+          <section>
+            <h2> CSS Compatibility </h2>
+            <p> Remember to check out reference for cross browser compatibility </p>
+            <pre style="margin-top: 0;"><code class="css">div {
     -webkit-transition: background-color 2s;
        -moz-transition: background-color 2s;
          -o-transition: background-color 2s;
             transition: background-color 2s;
 } </code></pre>
-					</section>
-				</section>
-				<section>
-				<section>
-					<h2> Useful Tool </h2>
-					<p> Debugger: Your Browser ! <br>
-					Ex: Chrome - F12 </p>
-				</section>
-				<section>
-					<h2> Useful Tool </h2>
-					<p> Compass + Sass: A new way to write css <br>
-					 </p>
-				</section>
-				</section>
+          </section>
+        </section>
+        <section>
+        <section>
+          <h2> Useful Tool </h2>
+          <p> Debugger: Your Browser ! <br>
+          Ex: Chrome - F12 </p>
+        </section>
+        <section>
+          <h2> Useful Tool </h2>
+          <p> Compass + Sass: A new way to write css <br>
+           </p>
+        </section>
+        </section>
 
-		
-					
-			</div>
-		</div>
+    
+          
+      </div>
+    </div>
 
 
-		<script src="../reveal.js/lib/js/head.min.js"></script>
-		<script src="../reveal.js/js/reveal.min.js"></script>
+    <script src="../reveal.js/lib/js/head.min.js"></script>
+    <script src="../reveal.js/js/reveal.min.js"></script>
 
-		<script>
+    <script>
 
-			// Full list of configuration options available here:
-			// https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				controls: true,
-				progress: true,
-				history: true,
-				center: true,
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
 
-				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
 
-				// Parallax scrolling
-				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
-				// parallaxBackgroundSize: '2100px 900px',
+        // Parallax scrolling
+        // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+        // parallaxBackgroundSize: '2100px 900px',
 
-				// Optional libraries used to extend on reveal.js
-				dependencies: [
-					{ src: '../reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: '../reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: '../reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: '../reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: '../reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-					{ src: '../reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
-				]
-			});
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: '../reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: '../reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: '../reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: '../reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: '../reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+      });
 
-		</script>
-	</body>
+    </script>
+  </body>
 </html>
 
