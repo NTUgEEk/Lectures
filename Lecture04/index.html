@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>Lecture03-Git</title>
+		<title></title>
 
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -54,19 +54,19 @@
 						<h2> HTML </h2>
 
 						<p>
-							決定網頁的架構！ ex: 標題、框架、區塊…
+						決定網頁的架構！<br> ex: 標題、框架、區塊…
 						</p>
 					</section>
 					<section>
 						<h2> CSS </h2>
 						<p>
-							決定網頁元素的style! ex: 顏色、大小、對齊…
+						決定網頁元素的style!<br> ex: 顏色、大小、對齊…
 						</p>
 					</section>
 					<section>
 						<h2> JS </h2>
 						<p>
-							讓網頁動起來！ ex: 與使用者互動、動話、伺服器溝通…
+						讓網頁動起來！<br> ex: 與使用者互動、動話、伺服器溝通…
 						</p>
 					</section>
 				</section>
@@ -110,6 +110,100 @@
 							<span class="tags">ul</span>, <span class="tags">ol</span>, <span class="tags">li</span></li>
 							<li><span class="tags">img</span></li>
 							<li><span class="tags">form</span>, <span class="tags">input</span></li>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2> CSS Syntax </h2>
+						<img src="http://2010.ittwpal.co.uk/images/css_syntax.png">
+					</section>
+					<section>
+						<h2> CSS - Where To? </h2>
+<pre style="margin-top: 0;"><code class="html">&lt;html&gt;
+  &lt;head&gt;
+    &lt;link rel="stylesheet" type="text/css" href="link/to/style.css"&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;p style="color: red;"&gt; Paragraph to be styled &lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt; </code></pre>
+					</section>
+					<section>
+						<h2> CSS Selector </h2>
+						<pre style="margin-top: 0;"><code class="css">p {
+    /* Select every &lt;p&gt; tag */
+    color: red;
+    border: solid 1px black;
+}
+
+.ClassName {
+    /* Select every tag which have class "ClassName" 
+    Ex: &lt;div class="ClassName"&gt;*/
+    float: left;
+}
+
+#IDName {
+    /* Select every tag which have id "IDName" 
+    Ex: &lt;div id="IDName"&gt;*/
+    text-family: monospace;
+}
+						</code></pre>
+					</section>
+					<section>
+						<h2> CSS Selector More </h2>
+						<pre style="margin-top: 0;"><code class="css">p a {
+    /* Select each &lt;a&gt; inside &lt;p&gt; */
+    color: red;
+}
+
+.ClassName #IDName {
+    /* Select every tag which have id "IDName" in class "ClassName" */
+    float: left;
+} 
+p::before {
+    /* Insert at begin of content */
+		content: "I wrote:"
+} </code></pre>
+					</section>
+					<section>
+						<h2> CSS Box Model </h2>
+						<img src="http://www.jaceju.net/resources/css_boxmodel/boxdim.gif">
+					</section>
+					<section>
+						<h2> CSS property </h2>
+						<ul>
+							<li><span class="csss">width</span>, <span class="csss">height</span></li>
+							<li><span class="csss">color</span>, <span class="csss">background-color</span></li>
+							<li><span class="csss">margin</span>, <span class="csss">border</span>,
+								<span class="csss">padding</span></li>
+							<li><span class="csss">display</span>, <span class="csss">float</span></li>
+						</ul>
+					</section>
+					<section>
+						<h2> CSS Compatibility </h2>
+						<p> Remember to check out reference for cross browser compatibility </p>
+						<pre style="margin-top: 0;"><code class="css">div {
+    -webkit-transition: background-color 2s;
+       -moz-transition: background-color 2s;
+         -o-transition: background-color 2s;
+            transition: background-color 2s;
+} </code></pre>
+					</section>
+				</section>
+				<section>
+				<section>
+					<h2> Useful Tool </h2>
+					<p> Debugger: Your Browser ! <br>
+					Ex: Chrome - F12 </p>
+				</section>
+				<section>
+					<h2> Useful Tool </h2>
+					<p> Compass + Sass: A new way to write css <br>
+					 </p>
+				</section>
+				</section>
+
+		
 					
 			</div>
 		</div>
