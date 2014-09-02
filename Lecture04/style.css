@@ -29,6 +29,23 @@
     border-radius: 7px;
 }
 
+.reveal code.tag {
+	background-color: #FFA3A3;
+	color: black;
+	font-size: 25px;
+	font-style: normal;
+	padding: 5px;
+	border-radius: 7px;
+}
+
+.reveal code.tag:before {
+	content: "<";
+}
+
+.reveal code.tag:after {
+	content: ">";
+}
+
 .reveal .key {
     background-color: #EEE790;
     color: black;
