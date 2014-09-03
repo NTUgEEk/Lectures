@@ -1,0 +1,103 @@
+body {
+	margin: 0;
+	min-height: 100%;
+	background-color: #E9EAED;
+}
+#top-banner {
+	width: 100%;
+	height: 50px;
+	background-image: linear-gradient(to bottom, #4B67A1, #3C5A98);
+	box-shadow: 0 1px 5px black;
+}
+
+
+#banner {
+	display: table;
+	margin: 0 auto;
+	color: white;
+	font-size: 30px;
+	line-height: 50px;
+	font-weight: 600;
+}
+
+
+
+#content {
+	width: 60%;
+	margin: 0 auto;
+	padding-top: 2px;
+	padding-bottom: 50px;
+}
+
+.post {
+	height: auto;
+	margin-top: 25px;
+	padding: 10px 15px 15px 15px;
+	background-color: white;
+	border-radius: 5px;
+	box-shadow: 0 0 7px #999999;
+	font-size: 20px;
+}
+
+.seeReply {
+	text-align: right;
+	margin-top: 10px;
+}
+
+.seeReply span {
+	background-image: linear-gradient(to bottom, #5B75A9, #6279AC);
+	color: white;
+	border-radius: 5px;
+	border: 1px solid #555555;
+	padding: 4px 4px;
+    font-size: 15px;
+	margin-top: 10px;
+}
+
+.replies {
+	margin-top: 8px;
+}
+
+.reply {
+	background-color: #F6F7F8;
+	padding: 5px 10px;
+	border-top: 2px solid white;
+}
+
+.reply-area {
+	margin: 10px 2px;
+}
+
+.reply-botton {
+	margin-left: 10px;
+	float: left;
+	border-radius: 6px;
+	height: 45px;
+	width: 13%;
+	background: #AAFFCC;
+	text-align: center;
+	line-height: 45px;
+}
+
+.float-clear {
+	clear: both;
+}
+
+.replies textarea {
+	float: left;
+	width: 85%;
+	height: 40px;
+	outline: none;
+	border-radius: 4px;
+	border: 1px solid #AAAAAA;
+	-webkit-appearance: none;
+	background: transparent;
+	resize: none;
+}
+
+
+p {
+	word-break: break-all;
+	margin: 0;
+	padding: 0;
+}
