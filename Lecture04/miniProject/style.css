@@ -21,7 +21,6 @@ body {
 }
 
 
-
 #content {
 	width: 60%;
 	margin: 0 auto;
@@ -69,8 +68,8 @@ body {
 }
 
 .reply-botton {
+    display: inline-block;
 	margin-left: 10px;
-	float: left;
 	border-radius: 6px;
 	height: 45px;
 	width: 13%;
@@ -84,13 +83,12 @@ body {
 }
 
 .replies textarea {
-	float: left;
+    display: inline-block;
 	width: 85%;
 	height: 40px;
 	outline: none;
 	border-radius: 4px;
 	border: 1px solid #AAAAAA;
-	-webkit-appearance: none;
 	background: transparent;
 	resize: none;
 }

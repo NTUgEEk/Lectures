@@ -41,28 +41,25 @@ var render_new_post = function(post) {
 
     var seeReply = $('<div/>', {'class': 'seeReply'});
     var seeReplyButton = $('<span/>', {'html': 'see replies'});
-    var showFunc = function() {
-        replies.slideDown();
-        seeReplyButton.text('fold replies');
-        seeReplyButton.unbind('click');
-        seeReplyButton.click(hideFunc);
-    }
-    var hideFunc = function() {
-        replies.slideUp();
-        seeReplyButton.text('see replies');
-        seeReplyButton.unbind('click');
-        seeReplyButton.click(showFunc);
-    }
-    seeReplyButton.click(showFunc);
-
     seeReply.append(seeReplyButton);
 
     var new_post = $('<div/>', { 'class': 'post' });
-    new_post.append([mainPost, replies, seeReply]);
+    new_post.append([mainPost, seeReply, replies]);
     content.prepend(new_post);
 }
 
 $(function() {
+    var open_re = "see replies";
+    var fold_re = "fold replies";
+    content.on('click', '.post .seeReply span', function() {
+        if ($(this).text() == fold_re) {
+            $(this).text(open_re);
+        }
+        else {
+            $(this).text(fold_re);
+        }
+        $(this).parent().siblings('.replies').slideToggle();
+    });
     console.log('document loaded');
     testJsonObject.postList.forEach(function(r) {
         render_new_post(r);
