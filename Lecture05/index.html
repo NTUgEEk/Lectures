@@ -1,0 +1,338 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <title>Lecture05 - Python</title>
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="../reveal.js/css/reveal.min.css">
+    <link rel="stylesheet" href="../reveal.js/css/theme/serif.css" id="theme">
+
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="../reveal.js/lib/css/zenburn.css">
+
+    <!-- Custom CSSs -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+    <script>
+      if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+      }
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+        <section>
+          <h1>Python</h1>
+          <p>There should be one -- and preferably only one -- obvious way to do it.</p>
+          <small>Created by NTUgEEk</small>
+        </section>
+
+
+        <section>
+          <section>
+            <h2>關於語言</h2>
+          </section>
+          <section>
+            <h2>編譯語言</h2>
+            <p>
+            C++、Java、Go
+            </p>
+            <svg xmlns="http://www.w3.org/2000/svg" width="240px" height="150px"
+            viewBox="0 0 250 250">
+              <rect fill="white" stroke="black" stroke-width="10px"
+              x="25" y="25"
+              width="200" height="200" rx="20" ry="20"/>
+              <text x="60" y="140" font-size="60px" fill="black">
+              Code
+              </text>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="300px" height="150px"
+            viewBox="0 0 500 250">
+              <polygon fill="blue" stroke="red" stroke-width="8px"
+              points="500,125 400,0, 400,50, 10,50 10,200, 400,200 400,250"/>
+
+              <text x="120" y="140" font-size="60px" fill="white">
+              Compiler
+              </text>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="240px" height="150px"
+            viewBox="0 0 400 250">
+              <rect fill="#CCC" stroke="black" stroke-width="10px"
+              x="25" y="25"
+              width="300" height="200" rx="20" ry="20"/>
+              <text x="45" y="140" font-size="60px" fill="black">
+              Executable
+              </text>
+            </svg>
+          </section>
+          <section>
+            <h2>直譯語言</h2>
+            <p>
+            Python、Ruby、Javascript
+            </p>
+            <svg xmlns="http://www.w3.org/2000/svg" width="150px" height="150px"
+            viewBox="0 0 250 250">
+              <rect fill="#CCC" stroke="black" stroke-width="10px"
+              x="25" y="25"
+              width="200" height="200" rx="20" ry="20"/>
+              <text x="50" y="140" font-size="60px" fill="black">
+              Script
+              </text>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="300px" height="150px"
+            viewBox="0 0 500 250">
+              <polygon fill="orange" stroke="red" stroke-width="8px"
+              points="500,125 400,0, 400,50, 10,50 10,200, 400,200 400,250"/>
+
+              <text x="100" y="140" font-size="60px" fill="black">
+              Interpreter
+              </text>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="150px" height="150px"
+            viewBox="0 0 250 250">
+              <circle fill="yellow" stroke="black" stroke-width="10px"
+              cx="125" cy="125" r="100" />
+              <text x="50" y="140" font-size="60px" fill="black">
+              Result
+              </text>
+          </section>
+          <section>
+            <h2>Duck Typing</h2>
+            <blockquote>
+            當看到一隻鳥走起來像鴨子、游泳起來像鴨子、叫起來也像鴨子，那麼這隻鳥就可以被稱為鴨子。
+            From Wikipedia
+            </blockquote>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>基本語法結構</h2>
+            <pre><code class="python">
+#! /usr/bin/env python
+
+name = input()
+if name:
+    print("Hello, {}!".format(name))
+            </code></pre>
+            <p>
+            </p>
+          </section>
+          <section>
+            <h2>if ... elif ... else</h2>
+            <pre><code class="python">
+name = input()
+if name == "E___E":
+    print("QQ")
+elif name != "TEST":
+    print("Hello, {}".format(name))
+else:
+    print("TESTING")
+            </code></pre>
+            <p>
+            </p>
+          </section>
+          <section>
+            <h2>for and while</h2>
+            <pre><code class="python">
+for i in range(10):
+    print("count {}".format(i))
+
+index = 0
+while index &lt; 10:
+    print("number", index)
+    index += 1   # python doesn't have ++ operator!
+            </code></pre>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Data Types</h2>
+          </section>
+          <section>
+            <h2>Mutable v.s. Immutable</h2>
+          </section>
+          <section>
+            <h2>int</h2>
+          </section>
+          <section>
+            <h2>str</h2>
+          </section>
+          <section>
+            <h2>list</h2>
+          </section>
+          <section>
+            <h2>dict</h2>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Function</h2>
+            <pre><code class="python">
+def adder(a, b, c):
+    return a + b + c
+
+adder(20, 10, -5) # 25
+adder("abc", "def", "GHI") # "abcdefGHI"
+            </code></pre>
+          </section>
+          <section>
+            <h2>Local Function</h2>
+            <pre><code class="python">
+def adder(a, b, c):
+    def addtwo(x, y):
+        return x + y
+    return addtwo(addtwo(a, b), c)
+            </code></pre>
+          </section>
+          <section>
+            <h2>Functions are objects</h2>
+            <pre><code class="python">
+def get_addtwo():
+    def addtwo(x, y):
+        return x + y
+    return addtwo
+
+addtwo = get_addtwo()
+print(addtwo(100, 20)) # 120
+            </code></pre>
+          </section>
+          <section>
+            <h2>Closure</h2>
+            <pre><code class="python">
+def get_addnum(num):
+    def addnum(x):
+        return x + num
+    return addnum
+
+add10 = get_addnum(10)
+print(add10(20)) # 30
+            </code></pre>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Class</h2>
+            <pre><code class="python">
+class Student:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def hello(self):
+        print("Hello, my name is {},"
+              " {} years old.".format(self.name, self.age))
+            </code></pre>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>I/O</h2>
+          </section>
+          <section>
+            <h2>stdin and stdout</h2>
+          </section>
+          <section>
+            <h2>file I/O</h2>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Advanced Topics</h2>
+            <p>
+              <ul>
+                <li>lambda</li>
+                <li>decorator</li>
+              </ul>
+            </p>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Power of Python</h2>
+          </section>
+          <section>
+            <h2>Modules</h2>
+            <p>
+            </p>
+          </section>
+          <section>
+            <h2>Python/C API</h2>
+            <p>
+            </p>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>How to learn more?</h2>
+          </section>
+          <section>
+            <h2>Python Docs</h2>
+          </section>
+          <section>
+            <h2>Prcatice</h2>
+            some website:
+            <ul>
+              <li><a href="http://www.codecademy.com/">Codecademy</a></li>
+              <li><a href="http://www.codewars.com/">Codewars</a></li>
+            </ul>
+          </section>
+        </section>
+
+
+      </div>
+    </div>
+
+    <script src="../reveal.js/lib/js/head.min.js"></script>
+    <script src="../reveal.js/js/reveal.min.js"></script>
+
+    <script>
+
+      // Full list of configuration options available here:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      history: true,
+      center: true,
+
+      theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+      transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+      // Parallax scrolling
+      // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+      // parallaxBackgroundSize: '2100px 900px',
+
+      // Optional libraries used to extend on reveal.js
+      dependencies: [
+        { src: '../reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+        { src: '../reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: '../reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: '../reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+        { src: '../reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+        { src: '../reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+      ]
+    });
+
+    </script>
+  </body>
+</html>
+
