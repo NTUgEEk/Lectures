@@ -136,6 +136,22 @@ if name:
             </p>
           </section>
           <section>
+            <h2>Indenting</h2>
+            <pre><code class="python">
+def f(x):
+		def g(y):
+			if y == 0"
+				return True
+			return False
+		return g
+
+def z():
+	pass
+            </code></pre>
+            <p>
+            </p>
+          </section>
+          <section>
             <h2>if ... elif ... else</h2>
             <pre><code class="python">
 name = input()
@@ -176,7 +192,29 @@ while index &lt; 10:
             <h2>str</h2>
           </section>
           <section>
+            <h2>tuple</h2>
+            <pre><code class="python">
+t1 = (1, '2', 3.00)
+t1[2]  #3.00
+t1[2] = "Tuples are immutable!"  # Error
+def f(a):
+	return a+1, a+2  # Same as (1, 2)
+a, b = f(0)  # a = 1, b = 2
+_, b = f(5)  # b = 6
+            </code></pre>
+						<blockquote>
+							How to swap two variable in "pythonic" way?
+						</blockquote>
+          </section>
+          <section>
             <h2>list</h2>
+            <pre><code class="python">
+l1 = [1, '2', 3.00]
+l2 = [[i*3 + j for j in range(3)] for i in range(3)]
+len(l1)  #3
+l1.append(4)   #[1, 2, 3, 4]
+print(l1)
+            </code></pre>
           </section>
           <section>
             <h2>dict</h2>
@@ -244,6 +282,14 @@ class Student:
         </section>
         <section>
           <section>
+            <h2>Importing</h2>
+            <pre><code class="python">
+import numpy
+from scipy import stats
+import matplotlib.pyplot as plt
+            </code></pre>
+          </section>
+          <section>
             <h2>I/O</h2>
           </section>
           <section>
@@ -251,6 +297,16 @@ class Student:
           </section>
           <section>
             <h2>file I/O</h2>
+          </section>
+          <section>
+            <h2>Error Catching</h2>
+            <pre><code class="python">
+try:
+	a = 1 // 0
+catch Exception as e:
+	# pass   Lazy....
+	print(e)
+						</code></pre>
           </section>
         </section>
         <section>
