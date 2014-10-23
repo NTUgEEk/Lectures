@@ -139,14 +139,14 @@ if name:
             <h2>Indenting</h2>
             <pre><code class="python">
 def f(x):
-		def g(y):
-			if y == 0"
-				return True
-			return False
-		return g
+    def g(y):
+        if y == 0"
+            return True
+        return False
+    return g
 
 def z():
-	pass
+    pass
             </code></pre>
             <p>
             </p>
@@ -186,10 +186,23 @@ while index &lt; 10:
             <h2>Mutable v.s. Immutable</h2>
           </section>
           <section>
-            <h2>int</h2>
+            <h2>int, float</h2>
+            <pre><code class="python">
+a = 2
+b = 4
+print(a + b, a - b, a * b, a / b, a**b) # 6 -2 8 0.5 16
+# big int
+print(2**100) # 1267650600228229401496703205376
+# float
+print(0.7**3.3) # 0.3081935405341894
+            </code></pre>
           </section>
           <section>
             <h2>str</h2>
+            <pre><code class="python">
+a = "Hello, world"
+print(a, a[7:], a[:-5] + "A__A")
+            </code></pre>
           </section>
           <section>
             <h2>tuple</h2>
@@ -294,9 +307,23 @@ import matplotlib.pyplot as plt
           </section>
           <section>
             <h2>stdin and stdout</h2>
+            <pre><code class="python">
+name = input()
+print("Hi, {}".format(name))
+            </code></pre>
           </section>
           <section>
             <h2>file I/O</h2>
+            <pre><code class="python">
+infile = open("test.in", "r")
+outfile = open("test.out", "w")
+for line in infile:
+    # each line has a '\n' at the end of line
+    outfile.write("Hello, {}".format(line))
+print("Hello over", file=outfile)
+infile.close()
+outfile.close()
+            </code></pre>
           </section>
           <section>
             <h2>Error Catching</h2>
@@ -315,7 +342,10 @@ catch Exception as e:
             <p>
               <ul>
                 <li>lambda</li>
+                <li>global &amp; nonlocal</li>
                 <li>decorator</li>
+                <li>generator</li>
+                <li>module</li>
               </ul>
             </p>
           </section>
@@ -342,6 +372,10 @@ catch Exception as e:
           </section>
           <section>
             <h2>Python Docs</h2>
+            <p>
+              <a href="https://docs.python.org">Python Documentation</a>
+              <!-- 簡單演示如何 "read" Documentation -->
+            </p>
           </section>
           <section>
             <h2>Prcatice</h2>
@@ -350,6 +384,10 @@ catch Exception as e:
               <li><a href="http://www.codecademy.com/">Codecademy</a></li>
               <li><a href="http://www.codewars.com/">Codewars</a></li>
             </ul>
+          </section>
+          <section>
+            <h2>Do yourself</h2>
+            <!-- Practice -->
           </section>
         </section>
 
