@@ -202,16 +202,18 @@ print(0.7**3.3) # 0.3081935405341894
             <pre><code class="python">
 a = "Hello, world"
 print(a, a[7:], a[:-5] + "A__A")
+arr = ['one', 'two', 'three']
+print(', '.join(arr)) # one, two, three
             </code></pre>
           </section>
           <section>
             <h2>tuple</h2>
             <pre><code class="python">
 t1 = (1, '2', 3.00)
-t1[2]  #3.00
+t1[2]  # 3.00
 t1[2] = "Tuples are immutable!"  # Error
 def f(a):
-	return a+1, a+2  # Same as (1, 2)
+    return a+1, a+2  # Same as (1, 2)
 a, b = f(0)  # a = 1, b = 2
 _, b = f(5)  # b = 6
             </code></pre>
@@ -222,15 +224,31 @@ _, b = f(5)  # b = 6
           <section>
             <h2>list</h2>
             <pre><code class="python">
-l1 = [1, '2', 3.00]
+l1 = [1, '2', 3.00] # can use different data type!!
+# list comprehension
 l2 = [[i*3 + j for j in range(3)] for i in range(3)]
-len(l1)  #3
-l1.append(4)   #[1, 2, 3, 4]
+len(l1)  # 3
+l1.append(4)   # [1, '2', 3.00, 4]
 print(l1)
             </code></pre>
           </section>
           <section>
             <h2>dict</h2>
+            <pre><code class="python">
+d1 = {1: 'test', '2': 5.0, 3.00: 20} # can use different data type!!
+print(d1['2']) # 5.0
+# dict comprehension
+d2 = {i:0 for i in range(3)} # {0:0, 1:0, 2:0}
+for k in d1:
+    print(k, d1[k])
+for k, v in d1.items():
+    print(k, v)
+for v in d1.values():
+    print v
+            </code></pre>
+						<div class="tip">
+              dict is a mapping!
+						</div>
           </section>
         </section>
         <section>
@@ -277,6 +295,24 @@ add10 = get_addnum(10)
 print(add10(20)) # 30
             </code></pre>
           </section>
+          <section>
+            <h2><code>*args</code> and <code>**kwargs</code></h2>
+            <pre><code class="python">
+def addnum(*args):
+    s = 0
+    for x in args:
+        s += x
+    return s
+
+def hello(**kwargs):
+    print("Hello, {}".format(kwargs['name']))
+
+print(addnum(1, 2, 3)) # 6
+print(addnum(1, 2, 3, 4, 5, 6)) # 21
+print(hello(a=1, name="TEST")) # Hello, TEST
+print(hello(1, name="TEST")) # ERROR !!
+            </code></pre>
+          </section>
         </section>
         <section>
           <section>
@@ -290,16 +326,74 @@ class Student:
     def hello(self):
         print("Hello, my name is {},"
               " {} years old.".format(self.name, self.age))
+
+    def get_age(self):
+        return self.age
+
+s = Student("Bob", 20)
+s.hello() # Hello, my name is Bob, 20 years old.
+print(s.get_age()) # 20
             </code></pre>
+          </section>
+          <section>
+            <h2>Method and <code>self</code></h2>
+            <pre><code class="python">
+class Student:
+    # ...
+
+    def do_something(self, *args):   # pass self as the first argument
+        # ...
+            </code></pre>
+            <div class="tip">
+              Note: <code>self</code> is just a convention.
+            </div>
+          </section>
+          <section>
+            <h2>Constructor? <code>__init__</code></h2>
+            <pre><code class="python">
+class Student:
+    def __init__(self, name, age):
+        # give self some properties
+        self.name = name
+        self.age = age
+
+s = Student("Bob", 20)
+s.height = 175 # we can add a new property to an object at any time!
+            </code></pre>
+          </section>
+          <section>
+            <h2>Special method names</h2>
+            <pre><code class="python">
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def __add__(self, p):
+        return Point(self.x + p.x, self.y + p.y)
+
+    def __str__(self):
+        return "({}, {})".format(self.x, self.y)
+
+x = Point(1, 2)
+y = Point(3, 4)
+print(x + y) # (4, 6)
+            </code></pre>
+            <div class="tip">
+              For more special method names:
+              <a href="https://docs.python.org/3.4/reference/datamodel.html#special-method-names">Python Docs</a>
+            </div>
           </section>
         </section>
         <section>
           <section>
             <h2>Importing</h2>
             <pre><code class="python">
-import numpy
+import numpy as np
 from scipy import stats
 import matplotlib.pyplot as plt
+
+print(np.pi) # 3.141592653589793
             </code></pre>
           </section>
           <section>
@@ -329,10 +423,10 @@ outfile.close()
             <h2>Error Catching</h2>
             <pre><code class="python">
 try:
-	a = 1 // 0
+    a = 1 // 0
 catch Exception as e:
-	# pass   Lazy....
-	print(e)
+    # pass   Lazy....
+    print(e)
 						</code></pre>
           </section>
         </section>
@@ -356,8 +450,10 @@ catch Exception as e:
           </section>
           <section>
             <h2>Modules</h2>
-            <p>
-            </p>
+            <ul>
+              <li>Built-in modules: math, re, httplib, asynio, ... <a href="https://docs.python.org/3/library/index.html">Python Library</a></li>
+              <li>Other modules: numpy, scipy, matplotlib, ... <a href="https://pypi.python.org/pypi">PyPI</a></li>
+            </ul>
           </section>
           <section>
             <h2>Python/C API</h2>
@@ -379,7 +475,9 @@ catch Exception as e:
           </section>
           <section>
             <h2>Prcatice</h2>
-            some website:
+            <p>
+              some website:
+            </p>
             <ul>
               <li><a href="http://www.codecademy.com/">Codecademy</a></li>
               <li><a href="http://www.codewars.com/">Codewars</a></li>
@@ -388,6 +486,18 @@ catch Exception as e:
           <section>
             <h2>Do yourself</h2>
             <!-- Practice -->
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Mini Project</h2>
+          </section>
+          <section>
+            <h2>ng-spice</h2>
+            用 ngspice 來做電路模擬
+            一個簡單的電路：
+            <pre><code>
+            </code></pre>
           </section>
         </section>
 
