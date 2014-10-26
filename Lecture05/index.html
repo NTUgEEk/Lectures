@@ -44,7 +44,6 @@
           <small>Created by NTUgEEk</small>
         </section>
 
-
         <section>
           <section>
             <h2>關於語言</h2>
@@ -162,8 +161,14 @@ elif name != "TEST":
 else:
     print("TESTING")
             </code></pre>
-            <p>
-            </p>
+          </section>
+          <section>
+            <h2>if expression</h2>
+            <pre><code class="python">
+num = int(input())
+# ans = num &lt; 10 ? num + 10 : num
+ans = num + 10 if num &lt; 10 else num
+            </code></pre>
           </section>
           <section>
             <h2>for and while</h2>
@@ -198,15 +203,6 @@ print(0.7**3.3) # 0.3081935405341894
             </code></pre>
           </section>
           <section>
-            <h2>str</h2>
-            <pre><code class="python">
-a = "Hello, world"
-print(a, a[7:], a[:-5] + "A__A")
-arr = ['one', 'two', 'three']
-print(', '.join(arr)) # one, two, three
-            </code></pre>
-          </section>
-          <section>
             <h2>tuple</h2>
             <pre><code class="python">
 t1 = (1, '2', 3.00)
@@ -222,11 +218,26 @@ _, b = f(5)  # b = 6
 						</blockquote>
           </section>
           <section>
+            <h2>str</h2>
+            <pre><code class="python">
+a = "Hello, world"
+print(a, a[7:], a[:-5] + "A__A")
+arr = ['one', 'two', 'three']
+print(', '.join(arr)) # one, two, three
+            </code></pre>
+            <div class="tip">
+              str 類似一個 character 的 tuple<br>
+              儘管並沒有 character 這個型態！ (而是視為長度 1 的 str)
+            </div>
+          </section>
+          <section>
             <h2>list</h2>
             <pre><code class="python">
 l1 = [1, '2', 3.00] # can use different data type!!
 # list comprehension
 l2 = [[i*3 + j for j in range(3)] for i in range(3)]
+# combined with if expression!!
+l3 = [i for i in range(10) if i % 2 == 0] # [0, 2, 4, 6, 8]
 len(l1)  # 3
 l1.append(4)   # [1, '2', 3.00, 4]
 print(l1)
@@ -443,10 +454,99 @@ catch Exception as e:
               </ul>
             </p>
           </section>
+          <section>
+            <h2>Lambda</h2>
+            <pre><code class="python">
+mul = lambda x, y: x * y
+sq = lambda x: mul(x, x)
+print(sq(10)) # 100
+						</code></pre>
+            <div class="tip">
+              <code>lambda <i>arugments</i>: <i>expression</i></code>
+            </div>
+          </section>
+          <section>
+            <h2>global and nonlocal</h2>
+            <pre><code class="python">num = 10
+def change_num():
+    global num
+    num = 20
+
+def local_num():
+    num = 100
+    def test():
+        nonlocal num
+        num = 200
+    test()
+    return num
+
+print(num) # 10
+change_num(), print(num) # 20
+print(local_num()) # 200
+print(num) # 20</code></pre>
+          </section>
+          <section>
+            <h2>Decorator</h2>
+            <pre><code class="python">
+def wrapper(f):
+    def _func(*args):
+        print("WRAPPER")
+        f(*args)
+    return _func
+
+@wrapper
+def test(num):
+    print("TEST", num)
+
+test(123)
+# WRAPPER
+# TEST 123
+            </code></pre>
+          </section>
+          <section>
+            <h2>Generator</h2>
+            <pre><code class="python">
+def gen_prime():
+    pris = []
+    i = 2
+    while True:
+        for p in pris:
+            if i % p == 0:
+                break
+        else:
+            pris.append(i)
+            yield i
+        i += 1
+
+primes = gen_prime() # get the generator
+for i in range(10):
+    print(next(primes)) # 2, 3, 5, 7, 11, 13, 17, 19, 23, 29
+            </code></pre>
+          </section>
+          <section>
+            <h2>Module</h2>
+            <p>
+              See Lecture05/examples
+            </p>
+          </section>
         </section>
         <section>
           <section>
             <h2>Power of Python</h2>
+          </section>
+          <section>
+            <h2>Built-in Functions</h2>
+            <ul>
+              <li>Math: <code>abs</code>, <code>max</code>, <code>min</code>, <code>sum</code>...</li>
+              <li>Iterable: <code>all</code>, <code>any</code>, <code>filter</code>, <code>map</code>,
+                <code>enumerate</code>...</li>
+              <li>...</li>
+            </ul>
+            <p>
+            <a href="https://docs.python.org/3.4/library/functions.html">
+              Built-in Functions
+            </a>
+            </p>
           </section>
           <section>
             <h2>Modules</h2>
