@@ -139,7 +139,7 @@ if name:
             <pre><code class="python">
 def f(x):
     def g(y):
-        if y == 0"
+        if y == 0
             return True
         return False
     return g
@@ -556,6 +556,17 @@ for i in range(10):
             </ul>
           </section>
           <section>
+            <h2>How to get Packages?</h2>
+            <ul>
+              <li>Via Linux distro package manager</li>
+              <li>Via Python package manager pip</li>
+            </ul>
+						<div class="tip">
+							Beware of Python2/3 compatible issue!
+						</div>
+
+          </section>
+          <section>
             <h2>Python/C API</h2>
             <p>
             </p>
@@ -590,15 +601,73 @@ for i in range(10):
         </section>
         <section>
           <section>
-            <h2>Mini Project</h2>
+            <h2>Mini Project 1 - Ngspice</h2>
+            用 ngspice 來做電路模擬<br>
           </section>
           <section>
             <h2>ng-spice</h2>
-            用 ngspice 來做電路模擬
+						安裝ngspice
+            <pre><code class="bash">
+sudo apt-get install ngspice
+sudo pacman -S ngspice
+# It is not a python package!!
+            </code></pre>
+						<a href="http://ngspice.sourceforge.net/docs/ngspice26-manual.pdf">Manual Here</a>
+					</section>
+					<section>
             一個簡單的電路：
             <pre><code>
+** First Line has to be a description
+
+* * = comment
+* 0 will be the ground
+V1 1 0 10  *Voltage source, + at 1, - at 0, 10V
+I1 0 1 5   *Current source, flow from 0 to 1
+R1 1 2 10k  *Resistor, 1 to 2, 10 ohm
+C1 2 0 10u  *Capacitor, 2 to 0, 10uF
             </code></pre>
           </section>
+					<section>
+						Give the description to ngspice!
+						<pre><code>
+ngspice your_file_name.cir
+						</code></pre>
+					</section>
+					<section>
+						Simulating!
+						<pre><code>
+op  *Operation Point Simulate
+show    *Show source condition
+show r  *Show resistor details
+print v(2)  
+						</code></pre>
+						<pre><code>
+tran 1n 2u 1u  *Transient Analysis, trans step end [start]
+plot v(2)
+						</code></pre>
+					</section>
+					<section>
+						<h2> Problem </h2>
+						<blockquote>
+							請使用 PSpice 或者<b>其他電路模擬軟體</b>模擬實驗中使用的一次電路。
+						</blockquote>
+						<blockquote>
+							Please modify project/circuit.cir
+						</blockquote>
+					</section>
+					<section>
+						將資料輸出至檔案，用python畫圖！
+						<pre><code>
+wrdata filename v(1) v(2) 
+						</code></pre>
+						安裝Matplotlib
+						<pre><code class="bash">
+sudo pip install matplotlib  #Or maybe by your distro PKM
+						</code></pre>
+					</section>
+					<section>
+						  
+					</section>
         </section>
 
 

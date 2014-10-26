@@ -1,0 +1,16 @@
+** RC, RL Primary Circuit
+
+* Hint 
+* Voltage source: V[name] +term -term ACwave
+* Pulse: PULSE(V1 V2 TDelay TRise TFall TPulseWidth Period)
+
+
+.control
+* You could put your simulation comand here
+* And you wont need to type every time you simulate
+* Ex: 
+* op
+* show
+
+
+.endc
