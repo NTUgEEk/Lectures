@@ -1,0 +1,251 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <title>Lecture06 - Server</title>
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="../reveal.js/css/reveal.min.css">
+    <link rel="stylesheet" href="../reveal.js/css/theme/serif.css" id="theme">
+
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="../reveal.js/lib/css/zenburn.css">
+
+    <!-- Custom CSSs -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+    <script>
+      if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+      }
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+        <section>
+          <h1>Server</h1>
+          <small>Created by NTUgEEk</small>
+        </section>
+
+        <section>
+          <section>
+            <h2>Client - Server</h2>
+            reference:<a href="http://en.wikipedia.org/wiki/Client%E2%80%93server_model">wiki</a>
+            <!-- 參考 Wiki -->
+          </section>
+          <section>
+            <h2>Peer to Peer</h2>
+            reference:<a href="http://en.wikipedia.org/wiki/Peer-to-peer">wiki</a>
+            <!-- 參考 Wiki -->
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Socket</h2>
+            <p>
+              <ul>
+                <li class="fragment">兩個 Process 之間互傳訊息的通道</li>
+                <li class="fragment">一個 Process 的位址由 IP 和 port 決定</li>
+              </ul>
+            </p>
+          </section>
+          <section>
+            <h2>Connection</h2>
+            <p>
+              <ul>
+                <li class="fragment">有一方是 Listener</li>
+                <li class="fragment">在通訊之間要先建立連線</li>
+                <li class="fragment">Timeout</li>
+              </ul>
+            </p>
+          </section>
+          <section>
+            <h2>Request and Response</h2>
+            <img src="img/rr.gif"></img>
+          </section>
+          <section>
+            <h2>Websocket</h2>
+            <p>透過 Browser 跟 Server 做 Socket 連線</p>
+            <p>Pros: 只要做一次 Handshake 就可以做長時間的連線</p>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Web Server (HTTP Server)</h2>
+            <p>
+              處理 HTTP requeset 的 Application
+            </p>
+            <p>
+              <ul class="fragment">
+                <li>Apache</li>
+                <li>Nginx</li>
+                <li>something else...</li>
+              </ul>
+            </p>
+          </section>
+          <section>
+            <h2>Dynamic Web page</h2>
+            <p>
+              <ul>
+                <li class="fragment">網頁的內容可根據狀況和參數自動改變</li>
+                <li class="fragment">利用 AJAX 技術，可在不 refresh 網頁的情況下跟 Server 互動</li>
+                <li class="fragment">近年來隨著各種技術發展，現在的趨勢是 Web App</li>
+              </ul>
+            </p>
+          </section>
+          <section>
+            <h2>Programming Languages</h2>
+            <ul>
+              <li class="fragment">
+                CGI<span class="fragment"> - <span class="red">don't use it!</span></span>
+              </li>
+              <li class="fragment">
+                PHP<span class="fragment"> - old style</span>
+              </li>
+              <li class="fragment">
+                Python<span class="fragment"> - Google</span>
+              </li>
+              <li class="fragment">
+                Ruby (RoR)<span class="fragment"> - really cool</span>
+              </li>
+              <li class="fragment">
+                Javascript<span class="fragment"> - a lot of framworks!</span>
+              </li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Handling Multiple Requests</h2>
+            <ul>
+              <li>Multithreading</li>
+              <li>Concurrency</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Multithreading</h2>
+            <p class="fragment">並行處理</p>
+            <ul class="fragment">
+              <li>Pros: 不會被卡死</li>
+              <li>Cons: 大家一起慢 + 不停切換</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Concurrency</h2>
+            <p class="fragment">一次處理一個</p>
+            <ul class="fragment">
+              <li>Pros: 切換次數少</li>
+              <li>Cons: 耗時計算會卡死</li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Frameworks</h2>
+            <p>前人種樹，後人乘涼？</p>
+          </section>
+          <section>
+            <h2>PHP</h2>
+            <p>跟上時代潮流的 PHP Framework</p>
+            <ul>
+              <li><a href="http://www.codeigniter.com">Codeigniter</a></li>
+              <li><a href="http://laravel.com">Laravel</a></li>
+            </ul>
+          </section>
+          <section>
+            <h2>Python</h2>
+            <p>Python 在各個領域都有其立足之地</p>
+            <ul>
+              <li><a href="https://www.djangoproject.com">Django</a></li>
+              <li><a href="http://www.tornadoweb.org">Tornado</a></li>
+              <li><a href="http://flask.pocoo.org">Flask</a></li>
+            </ul>
+          </section>
+          <section>
+            <h2>Ruby</h2>
+            <p><a href="http://rubyonrails.org">Ruby on Rails</a> 最知名的 Web framework!</p>
+          </section>
+          <section>
+            <h2>Javascript</h2>
+            <p>五花八門的強大 Frameworks!</p>
+            <ul>
+              <li><a href="https://www.meteor.com">Meteor</a> (P.S. 真的神)</li>
+              <li><a href="http://expressjs.com">Express</a></li>
+              <li><a href="https://www.totaljs.com">Total.js</a></li>
+              <li><a href="https://www.totaljs.com">AngularJS</a> (frontend)</li>
+              <li><a href="https://emberjs.com">Ember</a> (frontend)</li>
+              <li>and more!</li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Mini Project 1</h2>
+            <h2></h2>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Mini Project 2</h2>
+            <h2>1 對 1 聊天室</h2>
+          </section>
+        </section>
+        <section>
+        </section>
+
+
+      </div>
+    </div>
+
+    <script src="../reveal.js/lib/js/head.min.js"></script>
+    <script src="../reveal.js/js/reveal.min.js"></script>
+
+    <script>
+
+      // Full list of configuration options available here:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      history: true,
+      center: true,
+
+      theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+      transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+      // Parallax scrolling
+      // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+      // parallaxBackgroundSize: '2100px 900px',
+
+      // Optional libraries used to extend on reveal.js
+      dependencies: [
+        { src: '../reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+        { src: '../reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: '../reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: '../reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+        { src: '../reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+        { src: '../reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+      ]
+    });
+
+    </script>
+  </body>
+</html>
+
