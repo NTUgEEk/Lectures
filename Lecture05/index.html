@@ -386,7 +386,7 @@ class Point:
         self.y = y
 
     def __add__(self, p):
-        return Point(self.x + p.x, self.y + p.y)
+        return self.__class__(self.x + p.x, self.y + p.y)
 
     def __str__(self):
         return "({}, {})".format(self.x, self.y)
@@ -399,6 +399,22 @@ print(x + y) # (4, 6)
               For more special method names:
               <a href="https://docs.python.org/3.4/reference/datamodel.html#special-method-names">Python Docs</a>
             </div>
+          </section>
+          <section>
+            <h2>Inherit</h2>
+            <pre><code class="python">
+class Vector(Point):
+    def __init__(self, x, y):
+        super().__init__(x, y)
+
+    def length(self):
+        return (self.x**2 + self.y**2)**0.5
+
+x = Vector(1, 2)
+y = Vector(3, 1)
+z = x + y
+print(z.length()) # 5
+            </code></pre>
           </section>
         </section>
         <section>
@@ -440,7 +456,7 @@ outfile.close()
             <pre><code class="python">
 try:
     a = 1 // 0
-catch Exception as e:
+except Exception as e:
     # pass   Lazy....
     print(e)
 						</code></pre>
