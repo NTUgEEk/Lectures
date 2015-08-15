@@ -1,47 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 
-	<head>
-		<meta charset="utf-8">
+  <head>
+    <meta charset="utf-8">
 
-		<title>Lecture05 - Python</title>
+    <title>Lecture05 - Python</title>
 
-		<meta name="description" content="NTUgEEk Lecture05 - Python">
-		<meta name="author" content="NTUgEEk">
+    <meta name="description" content="NTUgEEk Lecture05 - Python">
+    <meta name="author" content="NTUgEEk">
 
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
     <link rel="stylesheet" href="../reveal.js/css/reveal.css">
     <link rel="stylesheet" href="../reveal.js/css/theme/serif.css" id="theme">
 
-		<!-- Code syntax highlighting -->
+    <!-- Code syntax highlighting -->
     <link rel="stylesheet" href="../reveal.js/lib/css/zenburn.css">
 
     <link rel="stylesheet" href="style.css">
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal.js/css/print/pdf.css' : '../reveal.js/css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal.js/css/print/pdf.css' : '../reveal.js/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
 
-		<!--[if lt IE 9]>
-		<script src="lib/js/html5shiv.js"></script>
-		<![endif]-->
-	</head>
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
 
-	<body>
+  <body>
 
-		<div class="reveal">
+    <div class="reveal">
 
-			<!-- Any section element inside of this container is displayed as a slide -->
-			<div class="slides">
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
 
         <section>
           <h1>Python</h1>
@@ -56,92 +56,92 @@
           <section>
             <h2>編譯語言</h2>
             <p>
-            C++、Java、Go
+              C++、Java、Go
             </p>
             <svg xmlns="http://www.w3.org/2000/svg" width="240px" height="150px"
-            viewBox="0 0 250 250">
+              viewBox="0 0 250 250">
               <rect fill="white" stroke="black" stroke-width="10px"
               x="25" y="25"
               width="200" height="200" rx="20" ry="20"/>
               <text x="60" y="140" font-size="60px" fill="black">
-              Code
+                Code
               </text>
             </svg>
             <svg xmlns="http://www.w3.org/2000/svg" width="300px" height="150px"
-            viewBox="0 0 500 250">
+              viewBox="0 0 500 250">
               <polygon fill="blue" stroke="red" stroke-width="8px"
               points="500,125 400,0, 400,50, 10,50 10,200, 400,200 400,250"/>
 
               <text x="120" y="140" font-size="60px" fill="white">
-              Compiler
+                Compiler
               </text>
             </svg>
             <svg xmlns="http://www.w3.org/2000/svg" width="240px" height="150px"
-            viewBox="0 0 400 250">
+              viewBox="0 0 400 250">
               <rect fill="#CCC" stroke="black" stroke-width="10px"
               x="25" y="25"
               width="300" height="200" rx="20" ry="20"/>
               <text x="45" y="140" font-size="60px" fill="black">
-              Executable
+                Executable
               </text>
             </svg>
           </section>
           <section>
             <h2>直譯語言</h2>
             <p>
-            Python、Ruby、Javascript
+              Python、Ruby、Javascript
             </p>
             <svg xmlns="http://www.w3.org/2000/svg" width="150px" height="150px"
-            viewBox="0 0 250 250">
+              viewBox="0 0 250 250">
               <rect fill="#CCC" stroke="black" stroke-width="10px"
               x="25" y="25"
               width="200" height="200" rx="20" ry="20"/>
               <text x="50" y="140" font-size="60px" fill="black">
-              Script
+                Script
               </text>
             </svg>
             <svg xmlns="http://www.w3.org/2000/svg" width="300px" height="150px"
-            viewBox="0 0 500 250">
+              viewBox="0 0 500 250">
               <polygon fill="orange" stroke="red" stroke-width="8px"
               points="500,125 400,0, 400,50, 10,50 10,200, 400,200 400,250"/>
 
               <text x="100" y="140" font-size="60px" fill="black">
-              Interpreter
+                Interpreter
               </text>
             </svg>
             <svg xmlns="http://www.w3.org/2000/svg" width="150px" height="150px"
-            viewBox="0 0 250 250">
+              viewBox="0 0 250 250">
               <circle fill="yellow" stroke="black" stroke-width="10px"
               cx="125" cy="125" r="100" />
               <text x="50" y="140" font-size="60px" fill="black">
-              Result
+                Result
               </text>
+            </section>
+            <section>
+              <h2>Duck Typing</h2>
+              <blockquote>
+                當看到一隻鳥走起來像鴨子、游泳起來像鴨子、叫起來也像鴨子，那麼這隻鳥就可以被稱為鴨子。
+                From Wikipedia
+              </blockquote>
+            </section>
           </section>
-          <section>
-            <h2>Duck Typing</h2>
-            <blockquote>
-            當看到一隻鳥走起來像鴨子、游泳起來像鴨子、叫起來也像鴨子，那麼這隻鳥就可以被稱為鴨子。
-            From Wikipedia
-            </blockquote>
-          </section>
-        </section>
 
-        <section>
           <section>
-            <h2>基本語法結構</h2>
-            <pre><code class="python">
+            <section>
+              <h2>基本語法結構</h2>
+              <pre><code class="python">
 #! /usr/bin/env python
 
 name = input()
 if name:
     print("Hello, {}!".format(name))
             </code></pre>
-            <p>
-            </p>
-          </section>
-          <section>
-            <h2>Indenting</h2>
-            <pre><code class="python">
+              <p>
+              </p>
+            </section>
+            <section>
+              <h2>Indenting</h2>
+              <pre><code class="python">
 def f(x):
     def g(y):
         if y == 0
@@ -152,12 +152,12 @@ def f(x):
 def z():
     pass
             </code></pre>
-            <p>
-            </p>
-          </section>
-          <section>
-            <h2>if ... elif ... else</h2>
-            <pre><code class="python">
+              <p>
+              </p>
+            </section>
+            <section>
+              <h2>if ... elif ... else</h2>
+              <pre><code class="python">
 name = input()
 if name == "E___E":
     print("QQ")
@@ -166,18 +166,18 @@ elif name != "TEST":
 else:
     print("TESTING")
             </code></pre>
-          </section>
-          <section>
-            <h2>if expression</h2>
-            <pre><code class="python">
+            </section>
+            <section>
+              <h2>if expression</h2>
+              <pre><code class="python">
 num = int(input())
 # ans = num &lt; 10 ? num + 10 : num
 ans = num + 10 if num &lt; 10 else num
             </code></pre>
-          </section>
-          <section>
-            <h2>for and while</h2>
-            <pre><code class="python">
+            </section>
+            <section>
+              <h2>for and while</h2>
+              <pre><code class="python">
 for i in range(10):
     print("count {}".format(i))
 
@@ -186,18 +186,18 @@ while index &lt; 10:
     print("number", index)
     index += 1   # python doesn't have ++ operator!
             </code></pre>
-          </section>
-        </section>
-        <section>
-          <section>
-            <h2>Data Types</h2>
+            </section>
           </section>
           <section>
-            <h2>Mutable v.s. Immutable</h2>
-          </section>
-          <section>
-            <h2>int, float</h2>
-            <pre><code class="python">
+            <section>
+              <h2>Data Types</h2>
+            </section>
+            <section>
+              <h2>Mutable v.s. Immutable</h2>
+            </section>
+            <section>
+              <h2>int, float</h2>
+              <pre><code class="python">
 a = 2
 b = 4
 print(a + b, a - b, a * b, a / b, a**b) # 6 -2 8 0.5 16
@@ -206,10 +206,10 @@ print(2**100) # 1267650600228229401496703205376
 # float
 print(0.7**3.3) # 0.3081935405341894
             </code></pre>
-          </section>
-          <section>
-            <h2>tuple</h2>
-            <pre><code class="python">
+            </section>
+            <section>
+              <h2>tuple</h2>
+              <pre><code class="python">
 t1 = (1, '2', 3.00)
 t1[2]  # 3.00
 t1[2] = "Tuples are immutable!"  # Error
@@ -218,26 +218,26 @@ def f(a):
 a, b = f(0)  # a = 1, b = 2
 _, b = f(5)  # b = 6
             </code></pre>
-						<blockquote>
-							How to swap two variable in "pythonic" way?
-						</blockquote>
-          </section>
-          <section>
-            <h2>str</h2>
-            <pre><code class="python">
+              <blockquote>
+                How to swap two variable in "pythonic" way?
+              </blockquote>
+            </section>
+            <section>
+              <h2>str</h2>
+              <pre><code class="python">
 a = "Hello, world"
 print(a, a[7:], a[:-5] + "A__A")
 arr = ['one', 'two', 'three']
 print(', '.join(arr)) # one, two, three
             </code></pre>
-            <div class="tip">
-              str 類似一個 character 的 tuple<br>
-              儘管並沒有 character 這個型態！ (而是視為長度 1 的 str)
-            </div>
-          </section>
-          <section>
-            <h2>list</h2>
-            <pre><code class="python">
+              <div class="tip">
+                str 類似一個 character 的 tuple<br>
+                儘管並沒有 character 這個型態！ (而是視為長度 1 的 str)
+              </div>
+            </section>
+            <section>
+              <h2>list</h2>
+              <pre><code class="python">
 l1 = [1, '2', 3.00] # can use different data type!!
 # list comprehension
 l2 = [[i*3 + j for j in range(3)] for i in range(3)]
@@ -247,10 +247,10 @@ len(l1)  # 3
 l1.append(4)   # [1, '2', 3.00, 4]
 print(l1)
             </code></pre>
-          </section>
-          <section>
-            <h2>dict</h2>
-            <pre><code class="python">
+            </section>
+            <section>
+              <h2>dict</h2>
+              <pre><code class="python">
 d1 = {1: 'test', '2': 5.0, 3.00: 20} # can use different data type!!
 print(d1['2']) # 5.0
 # dict comprehension
@@ -262,34 +262,34 @@ for k, v in d1.items():
 for v in d1.values():
     print v
             </code></pre>
-						<div class="tip">
-              dict is a mapping!
-						</div>
+              <div class="tip">
+                dict is a mapping!
+              </div>
+            </section>
           </section>
-        </section>
-        <section>
           <section>
-            <h2>Function</h2>
-            <pre><code class="python">
+            <section>
+              <h2>Function</h2>
+              <pre><code class="python">
 def adder(a, b, c):
     return a + b + c
 
 adder(20, 10, -5) # 25
 adder("abc", "def", "GHI") # "abcdefGHI"
             </code></pre>
-          </section>
-          <section>
-            <h2>Local Function</h2>
-            <pre><code class="python">
+            </section>
+            <section>
+              <h2>Local Function</h2>
+              <pre><code class="python">
 def adder(a, b, c):
     def addtwo(x, y):
         return x + y
     return addtwo(addtwo(a, b), c)
             </code></pre>
-          </section>
-          <section>
-            <h2>Functions are objects</h2>
-            <pre><code class="python">
+            </section>
+            <section>
+              <h2>Functions are objects</h2>
+              <pre><code class="python">
 def get_addtwo():
     def addtwo(x, y):
         return x + y
@@ -298,10 +298,10 @@ def get_addtwo():
 addtwo = get_addtwo()
 print(addtwo(100, 20)) # 120
             </code></pre>
-          </section>
-          <section>
-            <h2>Closure</h2>
-            <pre><code class="python">
+            </section>
+            <section>
+              <h2>Closure</h2>
+              <pre><code class="python">
 def get_addnum(num):
     def addnum(x):
         return x + num
@@ -310,10 +310,10 @@ def get_addnum(num):
 add10 = get_addnum(10)
 print(add10(20)) # 30
             </code></pre>
-          </section>
-          <section>
-            <h2><code>*args</code> and <code>**kwargs</code></h2>
-            <pre><code class="python">
+            </section>
+            <section>
+              <h2><code>*args</code> and <code>**kwargs</code></h2>
+              <pre><code class="python">
 def addnum(*args):
     s = 0
     for x in args:
@@ -328,12 +328,12 @@ print(addnum(1, 2, 3, 4, 5, 6)) # 21
 print(hello(a=1, name="TEST")) # Hello, TEST
 print(hello(1, name="TEST")) # ERROR !!
             </code></pre>
+            </section>
           </section>
-        </section>
-        <section>
           <section>
-            <h2>Class</h2>
-            <pre><code class="python">
+            <section>
+              <h2>Class</h2>
+              <pre><code class="python">
 class Student:
     def __init__(self, name, age):
         self.name = name
@@ -350,23 +350,23 @@ s = Student("Bob", 20)
 s.hello() # Hello, my name is Bob, 20 years old.
 print(s.get_age()) # 20
             </code></pre>
-          </section>
-          <section>
-            <h2>Method and <code>self</code></h2>
-            <pre><code class="python">
+            </section>
+            <section>
+              <h2>Method and <code>self</code></h2>
+              <pre><code class="python">
 class Student:
     # ...
 
     def do_something(self, *args):   # pass self as the first argument
         # ...
             </code></pre>
-            <div class="tip">
-              Note: <code>self</code> is just a convention.
-            </div>
-          </section>
-          <section>
-            <h2>Constructor? <code>__init__</code></h2>
-            <pre><code class="python">
+              <div class="tip">
+                Note: <code>self</code> is just a convention.
+              </div>
+            </section>
+            <section>
+              <h2>Constructor? <code>__init__</code></h2>
+              <pre><code class="python">
 class Student:
     def __init__(self, name, age):
         # give self some properties
@@ -376,10 +376,10 @@ class Student:
 s = Student("Bob", 20)
 s.height = 175 # we can add a new property to an object at any time!
             </code></pre>
-          </section>
-          <section>
-            <h2>Special method names</h2>
-            <pre><code class="python">
+            </section>
+            <section>
+              <h2>Special method names</h2>
+              <pre><code class="python">
 class Point:
     def __init__(self, x, y):
         self.x = x
@@ -395,14 +395,14 @@ x = Point(1, 2)
 y = Point(3, 4)
 print(x + y) # (4, 6)
             </code></pre>
-            <div class="tip">
-              For more special method names:
-              <a href="https://docs.python.org/3.4/reference/datamodel.html#special-method-names">Python Docs</a>
-            </div>
-          </section>
-          <section>
-            <h2>Inherit</h2>
-            <pre><code class="python">
+              <div class="tip">
+                For more special method names:
+                <a href="https://docs.python.org/3.4/reference/datamodel.html#special-method-names">Python Docs</a>
+              </div>
+            </section>
+            <section>
+              <h2>Inherit</h2>
+              <pre><code class="python">
 class Vector(Point):
     def __init__(self, x, y):
         super().__init__(x, y)
@@ -415,32 +415,32 @@ y = Vector(3, 1)
 z = x + y
 print(z.length()) # 5
             </code></pre>
+            </section>
           </section>
-        </section>
-        <section>
           <section>
-            <h2>Importing</h2>
-            <pre><code class="python">
+            <section>
+              <h2>Importing</h2>
+              <pre><code class="python">
 import numpy as np
 from scipy import stats
 import matplotlib.pyplot as plt
 
 print(np.pi) # 3.141592653589793
             </code></pre>
-          </section>
-          <section>
-            <h2>I/O</h2>
-          </section>
-          <section>
-            <h2>stdin and stdout</h2>
-            <pre><code class="python">
+            </section>
+            <section>
+              <h2>I/O</h2>
+            </section>
+            <section>
+              <h2>stdin and stdout</h2>
+              <pre><code class="python">
 name = input()
 print("Hi, {}".format(name))
             </code></pre>
-          </section>
-          <section>
-            <h2>file I/O</h2>
-            <pre><code class="python">
+            </section>
+            <section>
+              <h2>file I/O</h2>
+              <pre><code class="python">
 infile = open("test.in", "r")
 outfile = open("test.out", "w")
 for line in infile:
@@ -450,45 +450,45 @@ print("Hello over", file=outfile)
 infile.close()
 outfile.close()
             </code></pre>
-          </section>
-          <section>
-            <h2>Error Catching</h2>
-            <pre><code class="python">
+            </section>
+            <section>
+              <h2>Error Catching</h2>
+              <pre><code class="python">
 try:
     a = 1 // 0
 except Exception as e:
     # pass   Lazy....
     print(e)
-						</code></pre>
-          </section>
-        </section>
-        <section>
-          <section>
-            <h2>Advanced Topics</h2>
-            <p>
-              <ul>
-                <li>lambda</li>
-                <li>global &amp; nonlocal</li>
-                <li>decorator</li>
-                <li>generator</li>
-                <li>module</li>
-              </ul>
-            </p>
+            </code></pre>
+            </section>
           </section>
           <section>
-            <h2>Lambda</h2>
-            <pre><code class="python">
+            <section>
+              <h2>Advanced Topics</h2>
+              <p>
+                <ul>
+                  <li>lambda</li>
+                  <li>global &amp; nonlocal</li>
+                  <li>decorator</li>
+                  <li>generator</li>
+                  <li>module</li>
+                </ul>
+              </p>
+            </section>
+            <section>
+              <h2>Lambda</h2>
+              <pre><code class="python">
 mul = lambda x, y: x * y
 sq = lambda x: mul(x, x)
 print(sq(10)) # 100
-						</code></pre>
-            <div class="tip">
-              <code>lambda <i>arugments</i>: <i>expression</i></code>
-            </div>
-          </section>
-          <section>
-            <h2>global and nonlocal</h2>
-            <pre><code class="python">num = 10
+            </code></pre>
+              <div class="tip">
+                <code>lambda <i>arugments</i>: <i>expression</i></code>
+              </div>
+            </section>
+            <section>
+              <h2>global and nonlocal</h2>
+              <pre><code class="python">num = 10
 def change_num():
     global num
     num = 20
@@ -505,10 +505,10 @@ print(num) # 10
 change_num(), print(num) # 20
 print(local_num()) # 200
 print(num) # 20</code></pre>
-          </section>
-          <section>
-            <h2>Decorator</h2>
-            <pre><code class="python">
+            </section>
+            <section>
+              <h2>Decorator</h2>
+              <pre><code class="python">
 def wrapper(f):
     def _func(*args):
         print("WRAPPER")
@@ -523,10 +523,10 @@ test(123)
 # WRAPPER
 # TEST 123
             </code></pre>
-          </section>
-          <section>
-            <h2>Generator</h2>
-            <pre><code class="python">
+            </section>
+            <section>
+              <h2>Generator</h2>
+              <pre><code class="python">
 def gen_prime():
     pris = []
     i = 2
@@ -543,101 +543,101 @@ primes = gen_prime() # get the generator
 for i in range(10):
     print(next(primes)) # 2, 3, 5, 7, 11, 13, 17, 19, 23, 29
             </code></pre>
+            </section>
+            <section>
+              <h2>Module</h2>
+              <p>
+                See Lecture05/examples
+              </p>
+            </section>
           </section>
           <section>
-            <h2>Module</h2>
-            <p>
-              See Lecture05/examples
-            </p>
-          </section>
-        </section>
-        <section>
-          <section>
-            <h2>Power of Python</h2>
-          </section>
-          <section>
-            <h2>Built-in Functions</h2>
-            <ul>
-              <li>Math: <code>abs</code>, <code>max</code>, <code>min</code>, <code>sum</code>...</li>
-              <li>Iterable: <code>all</code>, <code>any</code>, <code>filter</code>, <code>map</code>,
-                <code>enumerate</code>...</li>
-              <li>...</li>
-            </ul>
-            <p>
-            <a href="https://docs.python.org/3.4/library/functions.html">
-              Built-in Functions
-            </a>
-            </p>
-          </section>
-          <section>
-            <h2>Modules</h2>
-            <ul>
-              <li>Built-in modules: math, re, httplib, asynio, ... <a href="https://docs.python.org/3/library/index.html">Python Library</a></li>
-              <li>Other modules: numpy, scipy, matplotlib, ... <a href="https://pypi.python.org/pypi">PyPI</a></li>
-            </ul>
-          </section>
-          <section>
-            <h2>How to get Packages?</h2>
-            <ul>
-              <li>Via Linux distro package manager</li>
-              <li>Via Python package manager pip</li>
-            </ul>
-						<div class="tip">
-							Beware of Python2/3 compatible issue!
-						</div>
+            <section>
+              <h2>Power of Python</h2>
+            </section>
+            <section>
+              <h2>Built-in Functions</h2>
+              <ul>
+                <li>Math: <code>abs</code>, <code>max</code>, <code>min</code>, <code>sum</code>...</li>
+                <li>Iterable: <code>all</code>, <code>any</code>, <code>filter</code>, <code>map</code>,
+                  <code>enumerate</code>...</li>
+                <li>...</li>
+              </ul>
+              <p>
+                <a href="https://docs.python.org/3.4/library/functions.html">
+                  Built-in Functions
+                </a>
+              </p>
+            </section>
+            <section>
+              <h2>Modules</h2>
+              <ul>
+                <li>Built-in modules: math, re, httplib, asynio, ... <a href="https://docs.python.org/3/library/index.html">Python Library</a></li>
+                <li>Other modules: numpy, scipy, matplotlib, ... <a href="https://pypi.python.org/pypi">PyPI</a></li>
+              </ul>
+            </section>
+            <section>
+              <h2>How to get Packages?</h2>
+              <ul>
+                <li>Via Linux distro package manager</li>
+                <li>Via Python package manager pip</li>
+              </ul>
+              <div class="tip">
+                Beware of Python2/3 compatible issue!
+              </div>
 
+            </section>
+            <section>
+              <h2>Python/C API</h2>
+              <p>
+              </p>
+            </section>
           </section>
-          <section>
-            <h2>Python/C API</h2>
-            <p>
-            </p>
-          </section>
-        </section>
 
-        <section>
           <section>
-            <h2>How to learn more?</h2>
+            <section>
+              <h2>How to learn more?</h2>
+            </section>
+            <section>
+              <h2>Python Docs</h2>
+              <p>
+                <a href="https://docs.python.org">Python Documentation</a>
+                <!-- 簡單演示如何 "read" Documentation -->
+              </p>
+            </section>
+            <section>
+              <h2>Prcatice</h2>
+              <p>
+                some website:
+              </p>
+              <ul>
+                <li><a href="http://www.codecademy.com/">Codecademy</a></li>
+                <li><a href="http://www.codewars.com/">Codewars</a></li>
+              </ul>
+            </section>
+            <section>
+              <h2>Do yourself</h2>
+              <!-- Practice -->
+            </section>
           </section>
           <section>
-            <h2>Python Docs</h2>
-            <p>
-              <a href="https://docs.python.org">Python Documentation</a>
-              <!-- 簡單演示如何 "read" Documentation -->
-            </p>
-          </section>
-          <section>
-            <h2>Prcatice</h2>
-            <p>
-              some website:
-            </p>
-            <ul>
-              <li><a href="http://www.codecademy.com/">Codecademy</a></li>
-              <li><a href="http://www.codewars.com/">Codewars</a></li>
-            </ul>
-          </section>
-          <section>
-            <h2>Do yourself</h2>
-            <!-- Practice -->
-          </section>
-        </section>
-        <section>
-          <section>
-            <h2>Mini Project 1 - Ngspice</h2>
-            用 ngspice 來做電路模擬<br>
-          </section>
-          <section>
-            <h2>ng-spice</h2>
-						安裝ngspice
-            <pre><code class="bash">
+            <section>
+              <h2>Mini Project 1 - Ngspice</h2>
+              用 ngspice 來做電路模擬<br>
+            </section>
+            <section>
+              <h2>ng-spice</h2>
+              安裝ngspice
+              <pre><code class="bash">
 sudo apt-get install ngspice
 sudo pacman -S ngspice
 # It is not a python package!!
             </code></pre>
-						<a href="http://ngspice.sourceforge.net/docs/ngspice26-manual.pdf">Manual Here</a>
-					</section>
-					<section>
-            一個簡單的電路：
-            <pre><code>
+              <a href="http://ngspice.sourceforge.net/docs/ngspice26-manual.pdf">Manual Here</a>
+            </section>
+            <section>
+              一個簡單的電路：
+              <pre><code>
 ** First Line has to be a description
 
 * * = comment
@@ -647,100 +647,100 @@ I1 0 1 5   *Current source, flow from 0 to 1
 R1 1 2 10k  *Resistor, 1 to 2, 10 ohm
 C1 2 0 10u  *Capacitor, 2 to 0, 10uF
             </code></pre>
-          </section>
-					<section>
-						Give the description to ngspice!
-						<pre><code>
+            </section>
+            <section>
+              Give the description to ngspice!
+              <pre><code>
 ngspice your_file_name.cir
-						</code></pre>
-					</section>
-					<section>
-						Simulating!
-						<pre><code>
+            </code></pre>
+            </section>
+            <section>
+              Simulating!
+              <pre><code>
 op  *Operation Point Simulate
 show    *Show source condition
 show r  *Show resistor details
 print v(2)  
-						</code></pre>
-						<pre><code>
+            </code></pre>
+              <pre><code>
 tran 1n 2u 1u  *Transient Analysis, trans step end [start]
 plot v(2)
-						</code></pre>
-					</section>
-					<section>
-						<h2> Problem </h2>
-						<blockquote>
-							請使用 PSpice 或者<b>其他電路模擬軟體</b>模擬實驗中使用的一次電路。
-						</blockquote>
-						<blockquote>
-							Please modify project/circuit.cir
-						</blockquote>
-					</section>
-					<section>
-						將資料輸出至檔案，用python畫圖！
-						<pre><code>
+            </code></pre>
+          </section>
+          <section>
+            <h2> Problem </h2>
+            <blockquote>
+              請使用 PSpice 或者<b>其他電路模擬軟體</b>模擬實驗中使用的一次電路。
+            </blockquote>
+            <blockquote>
+              Please modify project/circuit.cir
+            </blockquote>
+          </section>
+          <section>
+            將資料輸出至檔案，用python畫圖！
+            <pre><code>
 wrdata filename v(1) v(2) 
-						</code></pre>
-						安裝Matplotlib
-						<pre><code class="bash">
+            </code></pre>
+            安裝Matplotlib
+            <pre><code class="bash">
 sudo pip install matplotlib  #Or maybe by your distro PKM
-						</code></pre>
-					</section>
-					<section>
-						最後一步！ 用python讀入檔案，並繪圖！				  
-					</section>
+            </code></pre>
+          </section>
+          <section>
+            最後一步！ 用python讀入檔案，並繪圖！				  
+          </section>
         </section>
         <section>
           <section>
             <h2>Mini Project 2 - Beautiful Soup</h2>
-						用<a href="http://www.crummy.com/software/BeautifulSoup/">Beautiful Soup</a>擷取網頁資料！<br>
-						<blockquote>
-							安裝Beautiful soup
-						</blockquote>
+            用<a href="http://www.crummy.com/software/BeautifulSoup/">Beautiful Soup</a>擷取網頁資料！<br>
+            <blockquote>
+              安裝Beautiful soup
+            </blockquote>
           </section>
-					<section>
+          <section>
             <ul>
-							<li>找出query url</li>
-							<li>用Beautiful Soup parse data</li>
+              <li>找出query url</li>
+              <li>用Beautiful Soup parse data</li>
             </ul>
-						<blockquote>
-							Finish step 1 - 5!!
-						</blockquote>
-					</section>
-				</section>
+            <blockquote>
+              Finish step 1 - 5!!
+            </blockquote>
+          </section>
+        </section>
 
       </div> 
 
-		</div>
+    </div>
 
-		<script src="../reveal.js/lib/js/head.min.js"></script>
-		<script src="../reveal.js/js/reveal.js"></script>
+    <script src="../reveal.js/lib/js/head.min.js"></script>
+    <script src="../reveal.js/js/reveal.js"></script>
 
-		<script>
+    <script>
 
-			// Full list of configuration options available at:
-			// https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				controls: true,
-				progress: true,
-				history: true,
-				center: true,
+      // Full list of configuration options available at:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      history: true,
+      center: true,
 
-				transition: 'convex', // none/fade/slide/convex/concave/zoom
+      transition: 'convex', // none/fade/slide/convex/concave/zoom
 
-				// Optional reveal.js plugins
-				dependencies: [
-					{ src: '../reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: '../reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: '../reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: '../reveal.js/plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: '../reveal.js/plugin/zoom-js/zoom.js', async: true },
-					{ src: '../reveal.js/plugin/notes/notes.js', async: true }
-				]
-			});
+      // Optional reveal.js plugins
+      dependencies: [
+        { src: '../reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+        { src: '../reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: '../reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: '../reveal.js/plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+        { src: '../reveal.js/plugin/zoom-js/zoom.js', async: true },
+        { src: '../reveal.js/plugin/notes/notes.js', async: true }
+      ]
+    });
 
-		</script>
+    </script>
 
-	</body>
+  </body>
 </html>
-
+<!-- vim: set ts=2 sw=2 et: -->

@@ -1,79 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 
-	<head>
-		<meta charset="utf-8">
+  <head>
+    <meta charset="utf-8">
 
-		<title>Lecture01 - Linux</title>
+    <title>Lecture01 - Linux</title>
 
-		<meta name="description" content="NTUgEEk Lecture01 - Linux">
-		<meta name="author" content="NTUgEEk">
+    <meta name="description" content="NTUgEEk Lecture01 - Linux">
+    <meta name="author" content="NTUgEEk">
 
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
     <link rel="stylesheet" href="../reveal.js/css/reveal.css">
     <link rel="stylesheet" href="../reveal.js/css/theme/serif.css" id="theme">
 
-		<!-- Code syntax highlighting -->
+    <!-- Code syntax highlighting -->
     <link rel="stylesheet" href="../reveal.js/lib/css/zenburn.css">
 
     <link rel="stylesheet" href="style.css">
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal.js/css/print/pdf.css' : '../reveal.js/css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal.js/css/print/pdf.css' : '../reveal.js/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
 
-		<!--[if lt IE 9]>
-		<script src="lib/js/html5shiv.js"></script>
-		<![endif]-->
-	</head>
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
 
-	<body>
+  <body>
 
-		<div class="reveal">
+    <div class="reveal">
 
-			<!-- Any section element inside of this container is displayed as a slide -->
-			<div class="slides">
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
 
         <section>
           <h1>Linux</h1>
           <p>A free operating system that changes the world</p>
           <small>Created by NTUgEEk</small>
         </section>
-        
+
         <section>
           <section>
             <h2>Why Linux?</h2>
             <p>
-            <ul>
-              <li class="fragment">It's free!!!</li>
-              <li class="fragment">Linux 相當適合用來開發</li>
-              <li class="fragment">Linux 相當安全，不像 M$ Windows
-              要防備各種病毒的威脅</li>
-              <li class="fragment">會用 Linux 對找工作很有幫助XD</li>
-            </ul>
+              <ul>
+                <li class="fragment">It's free!!!</li>
+                <li class="fragment">Linux 適合用來開發程式和架設服務</li>
+                <li class="fragment">Linux 一般來說相當安全，不太需要防備各種病毒的威脅</li>
+                <li class="fragment">會用 Linux 對找工作很有幫助XD</li>
+              </ul>
             </p>
           </section>
           <section>
             <h2>Linux everywhere</h2>
             <p>
-            <ul>
-              <li class="fragment">你手上的 Android 正是 based on linux</li>
-              <li class="fragment">Apple 的愛好者？Apple 系列的系統也是從
-              linux 的朋友 BSD 發展出來的</li>
-              <li class="fragment">你正看上網嗎？你所瀏覽的這些網站大都
-              架設於 linux 的伺服器上</li>
-              <li class="fragment">全世界的超級電腦有非常高 (99%?) 的比率
-              是採用 linux 系統</li>
-            </ul>
+              <ul>
+                <li class="fragment">你手上的 Android 正是 based on linux</li>
+                <li class="fragment">Apple 的愛好者？Apple 系列的系統也是從
+                  linux 的朋友 BSD 發展出來的</li>
+                <li class="fragment">你正看上網嗎？你所瀏覽的這些網站大都架設於 linux 的伺服器上</li>
+                <li class="fragment">全世界的超級電腦有非常高 (99%?) 的比率是採用 linux</li>
+              </ul>
             </p>
           </section>
         </section>
@@ -82,36 +79,36 @@
           <h2>How to Install?</h2>
           <p class="fragment grow">下一步大法</p>
           <p class="fragment">
-            也有比較進階的設定，但需要對 Linux 的 Filesystems 有些了解
-          </p>
-        </section>
-        
-        <section>
-          <h2>Advanced Distro</h2>
-          <p>
-          <img style="border: none;" src="https://d11xdyzr0div58.cloudfront.net/static/logos/archlinux-logo-dark-90dpi.ebdee92a15b3.png" /><br>
-          <img style="border: none;" width="300" src="http://sources.gentoo.org/viewcvs.py/gentoo-projects/pr/images/smaller-sign.png" />
+            比較進階的設定，需要對 Linux 的 Filesystems 有些了解
           </p>
         </section>
 
         <section>
-          <h2>How to Use?</h2>
+          <h2>Advanced Distro</h2>
           <p>
-          平時使用時會需要的大概有：
-          <ul>
-            <li>Browser - Firefox, Chrome</li>
-            <li>Input Method - gcin, fcitx, ibus</li>
-            <li>Terminal - gnome-terminal, Kconsole, terminator...</li>
-            <li>File Manager - Dolphin, Nautilus, Thunar...</li>
-          </ul>
+            <img style="border: none;" src="https://d11xdyzr0div58.cloudfront.net/static/logos/archlinux-logo-dark-90dpi.ebdee92a15b3.png" /><br>
+            <img style="border: none;" width="300" src="http://sources.gentoo.org/viewcvs.py/gentoo-projects/pr/images/smaller-sign.png" />
+          </p>
+        </section>
+
+        <section>
+          <h2>Daily Use</h2>
+          <p>
+            平時使用時會需要的大概有：
+            <ul>
+              <li>Browser - Firefox, Chrome</li>
+              <li>Input Method - gcin, fcitx, ibus</li>
+              <li>Terminal - gnome-terminal, Kconsole, terminator...</li>
+              <li>File Manager - Dolphin, Nautilus, Thunar...</li>
+            </ul>
           </p>
           <p>
-          或許你還會想要：
-          <ul>
-            <li>音樂播放器 - Amarok, Clementine, DeaDBeeF...</li>
-            <li>FTP client - Filezilla</li>
-            <li>影片播放器 - VLC, totem...</li>
-          </ul>
+            或許你還會想要：
+            <ul>
+              <li>音樂播放器 - Amarok, Clementine, DeaDBeeF...</li>
+              <li>FTP client - Filezilla</li>
+              <li>影片播放器 - VLC, totem...</li>
+            </ul>
           </p>
         </section>
 
@@ -134,9 +131,11 @@
         <section>
           <section>
             <h2>Filesystems</h2>
-            <p>
-              樹狀結構
-            </p>
+            <ul>
+              <li>Everything is a file</li>
+              <li>樹狀結構</li>
+              <li>mount point</li>
+            </ul>
           </section>
           <section>
             <h2>File Permission</h2>
@@ -161,28 +160,28 @@
           <section>
             <h2>Text Manipulation</h2>
             <p>
-            <ul>
-              <li><code>sed</code></li>
-              <li><code>awk</code></li>
-            </ul>
+              <ul>
+                <li><code>sed</code></li>
+                <li><code>awk</code></li>
+              </ul>
             </p>
           </section>
           <section>
             <h2>Pipe and Redirection</h2>
             <p>
-            <ul>
-              <li><code>cat file | less</code></li>
-              <li><code>ls -R some_dir | grep <em>name</em></code></li>
-              <li><code>echo "TEST" &gt; file</code></li>
-              <li><code>echo "TEST" &gt;&gt; file</code></li>
-              <li><code>./test.sh &lt; input_file</code></li>
-              <li><code>./somethin 2&lt;&amp;1</code></li>
-              <li><code>cat &lt;&lt; EOF &gt; file</code></li>
-            </ul>
+              <ul>
+                <li><code>cat file | less</code></li>
+                <li><code>ls -R some_dir | grep <em>name</em></code></li>
+                <li><code>echo "TEST" &gt; file</code></li>
+                <li><code>echo "TEST" &gt;&gt; file</code></li>
+                <li><code>./test.sh &lt; input_file</code></li>
+                <li><code>./somethin 2&lt;&amp;1</code></li>
+                <li><code>cat &lt;&lt; EOF &gt; file</code></li>
+              </ul>
             </p>
           </section>
         </section>
-        
+
         <section>
           <h2>More details...</h2>
           認真想學習 Linux ，推薦去看
@@ -192,35 +191,36 @@
 
       </div> 
 
-		</div>
+    </div>
 
-		<script src="../reveal.js/lib/js/head.min.js"></script>
-		<script src="../reveal.js/js/reveal.js"></script>
+    <script src="../reveal.js/lib/js/head.min.js"></script>
+    <script src="../reveal.js/js/reveal.js"></script>
 
-		<script>
+    <script>
 
-			// Full list of configuration options available at:
-			// https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				controls: true,
-				progress: true,
-				history: true,
-				center: true,
+      // Full list of configuration options available at:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      history: true,
+      center: true,
 
-				transition: 'convex', // none/fade/slide/convex/concave/zoom
+      transition: 'convex', // none/fade/slide/convex/concave/zoom
 
-				// Optional reveal.js plugins
-				dependencies: [
-					{ src: '../reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: '../reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: '../reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: '../reveal.js/plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: '../reveal.js/plugin/zoom-js/zoom.js', async: true },
-					{ src: '../reveal.js/plugin/notes/notes.js', async: true }
-				]
-			});
+      // Optional reveal.js plugins
+      dependencies: [
+        { src: '../reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+        { src: '../reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: '../reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: '../reveal.js/plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+        { src: '../reveal.js/plugin/zoom-js/zoom.js', async: true },
+        { src: '../reveal.js/plugin/notes/notes.js', async: true }
+      ]
+    });
 
-		</script>
+    </script>
 
-	</body>
+  </body>
 </html>
+<!-- vim: set ts=2 sw=2 et: -->
