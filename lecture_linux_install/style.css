@@ -1,0 +1,137 @@
+/*.reveal{*/
+  /*font-family: "Linux Libertine", "Palatino Linotype", "Book Antiqua", Palatino, FreeSerif, serif; */
+  /*font-size: 32px;*/
+  /*font-weight: normal;*/
+  /*color: #000;*/
+/*}*/
+
+.reveal .command {
+  background-color: #C0E7FF;
+  color: black;
+  font-size: 25px;
+  font-style: normal;
+  padding: 5px;
+  border-radius: 7px;
+}
+
+.reveal .param {
+  background-color: #DDE5D3;
+  color: black;
+  font-size: 25px;
+  font-style: normal;
+  padding: 5px;
+  border-radius: 7px;
+}
+
+.reveal .files {
+  background-color: #FFE7C0;
+  color: black;
+  font-size: 25px;
+  font-style: normal;
+  padding: 5px;
+  border-radius: 7px;
+}
+
+.reveal .tags {
+  background-color: #FFA3A3;
+  color: black;
+  font-size: 25px;
+  font-style: normal;
+  font-family: monospace;
+  padding: 5px;
+  border-radius: 7px;
+}
+
+.reveal pre {
+  max-width: 600px;
+}
+
+.reveal .csss {
+  background-color: #B0FFCC;
+  color: black;
+  font-size: 25px;
+  font-style: normal;
+  font-family: monospace;
+  padding: 5px;
+  border-radius: 7px;
+}
+
+.reveal .tags::before {
+  content: "<";
+}
+
+.reveal .tags::after {
+  content: ">";
+}
+
+.reveal .key {
+  background-color: #EEE790;
+  color: black;
+  font-size: 26px;
+  font-style: normal;
+  font-family: monospace;
+  padding: 1px 5px;
+  border-radius: 7px;
+}
+.reveal .warning::before {
+  content: "⚠";
+  color: red;
+  font-weight: 800;
+  position: absolute;
+  top: 3px;
+  left: 10px;
+  margin-right: 20px;
+}
+
+.reveal .warning::after {
+  content: "⚠";
+  color: red;
+  font-weight: 800;
+  position: absolute;
+  top: 3px;
+  right: 10px;
+}
+
+.reveal .warning {
+  background-color: #FF8888;
+  /*line-height: */
+  color: black;
+  font-style: normal;
+  padding: 5px;
+  border-radius: 7px;
+  padding: 0 20px;
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.reveal .tip {
+  background-color: #5599FF;
+  max-width: 700px;
+  color: black;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.reveal .tip::before {
+  content: "Tip:";
+  background-color: #1155FF;
+  color: black;
+  padding: 4px 8px;
+  margin-right: 10px;
+  border-radius: 10px;
+}
+
+.red {
+  color: red;
+}
+
+.reveal blockquote {
+  background-color: #555;
+  color: #FFF;
+  margin-top: 25px;
+  padding: 20px;
+}
+// vim: ts=2 sw=2 et

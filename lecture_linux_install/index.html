@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Lecture - How to install Linux</title>
+
+    <meta name="description" content="NTUgEEk Lecture06 - Server">
+    <meta name="author" content="NTUgEEk">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="../reveal.js/css/reveal.css">
+    <link rel="stylesheet" href="../reveal.js/css/theme/myserif.css" id="theme">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="../reveal.js/lib/css/zenburn.css">
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal.js/css/print/pdf.css' : '../reveal.js/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="reveal">
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+
+        <section>
+          <h1>Linux Installation</h1>
+          <small>Created by NTUgEEk</small>
+        </section>
+
+        <section>
+          <section>
+            <h2>Choose Distro</h2>
+            <ul>
+              <li> Ubuntu </li>
+              <li> Mint </li>
+              <li> Arch </li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>Arch Linux</h2>
+            <!-- 參考 Wiki -->
+            <img style="border: none;" width="20%" data-src="https://archlinux.tw/images/logo-tw.png"/>
+            <br/>
+            <ul>
+              <li> 輕量 </li>
+              <li> 簡潔 </li>
+              <li> 漸進式升級 </li>
+              <li> 活躍的社群  </li>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Some Preparation</h2>
+          </section>
+          <section>
+            <h2>Virtual Box</h2>
+            <p>
+              <a href="https://www.virtualbox.org/">https://www.virtualbox.org/</a>
+            </p>
+          </section>
+          <section>
+            <h2>Arch Linux ISO</h2>
+            <p><a href="https://www.archlinux.org/download/">https://www.archlinux.org/download/</a></p>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2> Virtualbox Settings </h2>
+            <ol>
+              <li> Add new virtual machine </li>
+              <li> Choose Linux/Arch Linux </li>
+              <li> Set appropriate RAM, Disk size... </li>
+              <li> Launch with Arch Linux ISO </li>
+            </ol>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Network checking</h2>
+            <pre><code data-trim class="sh">
+$ ping google.com -c 3
+
+PING google.com (64.233.187.102) 56(84) bytes of data
+64 bytes from ...
+64 bytes from ...
+            </code></pre>
+          </section>
+          <section>
+            <h2>Partition Disk</h2>
+            <p>
+            <pre><code data-trim class="sh">
+$ lsblk
+
+NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
+sda      8:0    0    64G  0 disk 
+...
+
+$ cfdisk /dev/sda
+# Select dos
+            </code></pre>
+            </p>
+          </section>
+
+          <section>
+            <h2> Disk Partition </h2>
+            <img src="img/cfdisk.png" width="60%"/>
+            <div class="warning"> Remember to [Write] the partition! </div>
+          </section>
+
+          <section>
+            <h2> Make FS </h2>
+
+            <pre><code data-trim class="sh">
+$ mkfs.ext4 /dev/sda1
+$ mkswap /dev/sda2
+$ swapon /dev/sda2
+
+$ mount /dev/sda1 /mnt
+            </code></pre>
+          </section>
+          
+          <section>
+            <h2> Pacman Settings </h2>
+
+            <pre><code data-trim class="sh">
+$ vim /etc/pacman.d/mirrorlist
+# or try
+$ nano /etc/pacman.d/mirrorlist
+            </code></pre>
+            <p> Search for Taiwan's server, and put it on the top. </p>
+            <div class="tip">
+              For Vim, type <span class="key">/Taiwan</span> to search, 
+              <span class="key">n</span> to find next. 
+              <span class="key">dd</span> to cut. 
+              <span class="key">gg</span> to go to the begining. 
+              <span class="key">j</span> to move down. 
+              <span class="key">p</span> to paste. 
+              <span class="key">:w</span> to save file. 
+            </div>
+          </section>
+
+          <section>
+            <h2> Start Installing! </h2>
+
+            <pre><code data-trim class="sh">
+$ pacstrap /mnt base base-devel gvim git
+$ genfstab -U -p /mnt >> /mnt/etc/fstab
+            </code></pre>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Chroot</h2>
+            <pre><code data-trim class="sh">
+$ arch-chroot /mnt /bin/bash
+
+# From now on [...] means you may have to tweak it!
+$ echo [your hostname] > /etc/hostname
+$ passwd
+# Set a password. It is recommend not to use your
+# usual password, since you will set user password
+# later!
+$ systemctl enable dhcpcd
+# For network after reboot.
+            </code></pre>
+          </section>
+          <section>
+            <h2>Grub install</h2>
+            <pre><code data-trim class="sh">
+$ pacman -S grub
+...
+Packages (1) grub-1:2.02.beta2-5
+...
+$ grub-install /dev/sda --recheck
+Installing for i386-pc platform.
+Installation finished. No error reported.
+$ grub-mkconfig -o /boot/grub/grub.cfg
+$ exit
+$ poweroff
+            </code></pre>
+          </section>
+          <section>
+            <h2>Nearly Done!</h2>
+            Remove the ISO.<br/>
+            <img width="50%" src="img/eject.png"/>
+          </section>
+          <section>
+            <h2>Congrads!</h2>
+            <img width="50%" src="img/done.png"/>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Date Settings</h2>
+            <pre><code data-trim class="sh">
+$ timedatectl set-timezone Asia/Taipei
+$ date
+Sat Oct 17 23:51:41 CST 2015
+            </code></pre>
+          </section>
+          <section>
+            <h2>Locale Settings</h2>
+            <pre><code data-trim class="sh">
+$ vim /etc/locale.gen
+# Uncomment en_US.UTF-8 zh_TW.UTF-8
+$ locale-gen
+Generating locales...
+  en_US.UTF-8... done
+  zh_TW.UTF-8... done
+Generation complete.
+            </code></pre>
+            <div class="warning">
+              Be carefull of Underscore <span class="key">_</span>
+              and dash <span class="key">-</span>
+            </div><br/>
+            <div class="tip">
+              In vim, <span class="key">/</span> to search,
+              <span class="key">0</span> to go to the begining of line,
+              <span class="key">x</span> to delete a character.
+            </div>
+          </section>
+          <section>
+            <h2>Locale Settings</h2>
+            <pre><code data-trim class="sh">
+$ vim /etc/locale.conf
+# add LANG=en_US.UTF-8
+$ export LANG=en_US.UTF-8
+$ locale
+LANG=en_US.UTF-8
+            </code></pre>
+            <div class="tip">
+              In vim, <span class="key">i</span> to enter insert mode,
+              <span class="key">esc</span> to exit insert mode.
+            </div>
+          </section>
+          <section>
+            <h2>User Settings</h2>
+            <pre style="max-width: 700px"><code data-trim class="sh">
+$ useradd -m -g users -G wheel -s /bin/bash [your user name]
+$ passwd [your user name]
+$ visudo
+# Uncomment %wheel ALL=(ALL) ALL
+            </code></pre>
+          </section>
+          <section>
+            <h2>VirtualBox Settings</h2>
+            <pre><code data-trim class="sh">
+$ pacman -S virtualbox-guest-utils
+$ modprobe -a vboxguest vboxsf vboxvideo
+$ vim /etc/modules-load.d/virtualbox.conf
+# Add the following 3 lines
+# vboxguest
+# vboxsf
+# vboxvideo
+            </code></pre>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Desktop Settings</h2>
+            <p>We recommend Gnome.</p>
+            <p>Of course, feel free to try other cool desktop (Ex: KDE..).</p>
+          </section>
+          <section>
+            <h2>Gnome install</h2>
+            <pre><code data-trim class="sh">
+$ pacman -S gnome
+$ systemctl enable gdm
+            </code></pre>
+            <p> Yes, that simple. </p>
+          </section>
+          <section>
+            <h2>Gnome install</h2>
+            <img src="img/gnome.png" width="40%"/>
+          </section>
+        </section>
+      </div> 
+    </div>
+
+    <script src="../reveal.js/lib/js/head.min.js"></script>
+    <script src="../reveal.js/js/reveal.js"></script>
+
+    <script>
+
+      // Full list of configuration options available at:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      history: true,
+      center: true,
+
+      transition: 'convex', // none/fade/slide/convex/concave/zoom
+
+      // Optional reveal.js plugins
+      dependencies: [
+        { src: '../reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+        { src: '../reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: '../reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: '../reveal.js/plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+        { src: '../reveal.js/plugin/zoom-js/zoom.js', async: true },
+        { src: '../reveal.js/plugin/notes/notes.js', async: true }
+      ]
+    });
+
+    </script>
+
+  </body>
+</html>
+<!-- vim: set ts=2 sw=2 et: -->
