@@ -12,32 +12,29 @@
 
   <script>
     function initLinks(){
-      var lecNum = 12;
-      var lecNameList = ["Linux", "Vim", "Git", "Web1", "Python", "Server"];
+      var lecNameList = [
+        [ "linux", "Linux" ],
+        [ "vim", "Vim" ],
+        [ "git", "Git" ],
+        [ "web1", "Web1" ],
+        [ "python", "Python" ],
+        [ "web_backend", "Web Backend" ],
+        [ "docker", "Docker" ],
+        [ "linux_install", "Linux Install" ],
+      ];
 
       var ul = document.getElementById("navBar")
-      for(var i = 0; i < lecNum; i++) {
+      for(var i = 0; i < lecNameList.length; i++) {
         var a = document.createElement("a");
         var li = document.createElement("li");
-        var title;
-        if (i < lecNameList.length) {
-          a.href = "Lecture" + lzToString(i + 1);
-          title = "Lecture" + lzToString(i + 1) + " - " + lecNameList[i];
-        } else {
-          a.href = "#";
-          title = "Lecture" + lzToString(i + 1) + " - TBD";
-        }
+        a.href = lecNameList[i][0];
+        var title = lecNameList[i][1];
         var node = document.createTextNode(title);
         li.appendChild(node);
-        li.style.backgroundColor = getColorCode(i, lecNum);
+        li.style.backgroundColor = getColorCode(i, lecNameList.length);
         a.appendChild(li);
         ul.appendChild(a);
       }
-    }
-
-    function lzToString(a){
-      if(a >= 10) return a.toString();
-      return "0" + a.toString();
     }
 
     function getColorCode(a, n){
@@ -48,22 +45,22 @@
       var s;
       switch(Math.floor(h)) {
         case 0:
-          s = colorToString(c, x, 0);
+          s = colorToString(c, x, 100);
           break;
         case 1:
-          s = colorToString(x, c, 0);
+          s = colorToString(x, c, 100);
           break;
         case 2:
-          s = colorToString(0, c, x);
+          s = colorToString(100, c, x);
           break;
         case 3:
-          s = colorToString(0, x, c);
+          s = colorToString(100, x, c);
           break;
         case 4:
-          s = colorToString(x, 0, c);
+          s = colorToString(x, 100, c);
           break;
         case 5:
-          s = colorToString(c, 0, x);
+          s = colorToString(c, 100, x);
           break;
         default:
           s = "rgb(0, 0, 0)"
