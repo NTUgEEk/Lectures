@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Docker</title>
+
+    <meta name="description" content="NTUgEEk Lecture - Docker">
+    <meta name="author" content="NTUgEEk">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="../reveal.js/css/reveal.css">
+    <link rel="stylesheet" href="../reveal.js/css/theme/night.css" id="theme">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="../reveal.js/lib/css/zenburn.css">
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal.js/css/print/pdf.css' : '../reveal.js/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="reveal">
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+
+        <section>
+          <h1>Introduction to Computer?</h1>
+          <small>Created by NTUgEEk</small>
+        </section>
+
+        <section>
+          <section>
+            <h2>Computer Architecture</h2>
+            <img src="img/arch.gif"/>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>How computer store data</h2>
+            <ul>
+              <li>0: Low voltage</li>
+              <li>1: High voltage</li>
+            </ul>
+            <p>沒有別的了... </p>
+            <p>So everything is represent in Binary!</p>
+          </section>
+          <section>
+            <h2>Numbers in Binary</h2>
+            \( 11 = 8 + 2 + 1 = 2^3 + 2^1 + 2^0 = (1011)_2 \)
+          </section>
+
+          <section>
+            <h2>Bit</h2>
+            <p>1 Byte = 8 Bit</p>
+            <p>1 KB = \(2^{10}\) Byte ≈ \(10^3\) Byte</p>
+            <p>1 MB = \(2^{10}\) KB ≈ \(10^3\) KB...</p>
+          </section>
+
+          <section>
+            <h2>Integer in Computer</h2>
+            <p>The memory in computer is limited, so we use only
+            a fixed number of bit to represent a number. </p>
+          <p>For example, <code class="cpp">int</code> in c++ is 4 Bytes<br>
+            this limited the number of distinct numbers to \(2^{32}\)</p>
+          </section>
+
+          <section>
+            <h2>Negative</h2>
+          </section>
+
+          <section>
+            <h2>Floating Point</h2>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Linux Basic</h2>
+          </section>
+        </section>
+
+
+        <section>
+          <section data-markdown>
+            <script type="text/template">
+              ## Device & File
+              Everything is a file.
+
+              try `ls /dev`.
+            </script>
+          </section>
+
+          <section>
+            <h2>Hard disk</h2>
+          </section>
+
+          <section>
+            <h2>Booting</h2>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>File System</h2>
+          </section>
+
+          <section>
+            <h2>Mounting</h2>
+          </section>
+
+          <section>
+            <h2>Some Commands</h2>
+          </section>
+
+          <section>
+            <h2>Permission</h2>
+          </section>
+
+          <section>
+            <h2>Some Directory</h2>
+          </section>
+        </section>
+
+
+        <section>
+          <section>
+            <h2>Network</h2>
+          </section>
+
+          <section>
+            <h2>Subnet</h2>
+          </section>
+
+          <section>
+            <h2>DHCP</h2>
+          </section>
+
+          <section>
+            <h2>Port</h2>
+          </section>
+
+          <section>
+            <h2>encrypt</h2>
+          </section>
+
+          <section>
+            <h2>SSH</h2>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Program</h2>
+          </section>
+
+          <section>
+            <h2>Operating System</h2>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Programming cycle</h2>
+          </section>
+
+          <section>
+            <h2>Build, Makefile</h2>
+          </section>
+
+          <section>
+            <h2>Debuging</h2>
+          </section>
+
+          <section>
+            <h2>Security</h2>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Programming with Other</h2>
+          </section>
+
+          <section>
+            <h2>Version Control</h2>
+          </section>
+        </section>
+
+      </div> 
+
+    </div>
+
+    <script src="../reveal.js/lib/js/head.min.js"></script>
+    <script src="../reveal.js/js/reveal.js"></script>
+
+    <script>
+
+      // Full list of configuration options available at:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      history: true,
+      center: true,
+
+      transition: 'convex', // none/fade/slide/convex/concave/zoom
+      math: {
+        mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
+        config: 'TeX-AMS_HTML-full'  // See http://docs.mathjax.org/en/latest/config-files.html
+      },
+      // Optional reveal.js plugins
+      dependencies: [
+        { src: '../reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+        { src: '../reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: '../reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: '../reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+        { src: '../reveal.js/plugin/zoom-js/zoom.js', async: true },
+        { src: '../reveal.js/plugin/notes/notes.js', async: true },
+        { src: '../reveal.js/plugin/math/math.js', async: true }
+      ]
+    });
+
+    Reveal.addEventListener( 'ready', function( event ) {
+      codes = document.getElementsByTagName('code')
+      for (i=0; i<codes.length; i++) {
+        hljs.highlightBlock(codes[i]);
+      }
+    } );
+
+    </script>
+
+  </body>
+</html>
+<!-- vim: set ts=2 sw=2 et: -->
