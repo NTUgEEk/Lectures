@@ -81,22 +81,106 @@
             <h2>Integer in Computer</h2>
             <p>The memory in computer is limited, so we use only
             a fixed number of bit to represent a number. </p>
-          <p>For example, <code class="cpp">int</code> in c++ is 4 Bytes<br>
-            this limited the number of distinct numbers to \(2^{32}\)</p>
+          <p>For example, <code class="cpp">int</code> in c++ is 4 Bytes,
+            <code class="cpp">char</code> is 1 Byte.<br>
+            this limited the number of distinct numbers to \(2^{32}\) and \(2^8\)</p>
+          </section>
+
+          <section>
+            <h2>Arithmetics</h2>
+            <p>In <code class="cpp">unsigned char</code>, all the numbers that 
+              could be represent are</p>
+            <ul>
+              <li>0: \( (00000000)_2 \)</li>
+              <li>1: \( (00000001)_2 \)</li>
+              <li>2: \( (00000010)_2 \)</li>
+              <li>...</li>
+              <li>255: \( (11111111)_2 \)</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>Arithmetics</h2>
+            <p> \( 37 + 52 = 89 \), fine.</p>
+            <p> but what about \( 255 + 1 \) ?</p>
+            <p> Answer: Overflow! \(255 + 1 = 256 = (100000000)_2 \). <br>
+            Only the last 8 bit would be preserved.</p>
+            <p> So it would compute \( 255 + 1 = 0 \)! </p>
+          </section>
+
+          <section>
+            <h2>Modular</h2>
+            <p> \( a \equiv b \pmod{m} \Leftrightarrow m \mid a - b \)</p>
+            <p> Ex: \( 25 \equiv 9 \equiv -7 \pmod{16} \)</p>
+            <p> Some useful formula
+              <ul>
+                <li> \( a + b \equiv a \bmod{m} + b \bmod{m} \) </li>
+                <li> \( a b \equiv (a \bmod{m}) (b \bmod{m}) \) </li>
+              </ul>
+            </p>
+          </section>
+
+          <section>
+            <h2>Modular</h2>
+            <p> Arithmetic in a \( n \) bytes binary number system could
+            be seen as doing arithmetics in modular \( 2^n \)</p>
           </section>
 
           <section>
             <h2>Negative</h2>
+            <p> In <code class="cpp">unsigned</code>, we choose 
+              \( 0, 1, 2, \cdots, 2^{n-1} - 1, \color{red}{2^{n-1}, \cdots, 2^n - 2, 2^n - 1 }\).</p>
+            <p> But notice that \( 2^{n-1} \equiv -2^{n-1},
+              2^{n-1}+1 \equiv -2^{n-1}+1, \cdots \pmod{2^n} \)</p>
+            <p> So we could also choose
+              \( 0, 1, 2, \cdots, 2^{n-1} - 1, \color{red}{-2^{n-1}, \cdots, -2, -1 }\).</p>
+            <p> 好字！ We have negative numbers now. This is called the 
+              <b>two's complement representation</b></p>
+          </section>
+
+          <section>
+            <h2>Negative</h2>
+            <p> Ex: \( -3 \equiv 253 \pmod{2^8} \), so -3 would be represent
+              by \( (11111101)_2 \).
+            </p>
+            <p> Fomula: Flip and add one.
+            \( (00000011)_2 \rightarrow (11111100)_2 \rightarrow (11111101)_2 \).</p>
+          </section>
+
+          <section>
+            <h2>Some bit operations.</h2>
+            <p>
+              <ul>
+                <li style="margin-bottom: 5px;"><code>&amp;</code>:
+                  And.  <code class="cpp">1010 &amp; 1100 = 1000</code></li>
+                <li style="margin-bottom: 5px;"><code>|</code>:
+                  Or.  <code class="cpp">1010 &amp; 1100 = 1110</code></li>
+                <li style="margin-bottom: 5px;"><code>^</code>:
+                  Xor.  <code class="cpp">1010 &amp; 1100 = 0110</code></li>
+                <li style="margin-bottom: 5px;"><code>~</code>:
+                  Flip.  <code class="cpp">~1010 = 0101</code></li>
+              </ul><br><br> 
+              Ex:  <code class="cpp">-x = ~x + 1</code>
+            </p>
           </section>
 
           <section>
             <h2>Floating Point</h2>
+            <img src="img/floating.jpg" alt="" />
+            <p> \( \pm a \cdot 2^b \)</p>
+            <p> Some special numbers, <code>inf, nan</code>...</p>
           </section>
         </section>
 
         <section>
           <section>
-            <h2>Linux Basic</h2>
+            <h2>Linux Shell Basic</h2>
+            <pre><code data-trim class="sh">
+command [-flag1] [-flag2] ... [target]
+# Examples:
+tar -cvf archive.tar homework.pdf
+            </code></pre>
+            <p> <code class="sh">man</code>: Manual </p>
           </section>
         </section>
 
@@ -113,32 +197,70 @@
 
           <section>
             <h2>Hard disk</h2>
+            <p> <code class="sh">/dev/sdX</code> </p>
+            <p> Partition table: MBR, <b>GPT</b> </p>
           </section>
 
           <section>
             <h2>Booting</h2>
+            <p> BIOS(MBR) or EFI(GPT) </p>
+            <p> Boot loader (Grub) </p>
           </section>
         </section>
 
         <section>
           <section>
             <h2>File System</h2>
+            <ul>
+              <li> Fat32 </li>
+              <li> NTFS </li>
+              <li> ext4 </li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>Directory Tree</h2>
+            <img src="img/dtree.gif" alt="" />
+            <p>Ex: <code>/home/patric/school</code></p>
+            <p>Important: <code>.</code> and <code>..</code></p>
           </section>
 
           <section>
             <h2>Mounting</h2>
+            <pre><code data-trim class="sh">
+# mount device dir
+mount /dev/sda /mnt
+              </code></pre>
           </section>
 
           <section>
             <h2>Some Commands</h2>
+            <p>
+              <ul>
+                <li><code class="sh">cd, ls</code></li>
+                <li><code class="sh">mv, cp, rm, touch, mkdir, rmdir</code></li>
+              </ul>
+            </p>
           </section>
 
           <section>
             <h2>Permission</h2>
+            <pre><code data-trim class="sh">
+$ ls -al
+total 668
+drwx------  73 meteor users  4096 10月 24 23:58 .
+drwxr-xr-x   5 root   root   4096 10月 15 21:44 ..
+drwxr-xr-x   3 meteor users  4096 10月 20 21:05 abs
+drwx------   3 meteor users  4096  5月 20 11:17 .adobe
+            </code></pre>
           </section>
 
           <section>
             <h2>Some Directory</h2>
+            <pre><code data-trim class="sh">
+$ ls /
+boot  dev  etc  home  mnt  opt  proc  root  run  srv  sys  tmp  usr  var
+            </code></pre>
           </section>
         </section>
 
