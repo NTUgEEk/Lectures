@@ -5,3 +5,21 @@ code.hljs {
   display: inline;
   border-radius: 4px;
 }
+
+.reveal .command {
+  background-color: #C0E7FF;
+  color: black;
+  font-size: 25px;
+  font-style: normal;
+  padding: 3px;
+  border-radius: 7px;
+}
+
+.reveal .files {
+  background-color: #FFE7C0;
+  color: black;
+  font-size: 25px;
+  font-style: normal;
+  padding: 3px;
+  border-radius: 7px;
+}

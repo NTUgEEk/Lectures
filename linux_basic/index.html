@@ -268,64 +268,153 @@ boot  dev  etc  home  mnt  opt  proc  root  run  srv  sys  tmp  usr  var
         <section>
           <section>
             <h2>Network</h2>
+            <img src="img/network.jpg" alt="" />
           </section>
-
+          <section>
+            <h2>Network</h2>
+            <p>Each one has a unique IP.</p>
+            <ul>
+              <li>ipv4: <span class="files">192.168.1.101</span></li>
+              <li>ipv6: <span class="files">08:62:66:c7:e2:79</span></li>
+            </ul>
+          </section>
+          <section>
+            <h2>Network commands</h2>
+            <pre><code data-trim class="sh">
+$ ip link
+$ ip addr
+$ ip rou
+            </code></pre>
+            <p>Setting comand: <span class="command">netctl</span></p>
+          </section>
+          <section>
+            <h2>DNS</h2>
+            <p>Convert human readable name (ex: <span class="files">ntuee.org</span>)
+              to ip (ex: <span class="files">1.23.45.67</span>)</p>
+            <p>config in <span class="files">/etc/resolv.conf</span>).</p>
+          </section>
           <section>
             <h2>Subnet</h2>
+            <p>ipv4, not enough :( ...</p>
+            <p>Subnet example: <span class="files">123.45.67.89/24</span>).</p>
+            <p>Mask: <span class="files">255.255.255.0</span>).</p>
           </section>
 
           <section>
             <h2>DHCP</h2>
+            <p>Dynamic Host Configuration Protocol</p>
+            <pre><code data-trim>
+$ systemctl start dhcpcd
+            </code></pre>
           </section>
 
           <section>
             <h2>Port</h2>
-          </section>
-
-          <section>
-            <h2>encrypt</h2>
+            <p>Different type of application uses different port</p>
+            <p>Examples:
+              <ul>
+                <li>80: Browser</li>
+                <li>22: SSH</li>
+              </ul>
+            </p>
           </section>
 
           <section>
             <h2>SSH</h2>
+            <p>Really convenient command</p>
+            <pre><code data-trim class="sh">
+# usage: ssh [username]@[hostname] -p [port]
+# example
+$ ssh bbsu@ptt.cc
+            </code></pre>
           </section>
         </section>
 
         <section>
           <section>
-            <h2>Program</h2>
+            <h2>How program run</h2>
+            <img src="img/run.png" alt="" />
+          </section>
+
+          <section>
+            <h2>CPU Instructions</h2>
+            <img src="img/instruction.gif" alt="" />
           </section>
 
           <section>
             <h2>Operating System</h2>
+            <p>
+              <ul>
+                <li>Process management, tasking.</li>
+                <li>Memory management</li>
+                <li>System call</li>
+                <li>...</li>
+              </ul>
+            </p>
           </section>
         </section>
 
         <section>
           <section>
             <h2>Programming cycle</h2>
+            <img src="img/progcycle.gif" alt="" />
           </section>
 
           <section>
             <h2>Build, Makefile</h2>
+            <pre><code data-trim class="Makefile">
+CC=gcc
+CFLAGS=-I.
+DEPS = hellomake.h
+
+.PHONY: main clean
+
+%.o: %.c $(DEPS)
+  $(CC) -c -o $@ $< $(CFLAGS)
+
+hellomake: hellomake.o hellofunc.o 
+  gcc -o hellomake hellomake.o hellofunc.o -I.
+            </code></pre>
+            <p>Usually <span class="command">make</span> and 
+              <span class="command">make install</span> are provided</p>
           </section>
 
           <section>
             <h2>Debuging</h2>
+            <p><ul>
+                <li>Printing</li>
+                <li>Log</li>
+                <li>Tools: <span class="command">gdb</span> ...</li>
+            </ul></p>
           </section>
 
           <section>
             <h2>Security</h2>
+            <p>Bugs causes security issues</p>
+            <p><ul>
+                <li>Buffer overflow</li>
+                <li>SQL injection</li>
+            </ul>
+            <pre><code data-trim class="sql">
+SELECT * FROM users WHERE (name = '" + userName + "') and (pw = '"+ passWord +"')
+            </code></pre>
+            </p>
           </section>
         </section>
 
         <section>
           <section>
             <h2>Programming with Other</h2>
+            <p>Main issue: multiple programmer modifying different codes...</p>
           </section>
 
           <section>
             <h2>Version Control</h2>
+            <ul>
+              <li>Dropbox?</li>
+              <li>Subversion</li>
+              <li><b>Git</b></li>
+            </ul>
           </section>
         </section>
 
@@ -356,7 +445,7 @@ boot  dev  etc  home  mnt  opt  proc  root  run  srv  sys  tmp  usr  var
         { src: '../reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
         { src: '../reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
         { src: '../reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-        { src: '../reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+        { src: '../reveal.js/plugin/highlight/highlight.js', async: true, callback: function() {  } },
         { src: '../reveal.js/plugin/zoom-js/zoom.js', async: true },
         { src: '../reveal.js/plugin/notes/notes.js', async: true },
         { src: '../reveal.js/plugin/math/math.js', async: true }

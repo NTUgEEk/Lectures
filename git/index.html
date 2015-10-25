@@ -15,7 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
     <link rel="stylesheet" href="../reveal.js/css/reveal.css">
-    <link rel="stylesheet" href="../reveal.js/css/theme/serif.css" id="theme">
+    <link rel="stylesheet" href="../reveal.js/css/theme/night.css" id="theme">
 
     <!-- Code syntax highlighting -->
     <link rel="stylesheet" href="../reveal.js/lib/css/zenburn.css">
@@ -51,8 +51,8 @@
 
         <section>
           <h2> Installation </h2>
-          <pre><code class="bash">
-$ sudo apt-get install git
+          <pre><code data-trim class="bash">
+$ sudo pacman -S git
 # Or something similar depend on your distro
 $ git --version
 # You should see your git version
@@ -65,7 +65,7 @@ $ git --version
             <img class="fragment" style="height: 50vh;" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTC16jgXOKMXYIvXpQfdBoiZiEwAP8e8h2kpQ_PFz_qIcVlQ7BO" />
           </section>
           <section>
-            <h2>Why not CVCS?</h2>
+            <h2>CVCS?</h2>
             <img style="height: 50vh;" src="http://1.bp.blogspot.com/-FkKiHloHbZE/U38QijGe3aI/AAAAAAAAJTM/I1dqdaKZBGg/s1600/Screen+Shot+2014-05-23+at+5.08.00+PM.png" />
           </section>
           <section>
@@ -76,7 +76,7 @@ $ git --version
         <section>
           <h2>Setup - .gitconfig</h2>
           An example of <code class="files">.gitconfig</code>
-          <pre><code class="ini">
+          <pre><code class="ini" data-trim>
 [user]
     name = YourName
     email = YourEmail
@@ -101,12 +101,17 @@ $ git --version
 
         <section>
           <section>
+            <h2>Git Workflow</h2>
+            <img src="img/gitgr.png" />
+          </section>
+          <section>
             <h2>Basic Usage</h2>
-            <pre><code class="bash">
+            <pre><code class="bash" data-trim>
 $ mkdir my_project
 $ cd $_
 $ git init                           # initial a git repo
-$ echo "Hello world!" &gt; README.md
+# Add a README.md file, and modify it.
+# Then ..
 $ git add README.md                  # add README.md into SA
 $ git commit -m 'initial commit'     # commit to repo
             </code></pre>
@@ -114,7 +119,7 @@ $ git commit -m 'initial commit'     # commit to repo
           </section>
           <section>
             <h2>basic git command</h2>
-            下面的 command 都是接在 <code class="command">git</code> 後面
+            下面的 command 都是接在 <code class="command">git</code> 後面<br>
             <ul>
               <li><code class="command">add</code>: 將後面的檔案加入 SA</li>
               <li><code class="command">commit</code>: 將目前的 SA commit</li>
@@ -122,9 +127,6 @@ $ git commit -m 'initial commit'     # commit to repo
               <li><code class="command">branch</code>: 觀看 branch 狀態</li>
               <li><code class="command">checkout</code>: 移動目前所在的位置</li>
             </ul>
-          </section>
-          <section>
-            <img style="height: 50vh;" src="http://git-scm.com/images/about/index1@2x.png" />
           </section>
           <section>
             <h2>Practice Time</h2>
@@ -143,23 +145,27 @@ $ git commit -m 'initial commit'     # commit to repo
 
         <section>
           <section>
+            <h2>Git branching workflow</h2>
+            <img src="img/gitbr.png" alt="" />
+          </section>
+          <section>
             <h2>Branches are cheap !!</h2>
             <ul>
               <li><code class="command">branch</code> <code class="param">&lt;name&gt;</code>
                 : Create a new branch named <code class="param">&lt;name&gt;</code></li>
               <li><code class="command">branch -d</code> <code class="param">&lt;name&gt;</code>
                 : Delete branch <code class="param">&lt;name&gt;</code></li>
-              <li><code class="command">branch -a</code>
-                : List all branch (include remote branch refs)</li>
-              <li><code class="command">checkout -b</code>
-                <code class="param">&lt;name&gt;</code> :<br/>
-                Create a new branch <code class="param">&lt;name&gt;</code>
-                and checkout to it</li>
-              <li><code class="command">checkout -t</code>
-                <code class="param">&lt;remote&gt;/&lt;branch&gt;</code> :<br/>
-                Create a new branch <code class="param">&lt;branch&gt;</code> tracking  
-                <code class="param">&lt;remote&gt;/&lt;branch&gt;</code>
-                and checkout to it
+              <!--<li><code class="command">branch -a</code>-->
+                <!--: List all branch (include remote branch refs)</li>-->
+              <!--<li><code class="command">checkout -b</code>-->
+                <!--<code class="param">&lt;name&gt;</code> :<br/>-->
+                <!--Create a new branch <code class="param">&lt;name&gt;</code>-->
+                <!--and checkout to it</li>-->
+              <!--<li><code class="command">checkout -t</code>-->
+                <!--<code class="param">&lt;remote&gt;/&lt;branch&gt;</code> :<br/>-->
+                <!--Create a new branch <code class="param">&lt;branch&gt;</code> tracking  -->
+                <!--<code class="param">&lt;remote&gt;/&lt;branch&gt;</code>-->
+                <!--and checkout to it-->
               </li>
             </ul>
           </section>
@@ -180,13 +186,21 @@ $ git commit -m 'initial commit'     # commit to repo
               </li>
             </ul>
           </section>
+          <section>
+            <h2>Merging</h2>
+            <pre><code class="bash" data-trim>
+$ git merge [remote branch]
+            </code></pre>
+            <p>There are two mode, <span class="command">merge</span> 
+              and <span class="command">rebase</span></p>
+          </section>
         </section>
 
         <section>
           <section>
             <h2>merge</h2>
             如果 merge 沒有出現 conflict 的話就沒什麼問題，但是當有 conflict 的時候...
-            <pre><code class="no-highlight">
+            <pre><code class="no-highlight" data-trim>
 CONFLICT (add/add): Merge conflict in test.cpp
 Automatic merge failed; fix conflicts and then commit the result.
             </code></pre>
@@ -194,13 +208,12 @@ Automatic merge failed; fix conflicts and then commit the result.
             <p class="fragment" style="font-size: 40pt; color: red;">Q____Q</p>
           </section>
           <section>
-            <h2>mergetool - vimdiff</h2>
-            首先設定 mergetool 為 vimdiff
-            <pre><code class="bash">
+            <h2>mergetool (old)</h2>
+            <pre><code class="bash" data-trim>
 $ git config --global merge.tool vimdiff
             </code></pre>
             當碰到如前頁的 conflict 時，就可以用 vimdiff 來 resolve conflict
-            <pre><code class="bash">
+            <pre><code class="bash" data-trim>
 $ git mergetool
             </code></pre>
           </section>
@@ -256,6 +269,29 @@ $ git mergetool
                 update difference
               </li>
             </ul>
+          </section>
+
+          <section>
+            <h2>mergetool (new: meld)</h2>
+            <pre><code class="bash" data-trim>
+$ sudo pacman -S meld
+$ git config --global merge.tool meld
+            </code></pre>
+            當碰到如前頁的 conflict 時，就可以用 meld 來 resolve conflict
+            <pre><code class="bash" data-trim>
+$ git mergetool
+            </code></pre>
+          </section>
+
+          <section>
+            <h2>Practice Time</h2>
+            <pre><code class="bash" data-trim>
+$ git clone https://github.com/NTUgEEk/merge_practice
+$ cd merge_practice
+$ git checkout b2
+$ git merge b1
+            </code></pre>
+
           </section>
         </section>
 
