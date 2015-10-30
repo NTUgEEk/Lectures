@@ -948,159 +948,358 @@ class Point:
             </code></pre>
             <p>JS: Sadly, didn't has this feature...</p>
           </section>
-        </section>
-
-
-        <section>
-          <section>
-            <h2>Network</h2>
-            <img src="img/network.jpg" alt="" />
-          </section>
-          <section>
-            <h2>Network</h2>
-            <p>Each one has a unique IP.</p>
-            <ul>
-              <li>ipv4: <span class="files">192.168.1.101</span></li>
-              <li>ipv6: <span class="files">08:62:66:c7:e2:79</span></li>
-            </ul>
-          </section>
-          <section>
-            <h2>Network commands</h2>
-            <pre><code data-trim class="sh">
-$ ip link
-$ ip addr
-$ ip rou
-            </code></pre>
-            <p>Setting comand: <span class="command">netctl</span></p>
-          </section>
-          <section>
-            <h2>DNS</h2>
-            <p>Convert human readable name (ex: <span class="files">ntuee.org</span>)
-              to ip (ex: <span class="files">1.23.45.67</span>)</p>
-            <p>config in <span class="files">/etc/resolv.conf</span>).</p>
-          </section>
-          <section>
-            <h2>Subnet</h2>
-            <p>ipv4, not enough :( ...</p>
-            <p>Subnet example: <span class="files">123.45.67.89/24</span>).</p>
-            <p>Mask: <span class="files">255.255.255.0</span>).</p>
-          </section>
 
           <section>
-            <h2>DHCP</h2>
-            <p>Dynamic Host Configuration Protocol</p>
-            <pre><code data-trim>
-$ systemctl start dhcpcd
-            </code></pre>
-          </section>
-
-          <section>
-            <h2>Port</h2>
-            <p>Different type of application uses different port</p>
-            <p>Examples:
-              <ul>
-                <li>80: Browser</li>
-                <li>22: SSH</li>
-              </ul>
-            </p>
-          </section>
-
-          <section>
-            <h2>SSH</h2>
-            <p>Really convenient command</p>
-            <pre><code data-trim class="sh">
-# usage: ssh [username]@[hostname] -p [port]
-# example
-$ ssh bbsu@ptt.cc
-            </code></pre>
-          </section>
-        </section>
-
-        <section>
-          <section>
-            <h2>How program run</h2>
-            <img src="img/run.png" alt="" />
-          </section>
-
-          <section>
-            <h2>CPU Instructions</h2>
-            <img src="img/instruction.gif" alt="" />
-          </section>
-
-          <section>
-            <h2>Operating System</h2>
-            <p>
-              <ul>
-                <li>Process management, tasking.</li>
-                <li>Memory management</li>
-                <li>System call</li>
-                <li>...</li>
-              </ul>
-            </p>
-          </section>
-        </section>
-
-        <section>
-          <section>
-            <h2>Programming cycle</h2>
-            <img src="img/progcycle.gif" alt="" />
-          </section>
-
-          <section>
-            <h2>Build, Makefile</h2>
-            <pre><code data-trim class="Makefile">
-CC=gcc
-CFLAGS=-I.
-DEPS = hellomake.h
-
-.PHONY: main clean
-
-%.o: %.c $(DEPS)
-  $(CC) -c -o $@ $< $(CFLAGS)
-
-hellomake: hellomake.o hellofunc.o 
-  gcc -o hellomake hellomake.o hellofunc.o -I.
-            </code></pre>
-            <p>Usually <span class="command">make</span> and 
-              <span class="command">make install</span> are provided</p>
-          </section>
-
-          <section>
-            <h2>Debuging</h2>
+            <h2>Casting</h2>
             <p><ul>
-                <li>Printing</li>
-                <li>Log</li>
-                <li>Tools: <span class="command">gdb</span> ...</li>
+              <li>Up casting: Base class -&gt; Derive class</li>
+              <li>Down casting: Derive class -&gt; Base class</li>
+          </ul>
+          In Dynamic typed language, no need!
+        </p>
+            <pre class="x2"><code data-trim class="cpp">
+Derive x;
+Base *y = &amp;x;
+Base a;
+Derive *b = (Derive*) &amp;a; 
+Derive *b = 
+  dynamic_cast&lt;Derive*&gt;(&amp;a); 
+            </code></pre>
+          </section>
+        </section>
+
+
+        <section>
+          <section>
+            <h1>Advance Technique</h1>
+          </section>
+          <section>
+            <h2>Functional programming</h2>
+            <p>Function are object, they can be pass as arguments/ returned as value.</p>
+            <pre><code data-trim class="js">
+function adder(a) {
+  return function(b) {
+    return a + b;
+  }
+}
+f = adder(3);
+console.log(f(4)); // 7
+console.log(f(5)); // 8
+            </code></pre>
+          </section>
+          <section>
+            <h2>Lambda function</h2>
+            <p>Nameless function.</p>
+            <pre><code data-trim class="cpp">
+auto f = [](int a, int b) { return a + b; };
+            </code></pre> <br>
+            <pre><code data-trim class="python">
+f = lambda a, b: a+b
+            </code></pre><br>
+            <pre><code data-trim class="js">
+f = function(a, b) { return a+b; }
+f = (a, b) =&gt; a+b;
+            </code></pre>
+          </section>
+          <section>
+            <h2>Decorators</h2>
+            <p>A function of function to decorate functions.</p>
+            <pre><code data-trim class="python3">
+def extends_three(f):
+  def ret(a, b, c):
+    return f(f(a, b), c)
+    
+@extends_three
+def add(a, b):
+  return a+b
+
+@extends_three
+def minus(a, b):
+  return a+b
+
+print(add(1, 2, 3)) # 6
+print(minus(3, 2, 1)) # 0
+            </code></pre>
+          </section>
+          <section>
+            <h2>Generators</h2>
+            What does <code class="python3">range(10)</code> in python does? <br>
+            It throws out 1, 2, 3 ... in order. That's what generator does.
+            <pre class="x2"><code data-trim class="python3">
+def range(a):
+  t = 0
+  while t &lt; a:
+    yield t
+    t += 1
+
+gen = range(3)
+next(gen) # 0
+next(gen) # 1
+            </code></pre>
+            <pre class="x2"><code data-trim class="js">
+function* range(a) {
+  let t = 0;
+  while (t &lt; a) {
+    yield t;
+    t += 1;
+  }
+}
+
+let gen = range(3);
+gen.next().value // 0
+gen.next().value // 1
+            </code></pre>
+            </section>
+            <section>
+            <h2>Generators</h2>
+            <p>Can also send in value</p>
+            <pre class="x2"><code data-trim class="python3">
+def range(a):
+  t = 0
+  while t &lt; a:
+    t += yield t
+
+gen = range(40)
+gen.send(None) # 0
+gen.send(10) # 10
+gen.send(20) # 30
+            </code></pre>
+            <pre class="x2"><code data-trim class="js">
+function* range(a) {
+  let t = 0;
+  while (t &lt; a) {
+    t += yield t;
+  }
+}
+
+let gen = range(3);
+gen.next(10).value // 10
+gen.next(20).value // 30
+            </code></pre>
+          </section>
+
+          <section>
+            <h2>Yield from</h2>
+            <pre class="x2"><code data-trim class="python3">
+yield from a
+# Similar to
+for x in a: yield x
+# but of course, does lot more!
+            </code></pre>
+            <pre class="x2"><code data-trim class="js">
+yield* a
+# Similar to
+for (let x of a) { yield x; }
+            </code></pre>
+          </section>
+
+          <section>
+            <h2>Async function</h2>
+            <p>One day, a guy found out that</p>
+            <pre class="x2"><code data-trim class="python3">
+def task1():
+  while True:
+    print("Task 1")
+    yield
+
+def task2():
+  while True:
+    print("Task 2")
+    yield
+            </code></pre>
+            <pre class="x2"><code data-trim class="python3">
+tasks = [task1(), task2()]
+while True:
+  for x in tasks:
+    yield x
+
+# Task 1
+# Task 2
+# Task 1
+# Task 2
+# Task 1
+            </code></pre>
+          </section>
+
+          <section>
+            <h2>Async function</h2>
+            BOOOOOOOOOM! <br>
+            <img src="img/mt.jpg" width="50%" alt="" /><br>
+            generators gives you a road to multitasking!
+            Of course, there are other methods (ex: threading...)
+          </section>
+
+          <section>
+            <h2>Async function</h2>
+            <pre><code data-trim class="python3">
+import asyncio
+async def read_file(fl):
+  x = ""
+  with open(fl) as f:
+    x += f.read(64)
+    await asyncio.sleep(0)
+  return x
+
+async def Task():
+  files = ['file1', 'file2']
+  datas = []
+  for f in files:
+    datas.append(await read_file(f))
+  return datas
+            </code></pre>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h1>Exception handling</h1>
+          </section>
+
+          <section>
+            <h2>Error happens in anywhere</h2>
+            <p>
+            <ul>
+              <li><code>a[-1]</code></li>
+              <li>Network failed (peap 掉).</li>
+              <li>... </li>
             </ul></p>
           </section>
 
           <section>
-            <h2>Security</h2>
-            <p>Bugs causes security issues</p>
-            <p><ul>
-                <li>Buffer overflow</li>
-                <li>SQL injection</li>
-            </ul>
-            <pre><code data-trim class="sql">
-SELECT * FROM users WHERE (name = '" + userName + "') and (pw = '"+ passWord +"')
+            <h2>Throw</h2>
+            <p>Before handling, you needs to know how an exception is thrown</p>
+            <pre class="x3"><code data-trim class="cpp">
+throw Error;
             </code></pre>
-            </p>
+            <pre class="x3"><code data-trim class="python3">
+raise Error;
+            </code></pre>
+            <pre class="x3"><code data-trim class="js">
+throw Error;
+            </code></pre>
+            Usually, you have to inherit an <code>exception</code> class
+            which is different in each language to make custom exceptions.
+          </section>
+
+          <section>
+            <h2>Handling Error</h2>
+            <p>Try it!</p>
+            <pre class="x3"><code data-trim class="cpp">
+try {
+  do_something();
+} catch (err1 e) {
+  ...
+} catch (err2 e) {
+  ...
+} catch (err3 e) {
+}
+            </code></pre>
+            <pre class="x3"><code data-trim class="python3">
+try:
+  do_something();
+except Err1 as e:
+  ...
+except Err2, Err3 as e:
+  ...
+finally:
+
+            </code></pre>
+            <pre class="x3"><code data-trim class="js">
+try {
+  do_something();
+} catch (e) {
+  ...
+} finally {
+  ...
+}
+            </code></pre>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Coding Style</h2>
+            <p>Good coding style prevent bugs.</p>
+          </section>
+
+          <section>
+            <h2>Some suggestion</h2>
+            <p>Always indent</p>
+            <pre class="x2"><code data-trim class="cpp">
+for (int i=0; i&lt;10; i++) {
+for (int j=0; j&lt;i; j++) {
+if (i &lt; j) {
+fun(i, j, i+1, j+1,
+i+2, j+2, i+3, j+3);
+}
+}
+if (i == 3) continue;
+}
+// Wat R U Writing????
+            </code></pre>
+            <pre class="x2"><code data-trim class="cpp">
+for (int i=0; i&lt;10; i++) {
+  for (int j=0; j&lt;i; j++) {
+    if (i &lt; j) {
+      fun(i, j, i+1, j+1,
+          i+2, j+2, i+3, j+3);
+    }
+  }
+  if (i == 3) continue;
+}
+            </code></pre>
+          </section>
+
+          <section>
+            <h2>Some suggestion</h2>
+            Add some space
+            <pre><code data-trim class="cpp">
+for(int i=0;i&lt;a+b*2;i++) // NG
+
+for (int i = 0; i < a + b*2; i++) 
+            </code></pre>
+          </section>
+
+          <section>
+            <h2>Some suggestion</h2>
+            <p>
+              Use warnings.
+              <ul>
+                <li>Enable it</li>
+                <li>Read it</li>
+                <li>Fix it</li>
+            </ul></p>
+            <pre><code data-trim class="sh">
+g++ -Wall -Wshadow
+            </code></pre>
           </section>
         </section>
 
         <section>
           <section>
             <h2>Programming with Other</h2>
-            <p>Main issue: multiple programmer modifying different codes...</p>
+            <p>Main issue: who causes the bugs.</p>
+            <img src="img/blame.jpg" alt="" width="30%"/>
           </section>
 
           <section>
-            <h2>Version Control</h2>
+            <h2>Some suggestion</h2>
             <ul>
-              <li>Dropbox?</li>
-              <li>Subversion</li>
-              <li><b>Git</b></li>
+              <li>Modulize</li>
+              <li>Assert input</li>
+              <li>testing</li>
             </ul>
+            <p>Most impotant: 多討論、少嘴炮</p>
+          </section>
+
+          <section>
+            <img src="img/z1.jpg" alt="" />
+          </section>
+          <section>
+            <img src="img/z2.jpg" alt="" />
+          </section>
+          <section>
+            <img src="img/z3.jpg" alt="" />
           </section>
         </section>
 
