@@ -1,77 +1,1152 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="generator" content="pandoc">
-  <title>zzzz</title>
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="../reveal.js/css/reveal.css"/>
-  <style type="text/css">code{white-space: pre;}</style>
-  <link rel="stylesheet" href="../reveal.js/css/theme/black.css" id="theme">
-  <!-- Printing and PDF exports -->
-  <script>
-    var link = document.createElement( 'link' );
-    link.rel = 'stylesheet';
-    link.type = 'text/css';
-    link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal.js/css/print/pdf.css' : '../reveal.js/css/print/paper.css';
-    document.getElementsByTagName( 'head' )[0].appendChild( link );
-  </script>
-  <!--[if lt IE 9]>
-  <script src="../reveal.js/lib/js/html5shiv.js"></script>
-  <![endif]-->
-</head>
-<body>
-  <div class="reveal">
-    <div class="slides">
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Docker</title>
+
+    <meta name="description" content="NTUgEEk Lecture - Docker">
+    <meta name="author" content="NTUgEEk">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="../reveal.js/css/reveal.css">
+    <link rel="stylesheet" href="../reveal.js/css/theme/night.css" id="theme">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="../reveal.js/lib/css/zenburn.css">
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal.js/css/print/pdf.css' : '../reveal.js/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="reveal">
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+
         <section>
-          <h1>Docker</h1>
+          <h1>Introduction to Programming Language</h1>
           <small>Created by NTUgEEk</small>
         </section>
 
-<section>
-  <h1 class="title">zzzz</h1>
-</section>
+        <section>
+          <section>
+            <h2>Which Programming Language?</h2>
+          </section>
 
-<section><section id="section" class="titleslide slide level1"><h1></h1></section><section id="section-1" class="slide level2">
-<h1>234</h1>
-<ul>
-<li>3</li>
-<li>4</li>
-<li>5</li>
-</ul>
-</section><section id="section-2" class="slide level2">
-<h1>234</h1>
-<ul>
-<li>3</li>
-<li>4</li>
-<li>5</li>
-</ul>
-</section><section id="section-3" class="slide level2">
-<h1>123123</h1>
-</section></section>
+          <section>
+            <h2>Static/Dynamic Language</h2>
+            <p>Static language: C++, JAVA ...</p>
+            <p>Needs a compiler to compile codes into executables.</p>
+            <div class="arrow_box" style="">
+              Source
+            </div>
+            <div class="arrow_box" style="">
+              Compile
+            </div>
+            <div class="arrow_box" style="">
+              Execute
+            </div> <br><br>
+          </section>
+          <section>
+            <h2>Static/Dynamic Language</h2>
+            <p>Dynamic language: python, javascript</p>
+            <p>Needs a interpreter.</p>
+            <div class="arrow_box" style="">
+              Source
+            </div>
+            <div class="arrow_box" style="">
+              Execute
+            </div>
+          </section>
+
+          <section>
+            <h2>Static/Dynamic Typed</h2>
+            <p>Static: Type is determined in compile time.</p>
+            <p>
+              Dynamic: Duck Typing.
+              <blockquote>
+                當看到一隻鳥走起來像鴨子、游泳起來像鴨子、叫起來也像鴨子，那麼這隻鳥就可以被稱為鴨子。
+                From Wikipedia
+              </blockquote>
+            </p>
+          </section>
+
+          <section>
+            <h2>Programming Languages</h2>
+            <p>
+            <ul>
+              <li>C/C++: Kernel, hardware relative, applications, ..</li>
+              <li>JAVA: Android.</li>
+              <li>Python: Scientific programming, ...</li>
+              <li>JS: Browser, server...</li>
+            </ul>
+            </p>
+          </section>
+
+          <section>
+            <h2>So, which language?</h2>
+            <p>Best: 1 static language &amp; 1 dynamic language.</p>
+            <p>At least you have to know how to write C++.</p>
+          </section>
+        </section>
+
+        <section>
+        <section>
+          <h2>Time complexity</h2>
+          <p>Asymptotically growth of the time needed to compute something.</p>
+          <img src="img/bigo.png"/>
+        </section>
+        <section>
+        <p>If a computer could do 1G(\(10^9\)) operations per seconds.</p>
+          <table>
+            <tr><td>\(f(n)\)</td><td>\(n = 100 \)</td><td>\(n = 10^5\)</td></tr>
+            <tr><td>\(n\)</td><td>\( \lt 1\text{ms} \)</td><td>\(\lt 1\text{ms}\)</td></tr>
+            <tr><td>\(n \log n\)</td><td>\( \lt 1\text{ms} \)</td><td>\(1.6\text{ms}\)</td></tr>
+            <tr><td>\(n^2\)</td><td>\( \lt 1\text{ms} \)</td><td>\( 10\text{s}\)</td></tr>
+            <tr><td>\(2^n\)</td><td>BOOM</td><td>BOOM</td></tr>
+          </table>
+        </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Numbers</h2>
+            <ul>
+              <li>C++: <span class="command">int, long long, char, double...</span></li>
+              <li>Python: <code class="python3">int</code>, with nearly no upper bound.<br>
+              <code class="python3">float</code>, which is a double.</li>
+              <li>JS: Numbers, always float(*).</li>
+            </ul>
+          </section>
+          <section>
+            <h2>(Static) Array</h2>
+            <ul>
+              <li>C++: <code class="cpp">int arr[30]</code></li>
+              <li>JAVA: <code class="java">int [] arr</code> (*)</li>
+              <li>Python: No.</li>
+              <li>JS: No.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>(Dynamic) List</h2>
+            List that could dynamicly changes length.
+            <hr>
+            <pre class="x2"><code data-trim class="cpp">
+#include &lt;vector&gt;
+vector&lt;int&gt; ls; 
+ls.push_back(1);
+ls.push_back(3);
+cout &lt;&lt; ls[0] &lt;&lt; endl; // 1
+            </code></pre>
+            <pre class="x2"><code data-trim class="python">
+ls = [1, 'haha', 3.5]
+ls.append(10)
+print(ls[0]) # 1
+            </code></pre>
+          </section>
+
+          <section>
+            <h2>Map</h2>
+            A data structure that store key-value pairs. <br>
+            usually runs in \( O(n) \) or \( O( \log n ) \) time.
+            <hr>
+            <div class="altop">
+              <pre class="x2"><code data-trim class="cpp">
+map&lt;string, int&gt; mp;
+mp["Someone"] = 123;
+              </code></pre>
+              <pre class="x2"><code data-trim class="python">
+mp = {
+  'Someone': 123,
+  1.2      : [2, 3, 4],
+}
+            </code></pre>
+              
+            </div>
+          </section>
+
+          <section>
+            <h2>Tuple</h2>
+            Fixed length list. <br>
+            <hr>
+            <div class="altop">
+              <pre class="x2"><code data-trim class="cpp">
+#include &lt;utility&gt;
+#include &lt;tuple&gt; // C++11
+pair&lt;int, int&gt; p = {1, 2};
+tuple&lt;int, string, double&gt; z = 
+  make_tuple(1, "2", 3.0);
+              </code></pre>
+              <pre class="x2"><code data-trim class="python">
+pr = (1, 2)
+tup = (1, "2", 3.0)
+            </code></pre>
+              
+            </div>
+          </section>
+
+          <section>
+            <h2>String</h2>
+            <p> Can be think as a sequence of chars.</p>
+            <p><ul>
+                <li>C++: <code class="cpp">char []</code>, <code class="cpp">std::string</code></li>
+                <li>Python: <code class="python3">str</code></li>
+                <li>JS: <code class="js">string</code></li>
+            </ul> </p>
+          </section>
+
+          <section>
+            <h2>Common representation</h2>
+            <p><ul>
+                <li>list: <code>[a, b, c, ... ]</code></li>
+                <li>map: <code>{a: b, c: d, ...}</code></li>
+                <li>tuple: <code>(a, b, c, ...)</code></li>
+                <li>string: <code>"abc..."</code> or sometimes <code>'abc...'</code></li>
+            </ul> </p>
+          </section>
+
+          <section>
+            <h2>JSON</h2>
+            <pre><code data-trim class="json">
+{
+  "name": "John",
+  "age": 20,
+  "friends": [
+    {
+      "name": "Bob",
+      "age" : 18
+    },
+    {
+      "name": "Alice",
+      "age" : 21
+    }
+  ]
+}
+            </code></pre>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h1>Flow controlls</h1>
+          </section>
+          <section>
+            <h2>Block</h2>
+            <pre class="x3"><code data-trim class="cpp">
+if (something) {
+  int a = ... ;
+  for (...) {
+    int b = ...;
+  }
+}
+            </code></pre>
+            <pre class="x3"><code data-trim class="python">
+if something :
+  a = ...
+  for ... :
+    b = ...
+            </code></pre>
+            <pre class="x3"><code data-trim class="js">
+if (something) {
+  var a = ...;
+  for (...) {
+    var b = ...;
+  }
+}
+            </code></pre>
+          </section>
+
+          <section>
+            <h2>Conditions</h2>
+            <pre class=""><code data-trim class="cpp">
+if (a == b) {
+}
+
+switch (c) {
+  case 0:
+    puts("c = 0");
+    break;
+  case 1:
+    puts("c = 1");
+    break;
+}
+            </code></pre>
+          </section>
+
+          <section>
+            <h2>While loop</h2>
+            <pre class=""><code data-trim class="cpp">
+while (n--) {
+}
+
+do {
+} while (n--);
+            </code></pre>
+          </section>
+
+          <section>
+            <h2>For loop</h2>
+            <p>Usually two kinds, normal-for and ranged-for</p>
+            <pre class="x2"><code data-trim class="cpp">
+for (int i=0; i&lt;n; i++) ;
+vector&lt;int&gt; ls;
+for (auto x: ls) ; //Only in c++11
+            </code></pre>
+            <pre class="x2"><code data-trim class="python">
+# No normal for loop...
+ls = [1, 2, 3];
+for x in ls:
+            </code></pre>
+          </section>
+
+          <section>
+            <h2>Functions</h2>
+            <p>Callables.</p>
+            <pre class="x3"><code data-trim class="cpp">
+int f(int a, double b) {
+  return a + b;
+}
+            </code></pre>
+            <pre class="x3"><code data-trim class="python">
+def f(a, b):
+  return a + b
+            </code></pre>
+            <pre class="x3"><code data-trim class="js">
+function f(a, b) {
+  return a + b;
+}
+            </code></pre>
+          </section>
+        </section>
+
+
+        <section>
+          <section>
+            <h1>A closer look to C++'s variable.</h1>
+          </section>
+
+          <section>
+            <h2>How data is stored</h2>
+            <img src="img/data.png" alt="" />
+            <p> <code>&amp;</code> operator gets the address of a variable </p>
+            <pre><code data-trim class="cpp">
+cout &lt;&lt; &a &lt;&lt; endl;
+            </code></pre>
+          </section>
+
+          <section>
+            <h2>Pointers</h2>
+            <p> Store <b>Address</b> to other variable </p>
+            <img src="img/point.png" alt="" />
+          </section>
+
+          <section>
+            <h2>Pointers</h2>
+            <p> use <code>*ptr</code> to get the value (<b>with same address</b>)
+              where the pointer points at</p>
+            <pre><code data-trim class="cpp">
+int a = 10;
+int *b = &amp;a;
+// Same as 
+int *b; b = &amp;a;
+
+cout &lt;&lt; *b &lt;&lt; endl; // 10
+*b = 1;
+cout &lt;&lt; a &lt;&lt; endl; // 1
+            </code></pre>
+          </section>
+
+          <section>
+            <h2>Pointers operator</h2>
+            <p> <code>ptr + n</code> points to the address after <code>ptr</code>
+            which depends on the size of the type.</p>
+            <pre><code data-trim class="cpp">
+int *a = 0x0;
+cout &lt;&lt; a+1 &lt;&lt; endl; // 0x4
+double *b = 0x0;
+cout &lt;&lt; b+1 &lt;&lt; endl; // 0x8
+            </code></pre>
+          </section>
+
+          <section>
+            <h2>Reference</h2>
+            <p> Alias of a variable. Same address, value, just with different
+            names! </p>
+            <pre><code data-trim class="cpp">
+int a = 10;
+int &amp;b = a;
+
+cout &lt;&lt; b &lt;&lt; endl; // 10
+b = 1;
+cout &lt;&lt; a &lt;&lt; endl; // 1
+            </code></pre>
+          </section>
+
+          <section>
+            <h2>Passing variable to function</h2>
+            <p> Consider </p>
+            <pre><code data-trim class="cpp">
+int a = 1;
+int b = f(a);
+            </code></pre>
+            <p> Should the function be able to change my value?</p>
+          </section>
+
+          <section>
+            <h2>Pass by Value</h2>
+            <p> The normal way. </p>
+            <pre><code data-trim class="cpp">
+void f(int a) {
+  a = 3;
+}
+...
+int a = 1;
+f(a);
+cout &lt;&lt; a &lt;&lt; endl; // 1
+            </code></pre>
+          </section>
+
+          <section>
+            <h2>Pass by Reference</h2>
+            <p> But sometimes you want the function to be able to
+              changes your data. </p>
+            <pre><code data-trim class="cpp">
+void f(int &amp;a) {
+  a = 3;
+}
+...
+int a = 1;
+f(a);
+cout &lt;&lt; a &lt;&lt; endl; // 3
+            </code></pre>
+          </section>
+
+          <section>
+            <h2>Pass by Pointer</h2>
+            <p> Actually, pass a pointer <b>by value</b>.</p>
+            <pre><code data-trim class="cpp">
+void f(int *b) {
+  *b = 3;
+}
+...
+int a = 1;
+f(&amp;a);
+cout &lt;&lt; a &lt;&lt; endl; // 3
+            </code></pre>
+          </section>
+
+          <section>
+            <h2>Array revisited</h2>
+            <p>So how static array is stored in c++? <br>
+            It just a continuous block of variables.</p>
+            <p>The array variable store the first position
+            of the array</p>
+            <pre><code data-trim class="cpp">
+int a[10] = {1, 2, 3};
+// They are the same thing!
+a[5] = 3;
+*(a+5) = 3;
+// And that's why c++ won't stop you to do
+a[-1] = 3;
+            </code></pre>
+          </section>
+
+          <section>
+            <h2>Functions are also pointers!</h2>
+            <p>Really weird syntax.</p>
+            <pre><code data-trim class="cpp">
+int f(int a, double b);
+int (*g)(int, double) = f;
+            </code></pre>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h1>Some additional feature in c++</h1>
+          </section>
+
+          <section>
+            <h2>Defines</h2>
+            <p> Simply copy the code.</p>
+            <div style="display: inline-block; width: 45%;">
+            <pre><code data-trim class="cpp">
+#define yes true
+#define twice(a) (a*2)
+
+bool reply;
+int order = 3;
+if (reply == yes) {
+  order = twice(order);
+}
+            </code></pre>
+            Source code.
+          </div>
+            <div style="display: inline-block; width: 45%;">
+            <pre><code data-trim class="cpp">
+bool reply;
+int order = 3;
+if (reply == true) {
+  order = (order*2);
+}
+            </code></pre>
+            <b>Before</b> compile.
+          </div>
+          </section>
+
+          <section>
+            <h2>Enum</h2>
+            Which is more readable? <br>
+            <pre class="x2"><code data-trim class="cpp">
+int f() {
+  if (not network) {
+    return 1;
+  } else if (...) {
+    return 2;
+  } else ...
+            </code></pre>
+
+            <pre class="x2"><code data-trim class="cpp">
+typedef enum {
+  NETWORK_UNREACHABLE,
+  COMPUTER_ISNT_ON,
+  ...
+} ErrorType;
+
+ErrorType f() {
+  if (not network) {
+    return NETWORK_UNREACHABLE;
+  } else if (...) {
+    return COMPUTER_ISNT_ON;
+  } else ...
+            </code></pre>
+          </section>
+
+          <section>
+            <h2>Struct</h2>
+            <p>Old C feature, pack variable together.</p>
+            <pre class="x2"><code data-trim class="cpp">
+struct structA {
+  int b, c;
+};
+
+structA a = {1, 2};
+cout &lt;&lt; a.b &lt;&lt; endl;
+            </code></pre>
+          </section>
+
+          <section>
+            <h2>C++11 - auto</h2>
+            <p>Auto type deduce</p>
+            <pre class="x2"><code data-trim class="cpp">
+auto a = 10; 
+auto b = "haha";
+vector&lt;int&gt; vl;
+for (auto x: vl);
+// x: vector&lt;int&gt;::iterator
+            </code></pre>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h1>Closer look at Dynamic typed language.</h1>
+          </section>
+
+          <section>
+            <h2>Variable</h2>
+            <p>Is the variable value, reference, pointer in python, js? <br>
+            Neither, a variable is just a label. Maybe we could think as a
+            changable reference.</p>
+            <img src="img/dyvar.png" width="70%" />
+          </section>
+
+          <section>
+            <h2>Types</h2>
+            <p>There are two kinds of types, mutable and immutable.
+            <ul>
+              <li>Mutable are datas that could change, ex: 
+              <code class="python3">list, dict</code></li>
+              <li>Immutable are datas that couldn't change, ex:
+              <code class="python3">str, int, tuple</code></li>
+            </ul></p>
+          </section>
+
+          <section>
+            <h2>Pass by label name</h2>
+            <p>It only depends on whether the type is mutable/immutable.</p>
+            <pre><code data-trim class="python3">
+def f(a, b):
+  a += b
+
+a, b = 1, 2
+f(a, b)
+print(a) # 1
+a, b = [1], [2]
+f(a, b)
+print(a) # [1, 2]
+            </code></pre>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h1>Object oriented programming</h1>
+          </section>
+
+          <section>
+            <h2>Why?</h2>
+            <p>It's all about how to work together.</p>
+            <img src="img/selfish.png" alt="" />
+          </section>
+
+          <section>
+            <h2>Why?</h2>
+            <p>
+              <ul>
+                <li>Don't reinvent the wheel.</li>
+                <li>Modulize.</li>
+              </ul>
+            </p>
+          </section>
+
+          <section>
+            <h2>Class</h2>
+            <p>
+              <ul>
+                <li>Property: the data stored in the object</li>
+                <li>Method: some function owned by the object</li>
+              </ul>
+            </p>
+          </section>
+
+          <section>
+            <h2>Class</h2>
+            <pre class="x3"><code data-trim class="cpp">
+class MyClass {
+  int a, b;
+  double c;
+
+  MyClass() {
+    a = b = 0;
+    c = 0.0;
+  }
+
+  int f(int d);
+};
+            </code></pre>
+            <pre class="x3"><code data-trim class="python3">
+class MyClass:
+  def __init__(self):
+    self.a = self.b = 0
+    self.c = 0.0
+
+  def f(self, d):
+    return ...
+            </code></pre>
+            <pre class="x3"><code data-trim class="js">
+class MyClass {
+  constructor() {
+    this.a = this.b = 0
+    this.c = 0.0
+  }
+
+  f(d) {
+    return ...
+  }
+}
+            </code></pre>
+          </section>
+
+          <section>
+            <h2>Instancelize</h2>
+            <pre class=""><code data-trim class="cpp">
+MyClass obj;
+// or
+MyClass *objPtr = new MyClass();
+            </code></pre>
+            <pre class="x2"><code data-trim class="python3">
+obj = MyClass()
+            </code></pre>
+            <pre class="x2"><code data-trim class="js">
+obj = new MyClass()
+            </code></pre>
+          </section>
+
+          <section>
+            <h2>Member access</h2>
+            <pre class="x2"><code data-trim class="cpp">
+MyClass obj;
+cout &lt;&lt; obj.a &lt;&lt; obj.f() &lt;&lt; endl;
+MyClass *obj = new MyClass();
+cout &lt;&lt; obj-&gt;a &lt;&lt; obj-&gt;f() &lt;&lt; endl;
+            </code></pre>
+            <pre class="x2"><code data-trim class="python3">
+MyClass obj
+print(obj.a, obj.f())
+            </code></pre>
+          </section>
+
+          <section>
+            <h2>Member access permision</h2>
+            <pre class=""><code data-trim class="cpp">
+class MyClass {
+private:
+  int a;
+protected:
+  void f() {
+  }
+public:
+  string b;
+};
+            </code></pre>
+            <p>Python doesn't has this feature, JS partially supports.</p>
+          </section>
+
+          <section>
+            <h2>Member access permision in c++</h2>
+            
+            <p>Rules: <ul>
+              <li> Public: Everyone knows.</li>
+              <li> Protected: Only you and your derived class(children) knows.</li>
+              <li> private: Only you knows.</li>
+            </ul></p>
+          </section>
+
+          <section>
+            <h2>Inheritance</h2>
+            <pre class="x3"><code data-trim class="cpp">
+class B : public A {
+}
+class C : protected B {
+}
+            </code></pre>
+            <pre class="x3"><code data-trim class="python3">
+class B(A):
+  pass
+            </code></pre>
+            <pre class="x3"><code data-trim class="js">
+class B extends A {
+}
+            </code></pre>
+          </section>
+
+          <section>
+            <h2>Inheritance</h2>
+            <p>Basically, you will inherit every members which your parents have.<br>
+              You can add more, and even, <b> override </b> some exists parent functions.
+            </p>
+          </section>
+
+          <section>
+            <h2>Overriding</h2>
+            <pre class="x2"><code data-trim class="cpp">
+class A {
+public:
+  void f() {
+    cout &lt;&lt; "好" &lt;&lt; endl;
+  }
+}
+class B : public A {
+public:
+  void f() {
+    cout &lt;&lt; "慘" &lt;&lt; endl;
+  }
+}
+B b;
+b.f()
+            </code></pre>
+            <pre class="x2"><code data-trim class="python3">
+class A:
+  def f(self):
+    print('好')
+
+class B(A):
+  def f(self):
+    print('慘')
+
+b = B();
+b.f()
+            </code></pre>
+          </section>
+
+          <section>
+            <h2>Overriding - Good!</h2>
+            <pre class="x2"><code data-trim class="python">
+class Animal:
+  def __init__(self):
+    self.speed = "1m/s"
+  def move():
+    print("I don't know"
+    'how to move')
+
+class Bird(Animal):
+  def move():
+    print('I fly in', self.speed)
+
+class Fish(Animal):
+  def move():
+    print('I swim in', self.speed)
+            </code></pre>
+            <pre class="x2"><code data-trim class="python">
+class Dog(Animal):
+  def move():
+    print('I walk in', self.speed)
+
+animals = [Dog(), Fish(), Bird()]
+for x in animals:
+  x.move()
+# I walk in 1m/s
+# I swim in 1m/s
+# I fly in 1m/s
+            </code></pre>
+            <p>Well done!</p>
+            <p>But what about in c++? what is the type of the list <code>animals</code>?</p>
+          </section>
+
+          <section>
+            <h2>Overriding in C++</h2>
+            <pre class="x2"><code data-trim class="cpp" 
+            style="font-size: 18px !important;
+                   line-height: 18px !important;">
+             
+class Animal {
+  string speed;
+  Animal() {
+    speed = "1m/s";
+  }
+  void move() {
+    cout &lt;&lt; "I don't know "
+      "how to move" &lt;&lt; endl;
+  }
+}
+class Bird : Animal {
+  void move() {
+    cout &lt;&lt; "I fly in " &lt;&lt; 
+      speed &lt;&lt; endl;
+  }
+}
+class Fish : Animal {
+  void move() {
+    cout &lt;&lt; "I swim in " &lt;&lt; 
+      speed &lt;&lt; endl;
+  }
+}
+            </code></pre>
+            <pre class="x2"><code data-trim class="cpp" 
+            style="font-size: 18px !important;
+                   line-height: 18px !important;">
+class Dog : Animal {
+  void move() {
+    cout &lt;&lt; "I walk in " &lt;&lt; 
+      speed &lt;&lt; endl;
+  }
+}
+
+vector&lt;????&gt; animals {
+  new Dog(), new Fish(), new Bird()
+}
+
+for (auto x: animals) {
+  x-&gt;move()
+}
+# I walk in 1m/s
+# I swim in 1m/s
+# I fly in 1m/s
+            </code></pre>
+            <p>Answer: <code class="cpp">vector&lt;Animal*&gt;</code>, but...</p>
+          </section>
+
+          <section>
+            <h2>Overriding in C++</h2>
+            <pre class=""><code data-trim class="cpp" 
+            style="font-size: 18px !important;
+                   line-height: 18px !important;">
+vector&lt;Animal*&gt; animals {
+  new Dog(), new Fish(), new Bird()
+}
+
+for (auto x: animals) {
+  x-&gt;move()
+}
+# I don't know how to move
+# I don't know how to move
+# I don't know how to move
+            </code></pre>
+            <p>Because <code>x-&gt;move</code> point to the
+              function in <code>class Animal</code></p>
+            <p>Solution: vtable, virtual function</p>
+          </section>
+
+          <section>
+            <h2>Overriding in C++</h2>
+            <pre class=""><code data-trim class="cpp" 
+            style="font-size: 18px !important;
+                   line-height: 18px !important;">
+class Animal {
+  string speed;
+  Animal() {
+    speed = "1m/s";
+  }
+  virtual void move() {
+    cout &lt;&lt; "I don't know "
+      "how to move" &lt;&lt; endl;
+  }
+  // Or if you don't want to implement now
+  virtual void move = 0;
+}
+            </code></pre>
+          </section>
+
+          <section>
+            <h2>Operator polymorphism</h2>
+            <p>How compiler treats operators? </p>
+            <pre class=""><code data-trim class="cpp">
+a + b - c;
+// Actually (a.+(b)).-(c)
+cout &lt;&lt; 1 &lt;&lt; "hi!";
+// Actually (cout.&lt;&lt;(b)).&lt;&lt;(c)
+// Notice that these are just an explanation,
+// You will get compiles error with those codes.
+            </code></pre>
+          </section>
+          <section>
+            <h2>Operator polymorphism</h2>
+            <pre class="x2"><code data-trim class="cpp">
+class Point {
+  Point operator + (Point a) {
+    return Point(x+a.x, y+a.y);
+  }
+}
+            </code></pre>
+            <pre class="x2"><code data-trim class="python3">
+class Point:
+  def __add__(self, a):
+    return Point(self.x+a.x,
+      self.y+a.y)
+            </code></pre>
+            <p>JS: Sadly, didn't has this feature...</p>
+          </section>
+        </section>
+
+
+        <section>
+          <section>
+            <h2>Network</h2>
+            <img src="img/network.jpg" alt="" />
+          </section>
+          <section>
+            <h2>Network</h2>
+            <p>Each one has a unique IP.</p>
+            <ul>
+              <li>ipv4: <span class="files">192.168.1.101</span></li>
+              <li>ipv6: <span class="files">08:62:66:c7:e2:79</span></li>
+            </ul>
+          </section>
+          <section>
+            <h2>Network commands</h2>
+            <pre><code data-trim class="sh">
+$ ip link
+$ ip addr
+$ ip rou
+            </code></pre>
+            <p>Setting comand: <span class="command">netctl</span></p>
+          </section>
+          <section>
+            <h2>DNS</h2>
+            <p>Convert human readable name (ex: <span class="files">ntuee.org</span>)
+              to ip (ex: <span class="files">1.23.45.67</span>)</p>
+            <p>config in <span class="files">/etc/resolv.conf</span>).</p>
+          </section>
+          <section>
+            <h2>Subnet</h2>
+            <p>ipv4, not enough :( ...</p>
+            <p>Subnet example: <span class="files">123.45.67.89/24</span>).</p>
+            <p>Mask: <span class="files">255.255.255.0</span>).</p>
+          </section>
+
+          <section>
+            <h2>DHCP</h2>
+            <p>Dynamic Host Configuration Protocol</p>
+            <pre><code data-trim>
+$ systemctl start dhcpcd
+            </code></pre>
+          </section>
+
+          <section>
+            <h2>Port</h2>
+            <p>Different type of application uses different port</p>
+            <p>Examples:
+              <ul>
+                <li>80: Browser</li>
+                <li>22: SSH</li>
+              </ul>
+            </p>
+          </section>
+
+          <section>
+            <h2>SSH</h2>
+            <p>Really convenient command</p>
+            <pre><code data-trim class="sh">
+# usage: ssh [username]@[hostname] -p [port]
+# example
+$ ssh bbsu@ptt.cc
+            </code></pre>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>How program run</h2>
+            <img src="img/run.png" alt="" />
+          </section>
+
+          <section>
+            <h2>CPU Instructions</h2>
+            <img src="img/instruction.gif" alt="" />
+          </section>
+
+          <section>
+            <h2>Operating System</h2>
+            <p>
+              <ul>
+                <li>Process management, tasking.</li>
+                <li>Memory management</li>
+                <li>System call</li>
+                <li>...</li>
+              </ul>
+            </p>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Programming cycle</h2>
+            <img src="img/progcycle.gif" alt="" />
+          </section>
+
+          <section>
+            <h2>Build, Makefile</h2>
+            <pre><code data-trim class="Makefile">
+CC=gcc
+CFLAGS=-I.
+DEPS = hellomake.h
+
+.PHONY: main clean
+
+%.o: %.c $(DEPS)
+  $(CC) -c -o $@ $< $(CFLAGS)
+
+hellomake: hellomake.o hellofunc.o 
+  gcc -o hellomake hellomake.o hellofunc.o -I.
+            </code></pre>
+            <p>Usually <span class="command">make</span> and 
+              <span class="command">make install</span> are provided</p>
+          </section>
+
+          <section>
+            <h2>Debuging</h2>
+            <p><ul>
+                <li>Printing</li>
+                <li>Log</li>
+                <li>Tools: <span class="command">gdb</span> ...</li>
+            </ul></p>
+          </section>
+
+          <section>
+            <h2>Security</h2>
+            <p>Bugs causes security issues</p>
+            <p><ul>
+                <li>Buffer overflow</li>
+                <li>SQL injection</li>
+            </ul>
+            <pre><code data-trim class="sql">
+SELECT * FROM users WHERE (name = '" + userName + "') and (pw = '"+ passWord +"')
+            </code></pre>
+            </p>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Programming with Other</h2>
+            <p>Main issue: multiple programmer modifying different codes...</p>
+          </section>
+
+          <section>
+            <h2>Version Control</h2>
+            <ul>
+              <li>Dropbox?</li>
+              <li>Subversion</li>
+              <li><b>Git</b></li>
+            </ul>
+          </section>
+        </section>
+
+      </div> 
+
     </div>
-  </div>
 
-  <script src="../reveal.js/lib/js/head.min.js"></script>
-  <script src="../reveal.js/js/reveal.js"></script>
+    <script src="../reveal.js/lib/js/head.min.js"></script>
+    <script src="../reveal.js/js/reveal.js"></script>
 
-  <script>
+    <script>
 
       // Full list of configuration options available at:
-      // https://github.com/hakimel/reveal.js#configuration
-      Reveal.initialize({
-        // Vertical centering of slides
-        center: true,
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      history: true,
+      center: true,
 
-        // Optional reveal.js plugins
-        dependencies: [
-          { src: '../reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-          { src: '../reveal.js/plugin/zoom-js/zoom.js', async: true },
-          { src: '../reveal.js/plugin/notes/notes.js', async: true }
-        ]
-      });
+      transition: 'convex', // none/fade/slide/convex/concave/zoom
+      math: {
+        mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
+        config: 'TeX-AMS_HTML-full'  // See http://docs.mathjax.org/en/latest/config-files.html
+      },
+      // Optional reveal.js plugins
+      dependencies: [
+        { src: '../reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+        { src: '../reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: '../reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: '../reveal.js/plugin/highlight/highlight.js', async: true, callback: function() {  } },
+        { src: '../reveal.js/plugin/zoom-js/zoom.js', async: true },
+        { src: '../reveal.js/plugin/notes/notes.js', async: true },
+        { src: '../reveal.js/plugin/math/math.js', async: true }
+      ]
+    });
+
+    Reveal.addEventListener( 'ready', function( event ) {
+      codes = document.getElementsByTagName('code')
+      for (i=0; i<codes.length; i++) {
+        hljs.highlightBlock(codes[i]);
+      }
+    } );
+
     </script>
-    </body>
+
+  </body>
 </html>
+<!-- vim: set ts=2 sw=2 et: -->
