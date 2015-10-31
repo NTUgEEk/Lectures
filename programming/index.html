@@ -703,7 +703,7 @@ MyClass *obj = new MyClass();
 cout &lt;&lt; obj-&gt;a &lt;&lt; obj-&gt;f() &lt;&lt; endl;
             </code></pre>
             <pre class="x2"><code data-trim class="python3">
-MyClass obj
+obj = MyClass()
 print(obj.a, obj.f())
             </code></pre>
           </section>
@@ -832,6 +832,7 @@ for x in animals:
                    line-height: 18px !important;">
              
 class Animal {
+ public:
   string speed;
   Animal() {
     speed = "1m/s";
@@ -869,7 +870,7 @@ vector&lt;????&gt; animals {
 }
 
 for (auto x: animals) {
-  x-&gt;move()
+  x-&gt;move();
 }
 # I walk in 1m/s
 # I swim in 1m/s
@@ -888,7 +889,7 @@ vector&lt;Animal*&gt; animals {
 }
 
 for (auto x: animals) {
-  x-&gt;move()
+  x-&gt;move();
 }
 # I don't know how to move
 # I don't know how to move
@@ -905,6 +906,7 @@ for (auto x: animals) {
             style="font-size: 18px !important;
                    line-height: 18px !important;">
 class Animal {
+ public:
   string speed;
   Animal() {
     speed = "1m/s";
@@ -1486,7 +1488,7 @@ g++ -Wall -Wshadow
         { src: '../reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
         { src: '../reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
         { src: '../reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-        { src: '../reveal.js/plugin/highlight/highlight.js', async: true, callback: function() {  } },
+        { src: '../reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
         { src: '../reveal.js/plugin/zoom-js/zoom.js', async: true },
         { src: '../reveal.js/plugin/notes/notes.js', async: true },
         { src: '../reveal.js/plugin/math/math.js', async: true }
