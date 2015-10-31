@@ -1470,7 +1470,7 @@ g++ -Wall -Wshadow
 
     <script>
 
-      // Full list of configuration options available at:
+    // Full list of configuration options available at:
     // https://github.com/hakimel/reveal.js#configuration
     Reveal.initialize({
       controls: true,
@@ -1494,13 +1494,6 @@ g++ -Wall -Wshadow
         { src: '../reveal.js/plugin/math/math.js', async: true }
       ]
     });
-
-    Reveal.addEventListener( 'ready', function( event ) {
-      codes = document.getElementsByTagName('code')
-      for (i=0; i<codes.length; i++) {
-        hljs.highlightBlock(codes[i]);
-      }
-    } );
 
     </script>
 
