@@ -968,6 +968,54 @@ Derive *b =
           </section>
         </section>
 
+        <section>
+          <section>
+            <h1>Other Topics</h1>
+          </section>
+
+          <section>
+            <h2>Overloading</h2>
+            <p>Only in static language, create multiple methods of the same name
+            with different arguments number or type.</p>
+            <pre class=""><code data-trim class="cpp">
+int f(int a) {
+  return a + 1;
+}
+double f(double a) {
+  return a - 1.0;
+}
+
+f(1)   // 2
+f(1.0) // 0
+            </code></pre>
+          </section>
+
+          <section>
+            <h2>default arguments</h2>
+            <pre class="x3"><code data-trim class="cpp">
+int add(int a, int b=10)
+{
+  return a + b;
+}
+f(1, 2)   // 3
+f(1)      // 11
+            </code></pre>
+            <pre class="x3"><code data-trim class="python">
+def add(a, b=10):
+  return a + b
+f(1, 2)   # 3
+f(1)      # 11
+            </code></pre>
+            <pre class="x3"><code data-trim class="js">
+function add(a, b=10) {
+  return a + b;
+}
+f(1, 2)   // 3
+f(1)      // 11
+            </code></pre>
+          </section>
+        </section>
+
 
         <section>
           <section>
