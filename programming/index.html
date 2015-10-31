@@ -991,6 +991,21 @@ f(1.0) // 0
           </section>
 
           <section>
+            <h2>Templates</h2>
+            <p>Syntax sugar, compiler will figure out what you need
+            and copy for you.</p>
+            <pre class=""><code data-trim class="cpp">
+template &lt;typename T&gt;
+T add(T a, T b) {
+  return a + b;
+}
+add(1, 2);         // 3
+add&lt;double&gt;(1, 2) / 2;  // 1.5
+add("12"s, "34"s); // "1234", c++14
+            </code></pre>
+          </section>
+
+          <section>
             <h2>default arguments</h2>
             <pre class="x3"><code data-trim class="cpp">
 int add(int a, int b=10)
@@ -1012,6 +1027,99 @@ function add(a, b=10) {
 }
 f(1, 2)   // 3
 f(1)      // 11
+            </code></pre>
+          </section>
+
+          <section>
+            <h2>Unpacking</h2>
+            <pre class="x2"><code data-trim class="python">
+def f(a, b):
+  return a + b
+A = [1, 2]
+f(*[1, 2]) # 3
+            </code></pre>
+            <pre class="x2"><code data-trim class="js">
+function f(a, b) {
+  return a + b;
+}
+A = [1, 2];
+f(...[1, 2]); // 3
+            </code></pre>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h1>Modules</h1>
+          </section>
+          
+          <section>
+            <h2>Why modules?</h2>
+            <p>Python http server: 1204 lines of codes</p>
+            <img src="img/pyhttp.png" alt="" />
+            <p>Write it yourself, or use others?</p>
+          </section>
+
+          <section>
+            <h2>Libraries</h2>
+            <p>Usually, the official would supply some
+            standard libraries.</p>
+            <p>Of course, you could find some powerful
+            unofficial packages online.</p>
+          </section>
+          <section>
+            <h2>C++ include</h2>
+            <p>Simply paste the code, so to prevent
+            recursive import, use include guard
+            </p>
+            <pre class=""><code data-trim class="js">
+#include &lt;cstdio&gt;
+#include "myClass.h"
+            </code></pre>
+          </section>
+
+          <section>
+            <h2>C++ files</h2>
+            <p style="text-align: left">Why seperate .cpp .h file ?<br>
+            It is a controversial design. <br>
+            Main reason is to save compile time.
+            </p>
+
+            <p style="text-align: left">
+            Compile each .cpp file to .o (object) file.
+            Then merge(link) them. So if a single file changes,
+            you won't need to compile other files again.
+            </p>
+
+            <p style="text-align: left">
+            But if you call function outside, the compiler can't
+            know the information, so there is .h file.
+            </p>
+          </section>
+          <section>
+            <h2>C++ Namespace</h2>
+            <p>To prevent naming collision</p>
+            <pre class=""><code data-trim class="cpp">
+namespace math {
+  double sqrt(double x) {
+  }
+}
+math::sqrt(2.0);
+using namespace math;
+sqrt(2.0);
+            </code></pre>
+          </section>
+          <section>
+            <h2>Python/JS include</h2>
+            <pre class="x2"><code data-trim class="python3">
+import math
+import math.sqrt as rt
+from math import *
+            </code></pre>
+            <pre class="x2"><code data-trim class="js">
+import "math.js"
+import {sqrt} from "math.js"
+import * from "math.js"
             </code></pre>
           </section>
         </section>
