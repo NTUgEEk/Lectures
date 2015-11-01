@@ -1,0 +1,144 @@
+pre code.hljs {
+  display: block;
+}
+code.hljs {
+  display: inline;
+  border-radius: 4px;
+  font-size: 24px;
+  line-height: 26px;
+}
+
+.reveal .command {
+  background-color: #333333;
+  color: white;
+  font-size: 25px;
+  font-style: normal;
+  font-family: monospace;
+  padding: 3px;
+  border-radius: 7px;
+}
+
+.reveal .files {
+  background-color: #FFE7C0;
+  color: black;
+  font-size: 25px;
+  font-style: normal;
+  padding: 3px;
+  border-radius: 7px;
+}
+
+.reveal pre.x3 {
+  display: inline-block;
+  width: 31%;
+  vertical-align: top;
+}
+
+.reveal .x3 code {
+  font-size: 20px !important;
+  line-height: 24px;
+}
+
+.reveal pre.x2 {
+  display: inline-block;
+  width: 46%;
+  vertical-align: top;
+}
+
+.reveal .x2 code {
+  font-size: 20px !important;
+  line-height: 24px;
+}
+
+.reveal pre>code.cpp::after {
+  position: absolute;
+  right: 4px;
+  top: -24px;
+  content: 'cpp';
+  background-color: #AA0000;
+  padding: 0 2px;
+  z-index: -2;
+  border-radius: 2px 2px 0 0;
+  font-size: 22px;
+  line-height: 24px;
+}
+
+.reveal pre>code.python::after {
+  position: absolute;
+  right: 4px;
+  top: -24px;
+  content: 'python';
+  background-color: #0033CC;
+  z-index: -2;
+  border-radius: 2px 2px 0 0;
+  padding: 0 2px;
+  font-size: 22px;
+  line-height: 24px;
+}
+
+.reveal pre>code.python3::after {
+  position: absolute;
+  right: 4px;
+  top: -24px;
+  content: 'python3';
+  background-color: #0033CC;
+  z-index: -2;
+  border-radius: 2px 2px 0 0;
+  padding: 0 2px;
+  font-size: 22px;
+  line-height: 24px;
+}
+
+.reveal pre>code.js::after {
+  position: absolute;
+  right: 4px;
+  top: -24px;
+  content: 'ES6';
+  background-color: #007722;
+  z-index: -2;
+  border-radius: 2px 2px 0 0;
+  padding: 0 2px;
+  font-size: 22px;
+  line-height: 24px;
+}
+
+.reveal .altop {
+  vertical-align: top;
+}
+
+.reveal .arrow_box {
+  margin-left: 50px;
+  display: inline-block;
+	position: relative;
+	background: #d5522b;
+	border: 4px solid #f5b498;
+  border-right: 0 none;
+  height: 104px;
+  line-height: 104px;
+  color: black;
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.4);
+  padding-left: 20px;
+}
+.reveal .arrow_box:after, .arrow_box:before {
+  left: 100%;
+	top: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.reveal .arrow_box:after {
+	border-color: rgba(136, 183, 213, 0);
+border-left-color: #d5522b;
+	border-width: 52px;
+	margin-top: -52px;
+  margin-left: -1px;
+}
+.reveal .arrow_box:before {
+	border-color: rgba(194, 225, 245, 0);
+	border-left-color: #f5b498;
+	border-width: 56px;
+	margin-top: -56px;
+}
