@@ -108,6 +108,23 @@
             <p>Best: 1 static language &amp; 1 dynamic language.</p>
             <p>At least you have to know how to write C++.</p>
           </section>
+
+          <section>
+            <h2>Compile and Run</h2>
+            <pre class=""><code data-trim class="sh cpp">
+# compile
+g++ -std=c++11 -Wall -Wshadow -o filename filename.cpp  
+# run
+./filename
+            </code></pre><br>
+
+            <pre class=""><code data-trim class="python">
+python finename.py
+# or run in ipython
+ipython
+            </code></pre>
+            <p>For JS, open terminal in browser.</p>
+          </section>
         </section>
 
         <section>
@@ -152,24 +169,53 @@
             <h2>(Dynamic) List</h2>
             List that could dynamicly changes length.
             <hr>
-            <pre class="x2"><code data-trim class="cpp">
+            <pre class="x3"><code data-trim class="cpp">
 #include &lt;vector&gt;
 vector&lt;int&gt; ls; 
 ls.push_back(1);
 ls.push_back(3);
-cout &lt;&lt; ls[0] &lt;&lt; endl; // 1
+cout &lt;&lt; ls[0] &lt;&lt; endl;
+// 1
             </code></pre>
-            <pre class="x2"><code data-trim class="python">
+            <pre class="x3"><code data-trim class="python">
 ls = [1, 'haha', 3.5]
 ls.append(10)
 print(ls[0]) # 1
             </code></pre>
+            <pre class="x3"><code data-trim class="js">
+ls = [1, 'haha', 3.5]
+ls.push(10)
+console.log(ls[0])
+// 1
+            </code></pre>
+          </section>
+
+          <section>
+            <h2>Set</h2>
+            A data structure that store values. <br>
+            Usually could handle a query such like 
+            "If a value is in the set" in \( O(1) \) or \( O( \log n ) \) time.
+            <hr>
+            <div class="altop">
+              <pre class="x2"><code data-trim class="cpp">
+set&lt;int&gt; st;
+set.insert(1);
+set.insert(3);
+set.find(1);
+              </code></pre>
+              <pre class="x2"><code data-trim class="python">
+st = set()
+set.add(1)
+set.add(3)
+1 in st #True
+            </code></pre>
+            </div>
           </section>
 
           <section>
             <h2>Map</h2>
             A data structure that store key-value pairs. <br>
-            usually runs in \( O(n) \) or \( O( \log n ) \) time.
+            usually runs in \( O(1) \) or \( O( \log n ) \) time.
             <hr>
             <div class="altop">
               <pre class="x2"><code data-trim class="cpp">
@@ -296,7 +342,14 @@ switch (c) {
 
           <section>
             <h2>While loop</h2>
-            <pre class=""><code data-trim class="cpp">
+            <pre class="x2"><code data-trim class="cpp">
+while (n--) {
+}
+
+do {
+} while (n--);
+            </code></pre>
+            <pre class="x2"><code data-trim class="js">
 while (n--) {
 }
 
@@ -304,6 +357,7 @@ do {
 } while (n--);
             </code></pre>
           </section>
+
 
           <section>
             <h2>For loop</h2>
@@ -317,6 +371,18 @@ for (auto x: ls) ; //Only in c++11
 # No normal for loop...
 ls = [1, 2, 3];
 for x in ls:
+            </code></pre>
+          </section>
+
+          <section>
+            <h2>Break and continue</h2>
+            <pre class="x2"><code data-trim class="cpp">
+for i in range(10):
+  if i == 3: continue
+  if i == 7: break
+  print(i)
+
+# 0 1 2 4 5 6 
             </code></pre>
           </section>
 
@@ -390,6 +456,20 @@ cout &lt;&lt; b+1 &lt;&lt; endl; // 0x8
           </section>
 
           <section>
+            <h2>New</h2>
+            <p> Malloc a space, and return a pointer.</p>
+            <pre><code data-trim class="cpp">
+int *a = new int(1);
+int *b = new int[10]();
+
+delete a;
+delete [] b;
+            </code></pre>
+            <p> You have to delete it, or it may cause
+            memory leak.</p>
+          </section>
+
+          <section>
             <h2>Reference</h2>
             <p> Alias of a variable. Same address, value, just with different
             names! </p>
@@ -457,6 +537,59 @@ cout &lt;&lt; a &lt;&lt; endl; // 3
           </section>
 
           <section>
+            <h2>Quiz - what is the result?</h2>
+            <pre class="x2"><code data-trim class="cpp">
+void f(int b[]) {
+  b[0] = 10;
+}
+
+int main() {
+  int a[] = {1, 2, 3};
+  f(a);
+  // a[0] = ?
+}
+            </code></pre>
+            <pre class="x2"><code data-trim class="cpp">
+void f(vector&lt;int&gt; b) {
+  b[0] = 10;
+}
+
+int main() {
+  vector&lt;int&gt; a = {1, 2, 3};
+  f(a);
+  // a[0] = ?
+}
+            </code></pre>
+          </section>
+
+          <section>
+            <h2>Quiz - what is the result?</h2>
+            <pre class="x2"><code data-trim class="cpp">
+void f(int *b) {
+  b = new int(20);
+}
+
+int main() {
+  int *a = new int(10);
+  f(a);
+  // a = ?
+}
+            </code></pre>
+            <pre class="x2"><code data-trim class="cpp">
+void f(int *&amp;b) {
+  b = new int(20);
+}
+
+int main() {
+  int *a = new int(10);
+  f(a);
+  // a = ?
+}
+            </code></pre>
+          </section>
+
+
+          <section>
             <h2>Array revisited</h2>
             <p>So how static array is stored in c++? <br>
             It just a continuous block of variables.</p>
@@ -488,6 +621,15 @@ int (*g)(int, double) = f;
           </section>
 
           <section>
+            <h2>Modifiers</h2>
+            <pre><code data-trim class="cpp">
+const int a = 10;
+a = 3;
+// Compile Error.
+            </code></pre>
+          </section>
+
+          <section>
             <h2>Defines</h2>
             <p> Simply copy the code.</p>
             <div style="display: inline-block; width: 45%;">
@@ -513,6 +655,16 @@ if (reply == true) {
             </code></pre>
             <b>Before</b> compile.
           </div>
+          </section>
+
+          <section>
+            <h2>Quiz - what is the result?</h2>
+            <pre class="x2"><code data-trim class="cpp">
+#define add1(x) x+1
+
+int a = add1(1)*2;
+// a = ?
+            </code></pre>
           </section>
 
           <section>
@@ -608,6 +760,32 @@ f(a, b)
 print(a) # [1, 2]
             </code></pre>
           </section>
+
+          <section>
+            <h2>Quiz - what is the result?</h2>
+            <pre class="x2"><code data-trim class="python">
+def f(A):
+  for row in A:
+    for x in row:
+      x += 1
+
+B = [[1, 2, 3],
+     [4, 5, 6],
+     [7, 8, 9]]
+f(B)
+            </code></pre>
+            <pre class="x2"><code data-trim class="python">
+def f(A):
+  for row in A:
+    for i in range(len(row)):
+      row[i] += 1
+
+B = [[1, 2, 3],
+     [4, 5, 6],
+     [7, 8, 9]]
+f(A)
+            </code></pre>
+          </section>
         </section>
 
         <section>
@@ -629,6 +807,23 @@ print(a) # [1, 2]
                 <li>Modulize.</li>
               </ul>
             </p>
+          </section>
+
+          <section>
+            <h2>Imagine..</h2>
+            <p>
+              you are developing a game.
+            </p>
+            <pre class=""><code data-trim class="python">
+def attack(tp):
+  if tp == 'fighter':
+    ...
+  if tp == 'mage':
+    ...
+  if tp == 'sorceress':
+    ...
+  ...  
+            </code></pre>
           </section>
 
           <section>
