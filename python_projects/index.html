@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Programming</title>
+
+    <meta name="description" content="NTUgEEk Lecture - Programming">
+    <meta name="author" content="NTUgEEk">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="../reveal.js/css/reveal.css">
+    <link rel="stylesheet" href="../reveal.js/css/theme/night.css" id="theme">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="../reveal.js/lib/css/zenburn.css">
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal.js/css/print/pdf.css' : '../reveal.js/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="reveal">
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+
+        <section>
+          <h1>Python</h1>
+          <small>Created by NTUgEEk</small>
+        </section>
+
+        <section>
+          <section>
+            <h2>Data Visualizing</h2>
+            <img src="img/datav.png" width="70%"/>
+          </section>
+
+          <section>
+            <h2>Install packages</h2>
+            <pre class=""><code data-trim class="sh">
+# For arch linux
+pacman -Syu
+pacman -S python python-pip
+pacman -S python-numpy python-matplotlib
+# For Mac
+brew upgrade
+brew install python3 
+brew install numpy --with-python3
+brew install matplotlib --with-python3
+            </code></pre><br>
+          </section>
+
+          <section>
+            <h2>Ipython notebook</h2>
+            <pre class=""><code data-trim class="sh">
+# For arch linux
+pacman -S ipython jupyter
+# For Mac
+pip3 install ipython jupyter
+            </code></pre><br>
+          </section>
+
+          <section>
+            <h2>Numpy</h2>
+            <pre class=""><code data-trim class="python python3">
+import numpy as np
+A = np.array([1, 2, 3])
+A * 2  # array([2, 4, 6])
+B = np.array([[1, 0], [0, 1], [0, 0]])
+A @ B 
+# array([1, 2])
+# same as A.dot(B)
+            </code></pre><br>
+          </section>
+
+          <section>
+            <h2>Matplotlib</h2>
+            <pre class=""><code data-trim class="python python3">
+import numpy as np
+import matplotlib.pyplot as plt
+A = np.arange(0, 20)
+B = A ** 2
+plt.plot(A, B)
+plt.show()
+            </code></pre><br>
+          </section>
+
+          <section>
+            <h2>Mini project - 2016年總統選舉民調</h2>
+            <p>Wiki 上有民調結果，可否抓下來分析？</p>
+            <img src="img/z.png"/>
+          </section>
+
+          <section>
+            <h2>Fetching data</h2>
+            <p>Need to parse html</p>
+            <pre class=""><code data-trim class="html">
+&lt;tr&gt;
+  &lt;td&gt;
+    &lt;a rel="nofollow" class="external text" 
+       href="..."&gt;台灣指標&lt;/a&gt;
+  &lt;/td&gt;
+  &lt;td&gt; 2015年9月12日 &lt;/td&gt;
+  &lt;td style="..."&gt;
+    &lt;b&gt;43.6%&lt;/b&gt;
+  &lt;/td&gt;
+  &lt;td style="..."&gt; 15.3% &lt;/td&gt;
+  &lt;td&gt; 14.7% &lt;/td&gt;
+  &lt;td&gt; 26.5% &lt;/td&gt;
+&lt;/tr&gt;
+            </code></pre><br>
+          </section>
+
+          <section>
+            <h2>BeautifulSoup4</h2>
+            <pre class=""><code data-trim class="html">
+# For arch linux
+pacman -S python-beautifulsoup4
+# For Mac
+pip3 install beautifulsoup4
+            </code></pre><br>
+          </section>
+
+          <section>
+            <h2>Fetching html</h2>
+            <p> Use <a href="https://docs.python.org/3.5/library/urllib.request.html">
+            urllib</a> </p>
+            <pre class=""><code data-trim class="python python3">
+import urllib
+
+with urllib.request.urlopen(url) as response:
+    html = response.read().decode('utf8')
+            </code></pre><br>
+          </section>
+
+          <section>
+            <h2>BeautifulSoup4</h2>
+            <p>Documents is at <a href="http://www.crummy.com/software/BeautifulSoup/bs4/doc/">
+            here</a></p>
+            <pre class=""><code data-trim class="python python3">
+from bs4 import BeautifulSoup
+
+soup = BeautifulSoup(html, 'html.parser')
+tables = soup.find_all('table')
+            </code></pre><br>
+
+            <div class="tip">
+              Tip: Use <code>obj.text</code> to get the
+              text of a html object. <br>
+              Use <code>obj.children</code> to get the
+              children of a html object. <br>
+              Use <code>str.startswith(...)</code> 
+              to judge if a string start with a string.
+            </div>
+          </section>
+
+          <section>
+            <h2>DateTime</h2>
+            <p>Use <a href="https://docs.python.org/3.5/library/datetime.html">
+            datetime</a> to parse string to date object.</p>
+            <pre class=""><code data-trim class="python python3">
+from datetime import datetime
+date = datetime.strptime(s, '%Y年%m月%d日').date()
+            </code></pre><br>
+          </section>
+
+          <section>
+            <h2>Matplotlib plotting</h2>
+            <pre class=""><code data-trim class="python python3">
+import matplotlib.pyplot as plt
+plt.plot(X, Y)
+plt.show()
+            </code></pre><br>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Mini-Project: chatting app</h2>
+          </section>
+
+          <section>
+            <h2>Socket IO</h2>
+            <p>There are many libraries that provide convenient socket io functions.</p>
+            <p>We choose asyncio for asynchronous execution</p>
+          </section>
+
+          <section>
+            <h2>Asyncio</h2>
+            <p>There are some good examples in the <a href="https://docs.python.org/3/library/asyncio-stream.html">
+            documents</a></p>
+            <div class="tip">
+              Tip: Use <code>asyncio.get_event_loop</code> to get the
+              event loop. <br>
+              Use <code>asyncio.create_task(...)</code> 
+              to create a asynchronous task.
+            </div>
+          </section>
+
+          <section>
+            <h2>Capturing ctrl-c</h2>
+            <pre class=""><code data-trim class="python python3">
+try:
+  ...
+except KeyboardInterrupt:
+  ...
+            </code></pre><br>
+          </section>
+
+          <section>
+            <h2>Further..</h2>
+            <div class="tip">
+              Tip: Use <code>asyncio.Queue</code> to create
+              an asynchronous queue.
+            </div>
+            <pre class=""><code data-trim class="python python3">
+queue = asyncio.Queue
+queue.get(...) # Coroutine
+queue.put_nowait(...) # Blocking function
+            </code></pre><br>
+          </section>
+        </section>
+      </div> 
+
+    </div>
+
+    <script src="../reveal.js/lib/js/head.min.js"></script>
+    <script src="../reveal.js/js/reveal.js"></script>
+
+    <script>
+
+    // Full list of configuration options available at:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      history: true,
+      center: true,
+
+      transition: 'convex', // none/fade/slide/convex/concave/zoom
+      math: {
+        mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
+        config: 'TeX-AMS_HTML-full'  // See http://docs.mathjax.org/en/latest/config-files.html
+      },
+      // Optional reveal.js plugins
+      dependencies: [
+        { src: '../reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+        { src: '../reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: '../reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: '../reveal.js/plugin/highlight/highlight.js', async: true, callback: function() {
+            codes = document.getElementsByTagName('code');
+            for (i=0; i<codes.length; i++) {
+                hljs.highlightBlock(codes[i]);
+              }
+            }
+        },
+        { src: '../reveal.js/plugin/zoom-js/zoom.js', async: true },
+        { src: '../reveal.js/plugin/notes/notes.js', async: true },
+        { src: '../reveal.js/plugin/math/math.js', async: true }
+      ]
+    });
+
+    </script>
+
+  </body>
+</html>
+<!-- vim: set ts=2 sw=2 et: -->
