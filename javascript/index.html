@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Javascript</title>
+
+    <meta name="description" content="NTUgEEk Lecture - Javascript">
+    <meta name="author" content="NTUgEEk">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="../reveal.js/css/reveal.css">
+    <link rel="stylesheet" href="../reveal.js/css/theme/night.css" id="theme">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="../reveal.js/lib/css/zenburn.css">
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal.js/css/print/pdf.css' : '../reveal.js/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="reveal">
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+
+        <section>
+          <h1>Javascript</h1>
+          <p>The most popular language used in web</p>
+          <small>Created by NTUgEEk</small>
+        </section>
+
+        <section>
+          <h2> Installation </h2>
+          <ul>
+            <li><code class="files">server side</code>: install <code class="files">node + npm</code></li>
+            <li><code class="files">client side</code>: open your browser :)</li>
+          </ul>
+        </section>
+
+        <section>
+          <section>
+            <h2>What is Javascript?</h2>
+          </section>
+          <section>
+            <img style="height: 70vh;" src="img/js.jpg" />
+          </section>
+          <section>
+            <h2>JavaScript history</h2>
+            <ul>
+              <li>Initially developed at Netscape in 10 days under the name LiveScript.</li>
+              <li>In 1995 renamed to JavaScript, for marketing reasons.</li>
+              <li>In 1997 ECMAScript became the name of the standardized version.</li>
+              <li>Now we have ECMAScript 6(or ES2015)</li>
+            </ul>
+          </section>
+          <section>
+            <h2>...but what is JavaScript?</h2>
+            Inspired by many languages and has some familiar features:
+            <ul>
+              <li>curly-bracket language (like C++ & Java)</li>
+              <li>interpreted, not compiled (like Perl & Lua)</li>
+              <li>dynamic typed (like PHP & Python)</li>
+              <li>prototype-based inheritance (like Self & MOO)</li>
+            </ul>
+          </section>
+          <section>
+            <h2>A general-purpose language</h2>
+            <ul>
+              <li>Most commonly used in web browsers: client-side JavaScript</li>
+              <li>Also server-side JavaScript, e.g. In web servers: <a href="https://nodejs.org/en/" target="_blank">Node.js</a></li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Basics</h2>
+          </section>
+          <section>
+            <h2>Variables</h2>
+            <code class="files">var</code> (Globally scoped, unintuitive) is almost deprecated<br/>
+            use <code class="files">let + const</code> (ES2015, block-scoped)
+            <pre><code class="js" data-trim>
+// modifiable variable
+let a = 100;
+
+// const variable, use CONST_CASE
+const FULL_SCORE = 100;
+            </code></pre>
+            <p>
+              Identifier: alphanumeric strings with "$" and "_".<br/>
+              (Cannot start with number.)
+            </p>
+          </section>
+          <section>
+            <h2>Datatypes</h2>
+            <ul>
+              <li>Number, NaN, Infinity</li>
+              <li>Boolean</li>
+              <li>String</li>
+              <li>Array</li>
+              <li>Object</li>
+              <li>Function</li>
+              <li>null</li>
+              <li>undefined</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Number</h2>
+            <p>Single type (64-bit floating-point, IEEE 754)</p>
+            <pre><code class="js" data-trim>
+let temperature = -10;
+let maxImageWidth = 500;
+const PI = 3.14159;
+let x = 7.13e19;  // 7.13 x 10^19
+let thisIsAHexNumber = 0x7c;    // 7 * 16 + 12 * 1 = 124
+            </code></pre>
+            <p>Infinity: larger than what it can store</p>
+            <p>NaN: Not a Number (0/0)</p>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" target="_blank">MDN</a>
+          </section>
+          <section>
+            <h2>Boolean</h2>
+            <code class="files">true</code> or <code class="files">false</code>
+            <p>
+              <blockquote>
+                Every expression can be <em>truthy</em> or <em>falsy</em>,<br/>
+                But <code class="files">a</code> is truthy does not mean <code class="files">a == true</code>
+              </blockquote>
+            </p>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" target="_blank">MDN</a>
+          </section>
+          <section>
+            <h2>String</h2>
+            <p>Single-quoted or Double-quoted</p>
+            <pre><code class="js" data-trim>
+let string1 = "Double-quoted";
+let string2 = 'Single-quoted';
+let string3 = '"double-quotes" inside single-quotes is fine';
+let string3 = 'escape \'single-quotes\' inside single-quotes';
+            </code></pre>
+            <p>
+              <blockquote>
+                Use single-quoted 'strings' when possible.
+              </blockquote>
+            </p>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank">MDN</a>
+          </section>
+          <section>
+            <h2>Array</h2>
+            <p>Ordered collection, can be heterogeneous</p>
+            <pre><code class="js" data-trim>
+let array = [1, '2', [3]];
+console.log(array[1]); // '2'
+console.log(array.length); // 3
+array.length = 1;
+console.log(array); // [1]
+            </code></pre>
+            <p>
+              <blockquote>
+                A lot more useful methods:<br/><code class="files">forEach</code> , <code class="files">filter</code> , <code class="files">push</code> , <code class="files">pop</code> , <code class="files">join</code> , <code class="files">sort</code> ...
+              </blockquote>
+            </p>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" target="_blank">MDN</a>
+          </section>
+          <section>
+            <h2>Object</h2>
+            <p>Unordered collection (property, value pair)</p>
+            <pre><code class="js" data-trim>
+let object = {
+  name: 'ntuee',
+  students: 800,
+};
+// two ways to access properties
+// one is simple
+console.log(object.name); // 'ntuee'
+// the other is more dynamic
+console.log(object['n' + 'am' + 'e']); // 'ntuee'
+            </code></pre>
+            <p>
+              <blockquote>
+                Javascript Functions, Arrays... are actually all objects!!
+              </blockquote>
+            </p>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">MDN</a>
+          </section>
+          <section>
+            <h2>null</h2>
+            <p>Used to explicitly indicate a variable or object has no value.</p>
+            <pre><code class="js" data-trim>
+let object = {
+  name: null,
+  students: null,
+};
+console.log(object.name); // null
+            </code></pre>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null" target="_blank">MDN</a>
+          </section>
+          <section>
+            <h2>undefined</h2>
+            <p>Returned when:</p>
+            <ul>
+              <li>a variable was declared but never assigned a value</li>
+              <li>when accessing an object property that does not exist</li>
+            </ul>
+            <pre><code class="js" data-trim>
+let object = {
+  name: null,
+  students: null,
+};
+let whatIsThis;
+console.log(object.courses); // undefined
+console.log(whatIsThis); // undefined
+            </code></pre>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined" target="_blank">MDN</a>
+          </section>
+          <section>
+            <h2>Operators</h2>
+            <p><code class="files">+ - * / % == != <= >= ++ -- && ||</code></p>
+            Read <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators" target="_blank">MDN</a>.
+          </section>
+          <section>
+            <h2>Equal vs Strict Equal</h2>
+            <ul>
+              <li><code class="files">==</code> casts both values to the same type and then compare</li>
+              <li><code class="files">===</code> must be same type</li>
+            </ul>
+            <p>
+              <blockquote>
+                Read <a href="https://dorey.github.io/JavaScript-Equality-Table/" target="_blank">Equality table</a>.
+              </blockquote>
+            </p>
+          </section>
+          <section>
+            <h2>Truthy vs Falsey</h2>
+            <p>How conditions are evaluated.</p>
+            <ul>
+              <li>Falsey: <code class="files">undefined</code> , <code class="files">null</code> , <code class="files">NaN</code> , <code class="files">0</code> , <code class="files">''</code> , <code class="files">false</code></li>
+              <li>Truthy: The rest are truthy</li>
+            </ul>
+            <p>
+              <blockquote>
+                Read <a href="https://dorey.github.io/JavaScript-Equality-Table/" target="_blank">Equality table</a>.
+              </blockquote>
+            </p>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Primitive vs Reference Types</h2>
+          </section>
+          <section>
+            <h2>Primitive Types</h2>
+            <ul>
+              <li>Number, Boolean</li>
+              <li>Fixed size in memory.</li>
+              <li>Variable stores value.</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Primitive Types</h2>
+            <pre><code class="js" data-trim>
+let a = 1;
+let b = a; // copies value
+console.log(a); // 1
+b = 2;
+console.log(a); // 1, remains the same
+            </code></pre>
+          </section>
+          <section>
+            <h2>Reference Types</h2>
+            <ul>
+              <li>Array, Object</li>
+              <li>Dynamic size in memory.</li>
+              <li>Variable stores reference.</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Reference Types</h2>
+            <pre><code class="js" data-trim>
+let a = [1];
+let b = a; // copies reference
+console.log(a); // [1]
+b[0] = 2;
+console.log(a); // [2], changed by accessing b
+            </code></pre>
+          </section>
+          <section>
+            <h2>Fun Stuff</h2>
+            <p>Javascript is weird</p>
+            <a href="https://www.destroyallsoftware.com/talks/wat" target="_blank">WAT</a>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Control Statements</h2>
+          </section>
+          <section>
+            <h3>Mostly what you know</h3>
+            <ul>
+              <li><code class="files">if {...} else if {...} else {...}</code></li>
+              <li><code class="files">switch (...) { case ... default ... }</code></li>
+              <li><code class="files">() ? ... : ...</code></li>
+              <li><code class="files">while (...)</code></li>
+              <li><code class="files">do {...} while (...)</code></li>
+              <li><code class="files">for (let x ; ... ; ...) {}</code></li>
+            <ul>
+          </section>
+          <section>
+            <h3>What you may not know</h3>
+            <ul>
+              <li><code class="files">for (let x in y) {}</code> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in" target="_blank">MDN</a></li>
+            
+              <li><code class="files">for (let x of y) {}</code> (ES2015) <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of" target="_blank">MDN</a></li>
+            <ul>
+          </section>
+        </section>
+
+        <section>
+          <h2>See you next week</h2>
+          <p>Functions, events...</p>
+        </section>
+
+      </div> 
+
+    </div>
+
+    <script src="../reveal.js/lib/js/head.min.js"></script>
+    <script src="../reveal.js/js/reveal.js"></script>
+
+    <script>
+
+      // Full list of configuration options available at:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      history: true,
+      center: true,
+
+      transition: 'convex', // none/fade/slide/convex/concave/zoom
+
+      // Optional reveal.js plugins
+      dependencies: [
+        { src: '../reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+        { src: '../reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: '../reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: '../reveal.js/plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+        { src: '../reveal.js/plugin/zoom-js/zoom.js', async: true },
+        { src: '../reveal.js/plugin/notes/notes.js', async: true }
+      ]
+    });
+
+    </script>
+
+  </body>
+</html>
+<!-- vim: set ts=2 sw=2 et: -->
