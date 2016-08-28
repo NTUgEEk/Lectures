@@ -337,11 +337,94 @@ console.log(a); // [2], changed by accessing b
         </section>
 
         <section>
-          <h2>See you next week</h2>
-          <p>Functions, events...</p>
-        </section>
+          <section>
+            <h2>Function</h2>
+          </section>
+          <section>
+            <h2>Syntax</h2>
+            <pre><code class="js" data-trim>
+function f(x, y, z) {
+  return x + y + z;
+}
+// function is actually an object
+let f = function(x, y, z) {
+  return x + y + z;
+}
+// ES6 arrow functions
+let f = (x, y, z) => {
+  return x + y + z;
+}
+            </code></pre>
+          </section>
+          <section>
+            <h2>Function as argument</h2>
+            <pre><code class="js" data-trim>
+function g(f, x, y) {
+  return f(x, y);
+}
 
-      </div> 
+g((x,y) => {
+  return x + y;
+}, 1, 3); // 4
+            </code></pre>
+          </section>
+          <section>
+            <h2>Callback Function</h2>
+            <p>Returns value via calling callback</p>
+            <pre><code class="js" data-trim>
+function getSomeValue(cb) {
+  let value;
+  // get value...
+  cb(value);
+}
+            </code></pre>
+          </section>
+          <section>
+            <h2>Why Callback Function?</h2>
+            <ul>
+              <li>Things can be asynchronos</li>
+              <li>Javascript never blocks</li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Events</h2>
+          </section>
+          <section>
+            <h2>Event Loop</h2>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop" target="_blank">MDN</a>
+          </section>
+          <section>
+            <h2>Web Events</h2>
+            <p>Common: HTML DOM Events, Pointer Events</p>
+            <p>Reference: <a href="https://developer.mozilla.org/en-US/docs/Web/Events" target="_blank">MDN</a></p>
+          </section>
+          <section>
+            <h2>Register Event Listener</h2>
+            <pre><code class="js" data-trim>
+// with pure javascript
+target.addEventListener('click', listener[, options]);
+
+// javascript in HTML
+&lt;div onclick="myfunction()"&gt;
+            </code></pre>
+          </section>
+          <section>
+            <h2>Event Propagation</h2>
+            <p>Reference: <a href="https://developer.mozilla.org/zh-TW/docs/Web/API/Event/eventPhase" target="_blank">MDN</a></p>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>AJAX</h2>
+            <p>Asynchronous JavaScript and XML</p>
+          </section>
+          <section>
+            <h2><a href="http://blog.garstasio.com/you-dont-need-jquery/ajax/" target="_blank">You Don't need Jquery</a></h2>
+          </section>
+        </section>
+      </div>
 
     </div>
 
