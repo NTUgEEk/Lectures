@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+    <title>React</title>
+    <meta name="description" content="NTUgEEk Lecture - React">
+    <meta name="author" content="NTUgEEk">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="../reveal.js/css/reveal.css">
+		<link rel="stylesheet" href="../reveal.js/css/theme/night.css">
+    
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../reveal.js/lib/css/zenburn.css">
+    <link rel="stylesheet" href="styles/css">
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal.js/css/print/pdf.css' : '../reveal.js/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>ReactJS</h1>
+					<p style="font-size: 30px">Learn once, Write anywhere</p>
+					<small>Created by NTUgEEk</small>
+				</section>
+				<section>
+				  <h2>What is React?</h2>
+				  <br/>
+				  <p>Javascript library released by Facebook in 2015</p>
+				  <ul>
+					  <li class="fragment fade-up" style="font-size: 30px">Component based</li>
+					  <li class="fragment fade-up" style="font-size: 30px"> -> reusable and composable</li>
+				  </ul>
+				</section>
+				<section>
+					<h2>Installation</h2>
+					<a href="https://facebook.github.io/react/docs/installation.html">See doc</a>
+					<ul style="font-size: 30px;" >
+			      <li>
+			        CDN(fast but not recommended)
+								<pre class="fragment">
+			      	   <code class="hljs" data-trim contenteditable>
+<script crossorigin src="https://unpkg.com/react@15/dist/react.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
+			      	   </code>
+			      	</pre>	
+			      </li>    
+			      <li style="margin-top: -20px">
+			      	<span style="color: #3388FF">package manager</span>(yarn, npm) with <span style="color: #3388FF">bundler</span>(webpack, browserify) & <span style="color: #3388FF">compiler</span>(babel)
+			      	<pre class="fragment">
+			      	   <code class="hljs" data-trim contenteditable>
+npm init
+npm install --save react react-dom
+			      	   </code>
+			      	</pre>
+			      </li>
+			      <li style="margin-top: -20px">
+			      	<a href="http://github.com/facebookincubator/create-react-app">create-react-app</a> (recommended)
+			      	<pre class="fragment">
+			      	   <code class="hljs" data-trim contenteditable>
+npm install -g create-react-app
+create-react-app appName
+
+cd appName && npm start
+			      	   </code>
+			      	</pre>
+			      </li>
+			    </ul>
+			    <br/>
+			    <br/>
+				</section>
+				<section>
+				  <section>
+						<h2>Hello world</h2>
+						<br/>
+						<pre>
+							<code class="hljs" data-trim contenteditable>
+					       <!--index.html-->
+<div id="root"></div>
+							</code>
+						</pre>
+						<pre>
+							 <code class="hljs" data-trim contenteditable>
+// index.js
+ReactDOM.render(
+  <h1>WooooooooW</h1>,
+  document.getElementById('root')
+>
+							 </code>
+						</pre>
+						<a href="https://facebook.github.io/react/docs/hello-world.html">See doc</a>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Component</h2>
+						<p class="fragment">Similar to OOP conceptually</p>
+						<p class="fragment">Create your own HTML tags!</p>
+						<pre class="fragment">
+							<code class="hljs" data-trim contenteditable>
+import React, { Component } from 'react';
+
+class Hello extends Component {
+ render() {
+	   return (
+       <div>
+       	 <h1>Heeeeeeeeello</h1>
+       </div>
+	   )
+	}
+}
+export default Hello;
+							</code>
+						</pre>
+						
+						<a style="font-size:30px" href="https://facebook.github.io/react/docs/components-and-props.html">See doc</a>
+						
+					</section>
+					<section>
+					  <h2>Props</h2>
+					  <pre>
+					  	<code class="hljs" data-trim contenteditable>
+import React, { Component } from 'react';
+class Hello extends Component {
+ render() {
+	   return (
+        <div>
+          <h1>Hi, {this.props.text}</h1>
+        </div>
+	   )
+	}
+}
+export default Hello;
+					  	</code>
+					  </pre>
+					  
+					</section>
+					<section>
+					  <pre>
+					   	<code class="hljs" data-trim contenteditable>
+class App extends Component {
+	render() {
+	   return (
+       <div>
+         <Hello text="boy"/>
+         <Hello text="lala"/>
+         <Hello text="man"/>
+       </div>
+	   )
+	}
+} 	
+					   	</code>
+					  </pre>
+					  <ul>
+							<li class="fragment">Reusable</li>
+							<li class="fragment">Customizable</li>
+						</ul>
+				  </section>
+				</section>
+				
+			</div>
+		</div>
+
+		<script src="../reveal.js/lib/js/head.min.js"></script>
+		<script src="../reveal.js/js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: '../reveal.js/plugin/markdown/marked.js' },
+					{ src: '../reveal.js/plugin/markdown/markdown.js' },
+					{ src: '../reveal.js/plugin/notes/notes.js', async: true },
+					{ src: '../reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
