@@ -47,3 +47,6 @@
   margin: 2px
 }
 
+h1 {
+  text-transform: capitalize !important;
+}
