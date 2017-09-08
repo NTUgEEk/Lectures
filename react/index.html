@@ -1,287 +1,287 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
+  <head>
+    <meta charset="utf-8">
     <title>React</title>
     <meta name="description" content="NTUgEEk Lecture - React">
     <meta name="author" content="NTUgEEk">
 
     <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
     <link rel="stylesheet" href="styles.css">
-		<link rel="stylesheet" href="../reveal.js/css/reveal.css">
-		<link rel="stylesheet" href="../reveal.js/css/theme/night.css">
+    <link rel="stylesheet" href="../reveal.js/css/reveal.css">
+    <link rel="stylesheet" href="../reveal.js/css/theme/night.css">
     
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="../reveal.js/lib/css/zenburn.css">
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal.js/css/print/pdf.css' : '../reveal.js/css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>
-					<h1>ReactJS</h1>
-					<p style="font-size: 30px">Learn once, Write anywhere</p>
-					<small>Created by NTUgEEk</small>
-				</section>
-				<section>
-				  <h2>What is React?</h2>
-				  <img src="img/react.png" alt="react">
-				  <p>Javascript library released by Facebook in 2015 for web front-end</p>
-				  <ul>
-					  <li class="fragment fade-up" style="font-size: 30px">Component based</li>
-					  <li class="fragment fade-up" style="font-size: 30px"> -> reusable and composable</li>
-				  </ul>
-				</section>
-				<section>
-					<h2>Installation</h2>
-					<a href="https://facebook.github.io/react/docs/installation.html">See doc</a>
-					<ul style="font-size: 30px;" >
-			      <li>
-			        CDN(fast but not recommended)
-								<pre class="fragment">
-			      	   <code class="hljs" data-trim contenteditable>
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../reveal.js/lib/css/zenburn.css">
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal.js/css/print/pdf.css' : '../reveal.js/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h1>ReactJS</h1>
+          <p style="font-size: 30px">Learn once, Write anywhere</p>
+          <small>Created by NTUgEEk</small>
+        </section>
+        <section>
+          <h2>What is React?</h2>
+          <img src="img/react.png" alt="react">
+          <p>Javascript library released by Facebook in 2015 for web front-end</p>
+          <ul>
+            <li class="fragment fade-up" style="font-size: 30px">Component based</li>
+            <li class="fragment fade-up" style="font-size: 30px"> -> reusable and composable</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Installation</h2>
+          <a href="https://facebook.github.io/react/docs/installation.html">See doc</a>
+          <ul style="font-size: 30px;" >
+            <li>
+              CDN(fast but not recommended)
+                <pre class="fragment">
+                 <code class="hljs" data-trim contenteditable>
 <script crossorigin src="https://unpkg.com/react@15/dist/react.min.js"></script>
 <script crossorigin src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
-			      	   </code>
-			      	</pre>	
-			      </li>    
-			      <li style="margin-top: -20px">
-			      	<span style="color: #3388FF">package manager</span>(yarn, npm) with <span style="color: #3388FF">bundler</span>(webpack, browserify) & <span style="color: #3388FF">compiler</span>(babel)
-			      	<pre class="fragment">
-			      	   <code class="hljs" data-trim contenteditable>
+                 </code>
+              </pre>  
+            </li>    
+            <li style="margin-top: -20px">
+              <span style="color: #3388FF">package manager</span>(yarn, npm) with <span style="color: #3388FF">bundler</span>(webpack, browserify) & <span style="color: #3388FF">compiler</span>(babel)
+              <pre class="fragment">
+                 <code class="hljs" data-trim contenteditable>
 npm init
 npm install --save react react-dom
-			      	   </code>
-			      	</pre>
-			      </li>
-			      <li style="margin-top: -20px">
-			      	<a href="http://github.com/facebookincubator/create-react-app">create-react-app</a> (recommended)
-			      	<pre class="fragment">
-			      	   <code class="hljs" data-trim contenteditable>
+                 </code>
+              </pre>
+            </li>
+            <li style="margin-top: -20px">
+              <a href="http://github.com/facebookincubator/create-react-app">create-react-app</a> (recommended)
+              <pre class="fragment">
+                 <code class="hljs" data-trim contenteditable>
 npm install -g create-react-app
 create-react-app appName
 
 cd appName && npm start
-			      	   </code>
-			      	</pre>
-			      </li>
-			    </ul>
-			    <br/>
-			    <br/>
-				</section>
-				<section>
-					<h2>Hello world</h2>
-						<br/>
-						<pre>
-							<code class="hljs" data-trim contenteditable>
-					       <!--index.html-->
+                 </code>
+              </pre>
+            </li>
+          </ul>
+          <br/>
+          <br/>
+        </section>
+        <section>
+          <h2>Hello world</h2>
+            <br/>
+            <pre>
+              <code class="hljs" data-trim contenteditable>
+                 <!--index.html-->
 <div id="root"></div>
-							</code>
-						</pre>
-						<pre>
-							 <code class="hljs" data-trim contenteditable>
+              </code>
+            </pre>
+            <pre>
+               <code class="hljs" data-trim contenteditable>
 // index.js
 ReactDOM.render(
   <h1>WooooooooW</h1>,
   document.getElementById('root')
 >
-							 </code>
-						</pre>
-						<a href="https://facebook.github.io/react/docs/hello-world.html">See doc</a>
-				</section>
-				<section>
-					<section>
-						<h2>Component</h2>
-						<p class="fragment">Similar to OOP conceptually</p>
-						<p class="fragment">Create your own HTML tags!</p>
-						<pre class="fragment">
-							<code class="hljs" data-trim contenteditable>
+               </code>
+            </pre>
+            <a href="https://facebook.github.io/react/docs/hello-world.html">See doc</a>
+        </section>
+        <section>
+          <section>
+            <h2>Component</h2>
+            <p class="fragment">Similar to OOP conceptually</p>
+            <p class="fragment">Create your own HTML tags!</p>
+            <pre class="fragment">
+              <code class="hljs" data-trim contenteditable>
 import React, { Component } from 'react';
 
 class Hello extends Component {
  render() {
-	   return (
+     return (
        <div>
-       	 <h1>Heeeeeeeeello</h1>
+          <h1>Heeeeeeeeello</h1>
        </div>
-	   )
-	}
+     )
+  }
 }
 export default Hello;
-							</code>
-						</pre>
-						
-						<a style="font-size:30px" href="https://facebook.github.io/react/docs/components-and-props.html">See doc</a>
-						
-					</section>
-					<section>
-					  <h2>Props</h2>
-					  <p>Similar to data member conceptually(initialized on creation)</p>
-					  <pre>
-					  	<code class="hljs" data-trim contenteditable>
+              </code>
+            </pre>
+            
+            <a style="font-size:30px" href="https://facebook.github.io/react/docs/components-and-props.html">See doc</a>
+            
+          </section>
+          <section>
+            <h2>Props</h2>
+            <p>Similar to data member conceptually(initialized on creation)</p>
+            <pre>
+              <code class="hljs" data-trim contenteditable>
 import React, { Component } from 'react';
 class Hello extends Component {
  render() {
-	   return (
+     return (
         <div>
           <h1>Hi, {this.props.text}</h1>
         </div>
-	   )
-	}
+     )
+  }
 }
 export default Hello;
-					  	</code>
-					  </pre>
-					  <ul>
-					      <li class="fragment">Only can be modified from outside.</li>
-					      <li class="fragment">Once modified, the component will be rerendered.</li>
-					  </ul>
-					</section>
-					<section data-markdown>
-						<script type="text/template">
-							
-							```
-							class App extends Component {
-								render() {
-								   return (
-							       <div>
-							         <Hello text="boy"/>
-							         <Hello text="lala"/>
-							         <Hello text="man"/>
-							       </div>
-								   )
-								}
-							} 	
-							```
-							* Reusable
-							* Customizable
-						</script>
-					</section>
-				  <section>
-					  <h2>State</h2>
-					  <p>Essentially a js object(dictionary)</p>
-					  <pre>
-					  	<code class="hljs" data-trim contenteditable>
+              </code>
+            </pre>
+            <ul>
+                <li class="fragment">Only can be modified from outside.</li>
+                <li class="fragment">Once modified, the component will be rerendered.</li>
+            </ul>
+          </section>
+          <section data-markdown>
+            <script type="text/template">
+              
+              ```
+              class App extends Component {
+                render() {
+                   return (
+                     <div>
+                       <Hello text="boy"/>
+                       <Hello text="lala"/>
+                       <Hello text="man"/>
+                     </div>
+                   )
+                }
+              }   
+              ```
+              * Reusable
+              * Customizable
+            </script>
+          </section>
+          <section>
+            <h2>State</h2>
+            <p>Essentially a js object(dictionary)</p>
+            <pre>
+              <code class="hljs" data-trim contenteditable>
 class Clock extends Component {
-	constructor(props) {
-	  super(props);
-	  this.state = {
+  constructor(props) {
+    super(props);
+    this.state = {
        time: 0
-	  }
-	}
-	render() {
+    }
+  }
+  render() {
      setInterval(() => this.setState({time: new Date.getUTCSeconds()}), 1000)
      return (
        <p>It's {this.state.seconds}</p>
      )
-	}
+  }
 }
-					  	</code>
-					  </pre>
-					  <ul style="margin-top: -20px">
-					      <li class="fragment">States can only be modified from inside.</li>
-					      <li class="fragment">Like props, the component will be rerendered on state's change.</li>
-					      <li class="fragment">Always use <code style="color: #3388FF">setState</code> to modify state</li>
-					  </ul>
-					  <a href="https://facebook.github.io/react/docs/state-and-lifecycle.html">See doc</a>
-					</section>
-					<section>
-			  		<h2>Lifecycle</h2>
-			  		<p>Component's events</p>
-			  		<ul>
-			  		    <li><code style="color: #3388FF">componentWillMount()</code> : runs before the component output has been rendered</li>
-			  		    <li><code style="color: #3388FF">componentDidMount()</code> : runs after the component output has been rendered</li>
-			  		</ul>
-			  		<p>For more information, refer to the doc <a href="#" class="navigate-up">above</a></p>	
-			  	</section>
-			  	<section data-markdown>
-						<script type="text/template">
-							## Handling Events
+              </code>
+            </pre>
+            <ul style="margin-top: -20px">
+                <li class="fragment">States can only be modified from inside.</li>
+                <li class="fragment">Like props, the component will be rerendered on state's change.</li>
+                <li class="fragment">Always use <code style="color: #3388FF">setState</code> to modify state</li>
+            </ul>
+            <a href="https://facebook.github.io/react/docs/state-and-lifecycle.html">See doc</a>
+          </section>
+          <section>
+            <h2>Lifecycle</h2>
+            <p>Component's events</p>
+            <ul>
+                <li><code style="color: #3388FF">componentWillMount()</code> : runs before the component output has been rendered</li>
+                <li><code style="color: #3388FF">componentDidMount()</code> : runs after the component output has been rendered</li>
+            </ul>
+            <p>For more information, refer to the doc <a href="#" class="navigate-up">above</a></p>  
+          </section>
+          <section data-markdown>
+            <script type="text/template">
+              ## Handling Events
 
 
-							```
-							class Wow extends Component {
-									handleInput = (e) => {
-									   words = e.target.value;
-									   console.log(words);
-									}
-									handleClick = () => {
-									   console.log('WoooooW');
-									}
-									render() {
-								     <div>
-								       <input type="text" placeholder="Enter some text..." 
-								         onChange={this.handleInput}>
-								       <button onClick={this.handleClick}/>
-								     </div>
-									}
-							```
+              ```
+              class Wow extends Component {
+                  handleInput = (e) => {
+                     words = e.target.value;
+                     console.log(words);
+                  }
+                  handleClick = () => {
+                     console.log('WoooooW');
+                  }
+                  render() {
+                     <div>
+                       <input type="text" placeholder="Enter some text..." 
+                         onChange={this.handleInput}>
+                       <button onClick={this.handleClick}/>
+                     </div>
+                  }
+              ```
 
-							[See doc](https://facebook.github.io/react/docs/handling-events.html)
-						</script>
-					</section>
-					<section>
-						<h2>Practice--lifting states</h2>
+              [See doc](https://facebook.github.io/react/docs/handling-events.html)
+            </script>
+          </section>
+          <section>
+            <h2>Practice--lifting states</h2>
             <a href="https://facebook.github.io/react/docs/lifting-state-up.html">See doc</a>
-					</section>
-				</section>
-				<section>
-					<section>
-					  <h2>Redux</h2>
-					  <img src="img/redux.png" alt="redux"/	>
-					  <p>Managing state easily</p>
-					  <a href="http://redux.js.org/">Doc</a>
-				  </section>
-				  <section>
-						<h2>What is redux?</h2>
-						<p>Redux is a predictable state container for Javascript app</p>
-					</section>
-					<section>
-						<h2>Concept</h2>
-						<img src="img/react-redux-bubble.png" alt="react-redux-bubble"/>
-					</section>
-					<section>
-					  <h2>Data flow(React-redux)</h2>
-					  <a href="https://github.com/kdchang/reactjs101/blob/master/Ch07/react-redux-introduction.md">
-						  References
-					  </a>
-					  <div>
-						  <img src="img/react-redux.png" />
-					  </div>
-					</section>
-					<section>
-					  <img src="img/redux-img.png" />
-					</section>
-				</section>
-				<section>
-			  	<section data-markdown>
-						<script type="text/template">
-							## Actions
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Redux</h2>
+            <img src="img/redux.png" alt="redux"/  >
+            <p>Managing state easily</p>
+            <a href="http://redux.js.org/">Doc</a>
+          </section>
+          <section>
+            <h2>What is redux?</h2>
+            <p>Redux is a predictable state container for Javascript app</p>
+          </section>
+          <section>
+            <h2>Concept</h2>
+            <img src="img/react-redux-bubble.png" alt="react-redux-bubble"/>
+          </section>
+          <section>
+            <h2>Data flow(React-redux)</h2>
+            <a href="https://github.com/kdchang/reactjs101/blob/master/Ch07/react-redux-introduction.md">
+              References
+            </a>
+            <div>
+              <img src="img/react-redux.png" />
+            </div>
+          </section>
+          <section>
+            <img src="img/redux-img.png" />
+          </section>
+        </section>
+        <section>
+          <section data-markdown>
+            <script type="text/template">
+              ## Actions
 Simply a js object
 
-							```
-							// actionType: simply a String
-							// payload: anything you want it to be(String, array, object...)
-							// type is required while payload is optional
-							const action = { type: actionType, payload: somethingAsData };
-							
-							```
+              ```
+              // actionType: simply a String
+              // payload: anything you want it to be(String, array, object...)
+              // type is required while payload is optional
+              const action = { type: actionType, payload: somethingAsData };
+              
+              ```
 
-							[See doc](http://redux.js.org/docs/basics/Actions.html)
-						</script>
-				  </section>
-				  <section data-markdown>
-				  	<script type="text/template">
+              [See doc](http://redux.js.org/docs/basics/Actions.html)
+            </script>
+          </section>
+          <section data-markdown>
+            <script type="text/template">
 ## Action Creator
 
 js object with function as object value
@@ -293,20 +293,20 @@ export const actionCreator = {
   addNum: () => {
       return { type: 'ADD_NUM' };
   },
-	addText: (text) => {
+  addText: (text) => {
       return { type: 'ADD_TEXT', payload: text };
-	},
-	deleteItem: (index) => {
+  },
+  deleteItem: (index) => {
       return { type: 'DELETE_ITEM', payload: index };
-	},
-	...
-	...
+  },
+  ...
+  ...
 };
 ```
-				  	</script>
-				  </section>
-				  <section data-markdown>
-				  	<script type="text/template">
+            </script>
+          </section>
+          <section data-markdown>
+            <script type="text/template">
 ## Reducer
 
 A function take `action` and `state` as input, and returns new state based on action types.
@@ -333,10 +333,10 @@ const reducer = (action, state=initialState) => {
 export default reducer;
 ```
 [See doc](http://redux.js.org/docs/basics/Reducers.html)
-				  	</script>
-				  </section>
-				  <section data-markdown>
-				  	<script type="text/template">
+            </script>
+          </section>
+          <section data-markdown>
+            <script type="text/template">
 ## Dispatching Action
 
 How can we notify `reducer` an action?
@@ -350,10 +350,10 @@ dispatch(actionCreator.addText('woooow'));
 ```
 
 Will see more later...
-				  	</script>
-				  </section>
-				  <section data-markdown>
-			  	  <script type="text/template">
+            </script>
+          </section>
+          <section data-markdown>
+            <script type="text/template">
 ## Store
 
 Holding Application State
@@ -366,71 +366,71 @@ export default store = createStore(reducer);
 ```
 [See doc](http://redux.js.org/docs/basics/Store.html)
 
-			  	  </script>
-				  </section>
-				</section>
-				<section>
-					<section>
-				  	<h3>Connecting Redux with React Components</h3>
-				  	<a href="http://redux.js.org/docs/basics/UsageWithReact.html">See doc</a>
-				  </section>
-				  <section>
-				  	<h2>Data flow</h2>
-				  	<ol>
-				  	    <li class="fragment">Components use redux's <code>state</code> as part of UI.</li>
-				  	    <li class="fragment">User action invoke(onClick, onChange) UI to dispatch action created by <code>actionCreator</code>.</li>
-				  	    <li class="fragment"><code>Reducer</code> get notified and return the new <code>state</code>.</li>
-				  	    <li class="fragment">The <code>Component</code> is rerendered.</li>
-				  	</ol>
-				  	<img  class="fragment" src="img/react-redux.png"/>
-				  </section>
-				  <section>
-					  <h2>Separating Components</h2>
-				  	<img src="img/redux-components.png"/>
-				  </section>
-					<section data-markdown>
-						<script type="text/template">
+            </script>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h3>Connecting Redux with React Components</h3>
+            <a href="http://redux.js.org/docs/basics/UsageWithReact.html">See doc</a>
+          </section>
+          <section>
+            <h2>Data flow</h2>
+            <ol>
+                <li class="fragment">Components use redux's <code>state</code> as part of UI.</li>
+                <li class="fragment">User action invoke(onClick, onChange) UI to dispatch action created by <code>actionCreator</code>.</li>
+                <li class="fragment"><code>Reducer</code> get notified and return the new <code>state</code>.</li>
+                <li class="fragment">The <code>Component</code> is rerendered.</li>
+            </ol>
+            <img  class="fragment" src="img/react-redux.png"/>
+          </section>
+          <section>
+            <h2>Separating Components</h2>
+            <img src="img/redux-components.png"/>
+          </section>
+          <section data-markdown>
+            <script type="text/template">
 ## Presentational Components                                     
 
 * Handling UI apperance
 
 ```
 class Present extends Component {
-	render() {
-	  const { onBtnClick, clickNum } = this.props;
-	  return (
-		  <div>
-	  	  <button onClick={onBtnClick}>Click</button>
-	  	  <p>You clicked {clickNum} times.</p>
-		  </div>
-	  )
-	}
+  render() {
+    const { onBtnClick, clickNum } = this.props;
+    return (
+      <div>
+        <button onClick={onBtnClick}>Click</button>
+        <p>You clicked {clickNum} times.</p>
+      </div>
+    )
+  }
 }
 export default Present;
 ```
 
-						</script>
-					</section>
-					<section>
-						<h2>Container Components</h2>
-						<ul>
-						    <li class="fragment">Handling UI data flow</li>
-						    <li class="fragment">Use <code>connect</code> to connect to <code>redux</code> state</li>
-						    <li class="fragment">Connected will have <code>dispatch</code> props</li>
-						    <li class="fragment">Use <code>mapStateToProps</code> to take <code>redux</code> state to props</li>
-						</ul>
-					</section>
-					<section data-markdown>
-						<script type="text/template">
+            </script>
+          </section>
+          <section>
+            <h2>Container Components</h2>
+            <ul>
+                <li class="fragment">Handling UI data flow</li>
+                <li class="fragment">Use <code>connect</code> to connect to <code>redux</code> state</li>
+                <li class="fragment">Connected will have <code>dispatch</code> props</li>
+                <li class="fragment">Use <code>mapStateToProps</code> to take <code>redux</code> state to props</li>
+            </ul>
+          </section>
+          <section data-markdown>
+            <script type="text/template">
 
 ```
 import { connect } from 'react-redux';
 import { actionCreator } from './lalaRedux';
 import Present from './Present';
 mapStateToProps = (state) => {
-	return ({
-	  clickNum: state.num 
-	})
+  return ({
+    clickNum: state.num 
+  })
 };
 // now this Component will have a prop called clickNum
 // whose value equals state.num
@@ -439,9 +439,9 @@ class Container extends Component {
     const { dispatch } = this.props; // connected Component will have dispatch props
     dispatch(actionCreator.addNum());
   }
-	render() {
+  render() {
     <Present onBtnClick={this.onBtnClick} clickNum={this.props.clickNum}/>
-	}
+  }
 }
 // connect is a function that accepts (mapStateToProps, mapDispatchToProps, ...) as input
 // and outputs a function that accepts Component as input
@@ -450,10 +450,10 @@ class Container extends Component {
 export default connect(mapStateToProps)(Container);
 ```
 
-						</script>
-					</section>
-					<section data-markdown>
-						<script type="text/template">
+            </script>
+          </section>
+          <section data-markdown>
+            <script type="text/template">
 
 ## Provider
 
@@ -466,51 +466,51 @@ import App from './App';
 import store from './configureStore';
 ReactDOM.render(
   <Provider store={store}>
-	  <App/>
+    <App/>
   </Provider>,
   document.getElementById('root')
 );
 ```
 
-						</script>
-					</section>
-					<section>
-						<h2>Done!!</h2>
-					</section>
-					<section>
-						<h2>Practice--TodoList</h2>
-						<a href="http://redux.js.org/docs/basics/ExampleTodoList.html">See doc</a>
-					</section>
-				</section>
-				<section>
-					<h2>There are still more</h2>
-					<ul>
-					    <li><a href="https://github.com/gaearon/redux-thunk">Redux-thunk</a> for dispatching asynchronous actions(e.g. fetching data while showing a spinning circle)</li>
-					    <li><a href="https://github.com/ReactTraining/react-router">React-router</a> for making multiple-page web app</li>
-					    <li><a href="https://react-bootstrap.github.io/">React-bootstrap</a> and <a href="react-media">react-media</a> for making responsive design</li>
-					    <li>Lots of useful UI library like <a href="http://www.material-ui.com/#/">material-ui</a> and <a href="https://ant.design/">ant design</a></li>
-					</ul>
-				</section>
-			</section>
+            </script>
+          </section>
+          <section>
+            <h2>Done!!</h2>
+          </section>
+          <section>
+            <h2>Practice--TodoList</h2>
+            <a href="http://redux.js.org/docs/basics/ExampleTodoList.html">See doc</a>
+          </section>
+        </section>
+        <section>
+          <h2>There are still more</h2>
+          <ul>
+              <li><a href="https://github.com/gaearon/redux-thunk">Redux-thunk</a> for dispatching asynchronous actions(e.g. fetching data while showing a spinning circle)</li>
+              <li><a href="https://github.com/ReactTraining/react-router">React-router</a> for making multiple-page web app</li>
+              <li><a href="https://react-bootstrap.github.io/">React-bootstrap</a> and <a href="react-media">react-media</a> for making responsive design</li>
+              <li>Lots of useful UI library like <a href="http://www.material-ui.com/#/">material-ui</a> and <a href="https://ant.design/">ant design</a></li>
+          </ul>
+        </section>
+      </section>
 
-			</div>
-		</div>
+      </div>
+    </div>
 
-		<script src="../reveal.js/lib/js/head.min.js"></script>
-		<script src="../reveal.js/js/reveal.js"></script>
+    <script src="../reveal.js/lib/js/head.min.js"></script>
+    <script src="../reveal.js/js/reveal.js"></script>
 
-		<script>
-			// More info about config & dependencies:
-			// - https://github.com/hakimel/reveal.js#configuration
-			// - https://github.com/hakimel/reveal.js#dependencies
-			Reveal.initialize({
-				dependencies: [
-					{ src: '../reveal.js/plugin/markdown/marked.js' },
-					{ src: '../reveal.js/plugin/markdown/markdown.js' },
-					{ src: '../reveal.js/plugin/notes/notes.js', async: true },
-					{ src: '../reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-				]
-			});
-		</script>
-	</body>
+    <script>
+      // More info about config & dependencies:
+      // - https://github.com/hakimel/reveal.js#configuration
+      // - https://github.com/hakimel/reveal.js#dependencies
+      Reveal.initialize({
+        dependencies: [
+          { src: '../reveal.js/plugin/markdown/marked.js' },
+          { src: '../reveal.js/plugin/markdown/markdown.js' },
+          { src: '../reveal.js/plugin/notes/notes.js', async: true },
+          { src: '../reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+        ]
+      });
+    </script>
+  </body>
 </html>
